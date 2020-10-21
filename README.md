@@ -1,1 +1,30 @@
 # grupo-04
+
+El proyecto consiste en crear un sitio web focalizado en la comercialización de artículos usados haciendo foco en la cercanía entre vendedores y compradores.
+Pensamos que al registrarse en el sitio los usuarios accederán a una main page con un botón principal que denominaremos "ofertas" (el cual se podrá acotar por distintos filtros). El objetivo es mostrar al usuario una lista de artículos en venta ordenados por cercanía.
+La idea de trabajar con un botón principal de "ofertas" (al cual el usuario podrá aplicar filtros de búsqueda o no) surgió de la teoría de "La paradoja de la elección" en donde se expone cómo premisa la tendencia del ser humano a estar menos satisfecho con las decisiones que toma cuantas más alternativas tenga donde elegir.
+Características de la registración de los usuarios en el sitio web:
+Los usuarios se registrarán con sus datos: nombre, dirección, dni y foto (selfie y DNI) para validar la identidad. Otra opción es que se registren con google o facebook y luego completen el proceso de validación de la identidad enviando las fotos
+Es importante poder validar la identidad (de algún modo) del usuario registrado para que no pueda crear múltiples perfiles. Además la validación con un dni hace que la gente (por la general) tenga un comportamiento “más” correcto.
+Los usuarios al momento de registrarse crean su “alias” con el cual operarán. En función del domicilio o de su ubicación (el sitio deberá contar con geolocalización) tendrá una localización dentro de un mapa (aproximada, no podrá visualizarse el domicilio exacto). Esta localización será utilizada para determinar la cercanía en las consultas de los productos en venta por los usuarios compradores.
+El sitio web no interviene en el pago ni en los medios de pago entre usuarios (vendedores y compradores). Los usuarios, a medida que se van registrando, cargan en sus perfiles los medios de pagos que aceptan para realizar sus ventas.
+Por ahora nuestro modelo de negocio consistirá en cobrar por el aviso “solo una vez producida la venta”. Es necesario declarar la venta para poder calificar al usuario y acumular reputación. Si se detectaran ventas no declaradas el usuario es suspendido.
+El hecho que por defecto en cualquier búsqueda de “oferta” la misma esté ordenada por cercanía está pensado en: 1)no tener que desarrollar un sistema de logística de entrega entre usuario vendedores y compradores que a veces terminan encareciendo el producto y 2) favorecer las economías de cercanías, barrios, colegios,clubes, espacios afines, etc.
+En cada venta es obligatorio calificar al vendedor y al comprador. Con las sucesivas ventas los usuarios irán ganando reputación (positiva o negativa). Esto se podrá ir reflejando con “un modelo de estrellas del 1 al 5” al lado del alias para generar confianza o no a nuevos compradores.
+Características de las publicaciones
+Las publicaciones de cada usuario deberán almacenar fotos, descripción del producto, precio del producto, tipo de producto, descripción y detalles del producto, ubicación del vendedor (aproximada y no exacta) y reputación del vendedor. Se debe poder visualizar sencillamente las formas de pago que acepta el vendedor.
+La visualización de las búsquedas
+Cuando un usuario hace una búsqueda de una "oferta" es importante que el ordenamiento se haga por cercanía entre el vendedor y el comprador visualizándose la reputación del vendedor (pudiendo los usuarios filtrar por tipo de producto o límite la distancia de cercanía a consultar).
+ 
+Nombres tentativos:
+ 
+Desapego  => www.desapego.com.ar
+Desapegate => www.desapegate.com.ar
+ 
+Mercado meta:
+ 
+Todas aquellas personas (entre 18 y 100 años) que manejan una computadora o un celular y tengan ganas de vender cosas que no usan o de comprar productos en "oferta" y cerca de su casa, de manera rápida y segura.
+ 
+Sitios de referencia
+ 
+1. Letgo.com es un sitio norteamericano dedicado a la venta de artículos usados y orientado a la venta por cercanía entre vendedor y comprador.
