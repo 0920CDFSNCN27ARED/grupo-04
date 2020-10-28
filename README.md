@@ -39,6 +39,8 @@
 - Desapego  => www.desapego.com.ar
 - Desapegate => www.desapegate.com.ar
 
+ ![LOGO](https://imgur.com/aq7aqpD)https://imgur.com/aq7aqpD
+![ISOLOGO](https://imgur.com/mR5UIaP) https://imgur.com/mR5UIaP
  
 ### Mercado meta:
  
