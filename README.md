@@ -39,8 +39,6 @@
 - Desapego  => www.desapego.com.ar
 - Desapegate => www.desapegate.com.ar
 
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/6oXBQpx" data-context="false" ><a href="//imgur.com/a/6oXBQpx"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/6oXBQpx" data-context="false" ><a href="//imgur.com/a/6oXBQpx"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
  
 ### Mercado meta:
  
