@@ -49,15 +49,18 @@
 
 ### Integrantes del grupo:
 
-- Ramiro Ninni: Soy profesor de música y licenciado en artes.
-- Emiliano Fernandez.
-- Julian Eloy Lopez Zarzoso: 1 año aprobado de ingenieria en sistemas, me gusta mucho la musica mi pasatiempos es ser Dj.
+- Ramiro Ninni: Soy profesor de música y licenciado en artes. Me gusta estudiar idiomas y viajar por el mundo. Estudio programación desde hace un tiempo y pienso que este proyecto va a ser una excelente oportunidad para aprender mucho más.
 - Diego Valdés: me gusta la tecnologia y el diseño.
 
 
 ### Sitios de referencia
  
 1. Letgo.com es un sitio norteamericano dedicado a la venta de artículos usados y orientado a la venta por cercanía entre vendedor y comprador.
-2. Facebook Marketplace
-3. vtex.com
+2. Facebook Marketplace. Permite conectar a usuarios a través de Meseenger y permite realizar búsquedas cercanas según la geolocalización.
+3. vtex.com. Brinda soluciones de ecommerce del estilo Business-to-consumer (B2C), Servicio de empresa a empresa (B2B), omnicanal y market place.
+4. Mercado Libre. Empresa líder en compra-venta de productos con conexión directa entre comprador y vendedor.
+5. TiendaNube. Brinda soluciones para empresas que quieren vender sus productos, gestionando también los serviciones de envíos.
 
+
+### Tablero en Trello
+[Link al tablón en Trello](https://trello.com/b/CY9BzO3f/0920-grupo4-desapego)
