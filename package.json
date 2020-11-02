@@ -1,0 +1,23 @@
+{
+  "name": "grupo-04",
+  "version": "1.0.0",
+  "description": "- Consiste en crear un sitio web focalizado en la comercialización de artículos \"usados\" (no nuevos) haciendo foco en la cercanía entre vendedores y compradores.\r - Pensamos que al registrarse en el sitio los usuarios accederán a una \"main page\" con un botón principal que denominaremos \"ofertas\" (el cual se podrá acotar por distintos filtros). El objetivo es mostrar al usuario una lista de artículos en venta ordenados por cercanía.\r - La idea de trabajar con un botón principal de \"ofertas\" surgió de la teoría de \"La paradoja de la elección\" en donde se expone cómo premisa la tendencia del ser humano a estar menos satisfecho con las decisiones que toma cuantas más alternativas tenga donde elegir.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0920CDFSNCN27ARED/grupo-04.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0920CDFSNCN27ARED/grupo-04/issues"
+  },
+  "homepage": "https://github.com/0920CDFSNCN27ARED/grupo-04#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
