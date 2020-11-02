@@ -1,0 +1,119 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.link a {
+    text-decoration: none;
+    color: black;
+}
+
+.link-a {
+    text-decoration: none;
+    color: black;
+}
+
+.link {
+    list-style-type: none;
+}
+
+.text-primary {
+    color: #9b1fdd;
+}
+
+.text-secondary{
+    color: #2188db;
+}
+
+.text-success{
+    color: #39b54a;
+}
+
+.text-warning{
+    color:#9b1fdd;
+}
+
+.text-dark {
+    color: #666;
+}
+
+.text-muted{
+    color: #ebebeb;
+}
+
+.bg-primary {
+    background-color: #9b1fdd;
+}
+
+.bg-secondary{
+    background-color: #1259c3;
+}
+
+.bg.success{
+    background-color: #9b1fdd;
+}
+
+.bg-warning{
+    background-color:#a09d8e;
+}
+
+.bg-dark {
+    background-color: #666;
+}
+
+.bg-muted{
+    background-color: #ebebeb;
+}
+
+
+.truck-icon {
+    display: block;
+}
+
+p {
+    font-size: 12px;
+}
+
+.headline {
+ font-size: 24px;
+}
+
+.discount .description{
+    font-size: 16px;
+}
+
+.price {
+    font-size: 18px;
+}
+
+.display-block {
+    display: block;
+}
+
+.display-none {
+    display: none;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.p-r-5 {
+    padding-right: 5%;
+}
+
+.display-flex {
+    display: flex;
+    justify-content: center;
+}
+
+
+#boton-vender {
+    border: 8px solid #1259c3;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 5%;
+}
