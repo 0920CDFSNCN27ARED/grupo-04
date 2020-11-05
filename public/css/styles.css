@@ -1,25 +1,22 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     background: url(/images/fondo.jpg);
     background-size: auto;
-
 }
 
 .box {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     width: 400px;
     padding: 40px;
-    background: rgba (0,0,0,-8);
+    background: rgba (0, 0, 0, -8);
     box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0,0,0,.5);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-
-
 }
 .box h2 {
     margin: 0 0 30px;
@@ -41,7 +38,6 @@ body {
     border-bottom: 1px solid #1259c3;
     outline: none;
     background: transparent;
-
 }
 
 .box .inputBox label {
@@ -52,7 +48,7 @@ body {
     font-size: 16px;
     color: #1259c3;
     pointer-events: none;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .box .inputBox input:focus ~ label,
@@ -64,7 +60,6 @@ body {
 }
 
 .box input[type="submit"] {
-
     background: transparent;
     border: purple;
     outline: purple;
@@ -72,10 +67,7 @@ body {
     background: whitesmokes;
     cursor: pointer;
     border-radius: 5px;
-
 }
-
-
 
 .link a {
     text-decoration: none;
@@ -95,23 +87,23 @@ body {
     color: #9b1fdd;
 }
 
-.text-secondary{
+.text-secondary {
     color: #2188db;
 }
 
-.text-success{
+.text-success {
     color: #39b54a;
 }
 
-.text-warning{
-    color:#9b1fdd;
+.text-warning {
+    color: #9b1fdd;
 }
 
 .text-dark {
     color: #666;
 }
 
-.text-muted{
+.text-muted {
     color: #ebebeb;
 }
 
@@ -119,26 +111,25 @@ body {
     background-color: #9b1fdd;
 }
 
-.bg-secondary{
+.bg-secondary {
     background-color: #1259c3;
 }
 
-.bg.success{
+.bg.success {
     background-color: #9b1fdd;
 }
 
-.bg-warning{
-    background-color:#a09d8e;
+.bg-warning {
+    background-color: #a09d8e;
 }
 
 .bg-dark {
     background-color: #666;
 }
 
-.bg-muted{
+.bg-muted {
     background-color: #ebebeb;
 }
-
 
 .truck-icon {
     display: block;
@@ -149,10 +140,10 @@ p {
 }
 
 .headline {
- font-size: 24px;
+    font-size: 24px;
 }
 
-.discount .description{
+.discount .description {
     font-size: 16px;
 }
 
@@ -184,7 +175,6 @@ p {
     display: flex;
     justify-content: center;
 }
-
 
 #boton-vender {
     border: 8px solid #1259c3;
