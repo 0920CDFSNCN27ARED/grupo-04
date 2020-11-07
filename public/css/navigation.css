@@ -1,0 +1,72 @@
+.nav-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #cccccc;
+}
+
+.nav-logo {
+    width: 14em;
+}
+
+.menu-hamburger {
+    font-size: 1.3em;
+    background-color: #565656;
+    padding: 0.35em 0.5em;
+    border-radius: 5px;
+    margin-bottom: 0.5em;
+}
+
+.menu-hamburger-icon {
+    color: #fff;
+}
+
+.nav {
+}
+
+.nav-item {
+    margin: 1em;
+}
+
+.nav-list {
+    /*TO DO hacer hamburger menu con JS*/
+    display: none;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: flex-end;
+    list-style-type: none;
+}
+
+.nav-anchor {
+    text-decoration: none;
+    color: #565656;
+}
+
+.nav-anchor:hover {
+    text-decoration: none;
+    color: #9b1fdd;
+}
+
+@media (min-width: 768px) {
+    .nav-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background-color: #cccccc;
+    }
+
+    .nav-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        list-style-type: none;
+    }
+
+    .menu-hamburger {
+        display: none;
+    }
+}

@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: "Roboto", sans-serif;
     background: url(/images/fondo.jpg);
     background-size: auto;
@@ -67,11 +68,6 @@ body {
     background: whitesmokes;
     cursor: pointer;
     border-radius: 5px;
-}
-
-.link a {
-    text-decoration: none;
-    color: black;
 }
 
 .link-a {

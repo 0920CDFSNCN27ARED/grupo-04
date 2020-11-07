@@ -13,91 +13,82 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
         />
         <link rel="stylesheet" href="/css/styles.css" />
+        <link rel="stylesheet" href="/css/navigation.css" />
     </head>
 
     <body class="bg-muted">
         <header>
-            <div class="bg-muted">
+            <div class="nav-container">
                 <img
-                    src="/images/logo.jpg"
-                    width="360"
+                    class="nav-logo"
+                    src="/images/logo-desapego.svg"
                     alt="Logo de MercadoLiebre"
                 />
-                <ul class="link text-align-right p-r-5">
-                    <li>
-                        <a href="#"
-                            >Mis compras <i class="fas fa-shopping-basket"></i
-                        ></a>
-                    </li>
-                </ul>
-                <!-- Nav
-                        TO DO hacerlo flotante abajo -->
-                <div>
-                    <p>
-                        <i class="fas fa-hand-holding-usd"></i>Comprá en cuotas
-                        y sin tarjeta de crédito
-                    </p>
-                    <ul class="link">
-                        <li>
-                            <a href="#"
+                <div class="menu-hamburger">
+                    <i class="fas fa-bars menu-hamburger-icon"></i>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a class="nav-anchor" href="#"
                                 >Mis compras
                                 <i class="fas fa-shopping-basket"></i
                             ></a>
                         </li>
-                        <li><a href="#">Ofertas</a></li>
-                        <li><a href="#">Tiendas Oficiales</a></li>
-                        <li><a href="#">Vender</a></li>
-                        <li><a href="#">Ayuda</a></li>
-                    </ul>
-                    <ul class="link">
-                        <li>
-                            <a href="/register"
+                        <li class="nav-item">
+                            <a class="nav-anchor" href="/register"
                                 >Creá tu cuenta <i class="far fa-id-card"></i
                             ></a>
                         </li>
-                        <li>
-                            <a href="/login"
+                        <li class="nav-item">
+                            <a class="nav-anchor" href="/login"
                                 >Ingresá a tu cuenta
                                 <i class="fas fa-sign-in-alt"></i
                             ></a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-anchor" href="#">Vender</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-anchor" href="#">Ayuda</a>
+                        </li>
                     </ul>
-                </div>
-            </div>
-            <div class="bg-primary">
-                <form action="" class="text-align-center">
-                    <label for="distancia" class="display-block"
-                        >¿Qué se vende cerca?</label
-                    >
-                    <input
-                        type="range"
-                        id="distancia"
-                        name="distancia"
-                        min="0"
-                        max="50"
-                    />
-                    <label for="precio" class="display-block"
-                        >¿Cuánto quiero gastar?</label
-                    >
-                    <input
-                        type="range"
-                        id="precio"
-                        name="precio"
-                        min="0"
-                        max="50"
-                    />
-                    <input
-                        type="text"
-                        placeholder="Quiero buscar por producto"
-                        class="display-block"
-                    /><i class="fas fa-search"></i>
-                </form>
-            </div>
-            <div>
-                <!-- Slider de productos destacados -->
-                <img src="/images/pileta.jpg" alt="" width="350px" />
+                </nav>
             </div>
         </header>
+        <div class="bg-primary">
+            <form action="" class="text-align-center">
+                <label for="distancia" class="display-block"
+                    >¿Qué se vende cerca?</label
+                >
+                <input
+                    type="range"
+                    id="distancia"
+                    name="distancia"
+                    min="0"
+                    max="50"
+                />
+                <label for="precio" class="display-block"
+                    >¿Cuánto quiero gastar?</label
+                >
+                <input
+                    type="range"
+                    id="precio"
+                    name="precio"
+                    min="0"
+                    max="50"
+                />
+                <input
+                    type="text"
+                    placeholder="Quiero buscar por producto"
+                    class="display-block"
+                /><i class="fas fa-search"></i>
+            </form>
+        </div>
+        <div>
+            <!-- Slider de productos destacados -->
+            <img src="/images/pileta.jpg" alt="" width="350px" />
+        </div>
         <main>
             <div class="display-flex">
                 <button class="bg-primary" id="boton-vender">
