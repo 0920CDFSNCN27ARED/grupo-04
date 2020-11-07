@@ -14,6 +14,7 @@
         />
         <link rel="stylesheet" href="/css/styles.css" />
         <link rel="stylesheet" href="/css/navigation.css" />
+        <link rel="stylesheet" href="/css/forms.css" />
     </head>
 
     <body class="bg-muted">
@@ -56,40 +57,41 @@
                 </nav>
             </div>
         </header>
-        <div class="bg-primary">
-            <form action="" class="text-align-center">
-                <label for="distancia" class="display-block"
-                    >¿Qué se vende cerca?</label
-                >
-                <input
-                    type="range"
-                    id="distancia"
-                    name="distancia"
-                    min="0"
-                    max="50"
-                />
-                <label for="precio" class="display-block"
-                    >¿Cuánto quiero gastar?</label
-                >
-                <input
-                    type="range"
-                    id="precio"
-                    name="precio"
-                    min="0"
-                    max="50"
-                />
-                <input
-                    type="text"
-                    placeholder="Quiero buscar por producto"
-                    class="display-block"
-                /><i class="fas fa-search"></i>
-            </form>
-        </div>
-        <div>
-            <!-- Slider de productos destacados -->
-            <img src="/images/pileta.jpg" alt="" width="350px" />
-        </div>
         <main>
+            <div class="form-container-distance bg-primary">
+                <form action="" class="form-distance">
+                    <label for="distancia" class="display-block"
+                        >¿Qué se vende cerca?</label
+                    >
+                    <input
+                        type="range"
+                        id="distancia"
+                        name="distancia"
+                        min="0"
+                        max="50"
+                    />
+                    <label for="precio" class="display-block"
+                        >¿Cuánto quiero gastar?</label
+                    >
+                    <input
+                        type="range"
+                        id="precio"
+                        name="precio"
+                        min="0"
+                        max="50"
+                    />
+                    <input
+                        type="text"
+                        placeholder="Quiero buscar por producto 🔍"
+                        class="display-block search-bar text-align-center"
+                    />
+                </form>
+            </div>
+            <div class="featured-products">
+                <!-- Slider de productos destacados -->
+                <img src="/images/products/iphone.jpg" alt="" width="350px" />
+            </div>
+
             <div class="display-flex">
                 <button class="bg-primary" id="boton-vender">
                     <a href="https://www.google.com.ar" class="text-muted"
