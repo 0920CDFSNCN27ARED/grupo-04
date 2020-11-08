@@ -1,38 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Bienvenidxs a MercadoLiebre</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Bienvenidxs a MercadoLiebre</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+        />
+        <link rel="stylesheet" href="/css/styles.css" />
+    </head>
 
-<body>
-    <header>
-        <div class="bg-muted">
-            <img src="/images/logo.jpg" width="360" alt="Logo de MercadoLiebre">
-        <ul class="link text-align-right p-r-5">
-        </ul>
-    </header>
-   <form action="login.html"
-   method = "get"></form>
-        <div class="box">
+    <body>
+        <header>
+            <img
+                class="nav-logo2"
+                src="/images/logo-desapego.svg"
+                alt="Logo de Desapego"
+            />
+        </header>
+        <form action="login.html" method="get"></form>
+        <!--<div class="box">
             <h2>Login</h2>
             <form>
-                <div class = "inputBox">
+                <div class="inputBox">
                     <input type= "email" id= "email" name "email" required= "">
                     <label for="email"> Tu email</label>
                 </div>
-                <div class = "inputBox">
-                    <input type= "password" id= "password" name "password" required= "">
+                <div class="inputBox">
+                    <input type= "password" id= "password" name "password"
+                    required= "">
                     <label for="password"> Tu contraseña</label>
                 </div>
                 <input type= "submit" id= "password" name "password">
                 <a ref="#">No recuerdo mi contraseña</a>
                 <a ref="#">No tengo cuenta !</a>
             </form>
+        </div>-->
+        <div class="login-box">
+            <img src="/images/isologo2.png" class="avatar" alt="Avatar Image" />
+            <h1>Login Here</h1>
+            <form>
+                <!-- USERNAME INPUT -->
+                <label for="username">Username</label>
+                <input type="text" placeholder="Enter Username" required="" />
+                <!-- PASSWORD INPUT -->
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    placeholder="Enter Password"
+                    required=""
+                />
+                <input type="submit" value="Log In" />
+                <a href="#">Lost your Password?</a><br />
+                <a href="/register">Don't have An account?</a>
+            </form>
         </div>
-</body>
+    </body>
 </html>

@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="/css/styles.css" />
         <link rel="stylesheet" href="/css/navigation.css" />
         <link rel="stylesheet" href="/css/forms.css" />
+        <link rel="stylesheet" href="/css/slider.css" />
     </head>
 
     <body class="bg-muted">
@@ -23,7 +24,7 @@
                 <img
                     class="nav-logo"
                     src="/images/logo-desapego.svg"
-                    alt="Logo de MercadoLiebre"
+                    alt="Logo de Desapego"
                 />
                 <div class="menu-hamburger">
                     <i class="fas fa-bars menu-hamburger-icon"></i>
@@ -36,14 +37,16 @@
                                 <i class="fas fa-shopping-basket"></i
                             ></a>
                         </li>
-                        <li class="nav-item">
+                        <!-- Al ingresar a Desapego podes loguearte y sino tenes cuenta poser crearla desde el "login"
+                            
+                            <li class="nav-item">
                             <a class="nav-anchor" href="/register"
                                 >Creá tu cuenta <i class="far fa-id-card"></i
                             ></a>
-                        </li>
+                        </li>-->
                         <li class="nav-item">
                             <a class="nav-anchor" href="/login"
-                                >Ingresá a tu cuenta
+                                >Ingresá a Desapego
                                 <i class="fas fa-sign-in-alt"></i
                             ></a>
                         </li>
@@ -88,10 +91,22 @@
                 </form>
             </div>
             <div class="featured-products">
-                <!-- Slider de productos destacados -->
+                <!-- Slider de productos destacados 
                 <img src="/images/products/iphone.jpg" alt="" width="350px" />
-            </div>
+            </div>-->
 
+            <div class="slider">
+
+                <ul>
+                    <li><img src="/images/products/iphone.jpg" alt= ""></li>
+                    <li><img src="/images/products/macbookpro.jpg" alt= ""></li>
+                    <li><img src="/images/products/tv.jpg" alt= ""></li>
+                    <li><img src="/images/products/ventilador.jpg" alt= ""></li>
+                    <li><img src="/images/products/desapegate.jpg" alt= ""></li>
+                </ul>
+
+
+            </div>
             <div class="display-flex">
                 <button class="bg-primary" id="boton-vender">
                     <a href="https://www.google.com.ar" class="text-muted"
@@ -100,6 +115,7 @@
                 </button>
             </div>
         </main>
+            
 
         <footer>
             <i class="far fa-credit-card text-secondary"></i>
