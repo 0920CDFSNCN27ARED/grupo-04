@@ -2,8 +2,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    background: url(/images/fondo.jpg);
-    background-size: auto;
+    background: url(/images/fondo2.png) no-repeat center top;
+    background-size: 98%;
 
 }
 
