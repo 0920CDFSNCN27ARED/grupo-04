@@ -1,4 +1,8 @@
 {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> d56fafc9c3bb3b96d777d774743846d4d6ea0934

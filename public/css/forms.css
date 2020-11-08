@@ -1,0 +1,36 @@
+.form-container-distance {
+    padding: 2em 1.5em;
+}
+
+.form-distance {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-distance > label {
+    margin: 0.5em 0;
+}
+
+.form-distance > input {
+    margin: 0.5em 0;
+}
+
+#distancia,
+#precio {
+    width: 80%;
+}
+
+.search-bar {
+    border-radius: 50px;
+    width: 80%;
+}
+
+.form-distance > input + label {
+    margin-top: 1em;
+}
+
+#precio {
+    margin-bottom: 1em;
+}

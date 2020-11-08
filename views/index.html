@@ -1,73 +1,126 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Bienvenidxs a MercadoLiebre</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+        />
+        <link rel="stylesheet" href="/css/styles.css" />
+        <link rel="stylesheet" href="/css/navigation.css" />
+        <link rel="stylesheet" href="/css/forms.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Bienvenidxs a MercadoLiebre</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
-
-<body class="bg-muted">
-    <header>
-        <div class="bg-muted">
-            <img src="/images/logo.jpg" width="360" alt="Logo de MercadoLiebre">
-        <ul class="link text-align-right p-r-5">
-            <li><a href="#">Mis compras <i class="fas fa-shopping-basket"></i></a></li>
-        </ul>
-                <!-- Nav
-                        TO DO hacerlo flotante abajo -->
-                <div>
-                    <p><i class="fas fa-hand-holding-usd"></i>Comprá en cuotas y sin tarjeta de crédito</p>
-                    <ul class="link">
-                        <li><a href="#">Mis compras <i class="fas fa-shopping-basket"></i></a></li>
-                        <li><a href="#">Ofertas</a></li>
-                        <li><a href="#">Tiendas Oficiales</a></li>
-                        <li><a href="#">Vender</a></li>
-                        <li><a href="#">Ayuda</a></li>
-                    </ul>
-                    <ul class="link">
-                        <li><a href="/register">Creá tu cuenta <i class="far fa-id-card"></i></a></li>
-                        <li><a href="/login">Ingresá a tu cuenta <i class="fas fa-sign-in-alt"></i></a></li>
-                    </ul>
+    <body class="bg-muted">
+        <header>
+            <div class="nav-container">
+                <img
+                    class="nav-logo"
+                    src="/images/logo-desapego.svg"
+                    alt="Logo de MercadoLiebre"
+                />
+                <div class="menu-hamburger">
+                    <i class="fas fa-bars menu-hamburger-icon"></i>
                 </div>
-        </div>
-        <div class="bg-primary">
-            <form action="" class="text-align-center">
-                <label for="distancia" class="display-block">¿Qué se vende cerca?</label>
-                <input type="range" id="distancia" name="distancia" min="0" max="50">
-                <label for="precio" class="display-block">¿Cuánto quiero gastar?</label>
-                <input type="range" id="precio" name="precio" min="0" max="50">
-                <input type="text" placeholder="Quiero buscar por producto" class="display-block"><i class="fas fa-search"></i>
-            </form>
-        </div>
-        <div> <!-- Slider de productos destacados -->
-            <img src="/images/pileta.jpg" alt="" width="350px">
-        </div>
-    </header>
-    <main>
-        <div class="display-flex">
-        <button class="bg-primary" id="boton-vender"><a href="https://www.google.com.ar" class="text-muted">¡Quiero vender!</a></button>
-        </div>
-    </main>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a class="nav-anchor" href="#"
+                                >Mis compras
+                                <i class="fas fa-shopping-basket"></i
+                            ></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-anchor" href="/register"
+                                >Creá tu cuenta <i class="far fa-id-card"></i
+                            ></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-anchor" href="/login"
+                                >Ingresá a tu cuenta
+                                <i class="fas fa-sign-in-alt"></i
+                            ></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-anchor" href="#">Vender</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-anchor" href="#">Ayuda</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <div class="form-container-distance bg-primary">
+                <form action="" class="form-distance">
+                    <label for="distancia" class="display-block"
+                        >¿Qué se vende cerca?</label
+                    >
+                    <input
+                        type="range"
+                        id="distancia"
+                        name="distancia"
+                        min="0"
+                        max="50"
+                    />
+                    <label for="precio" class="display-block"
+                        >¿Cuánto quiero gastar?</label
+                    >
+                    <input
+                        type="range"
+                        id="precio"
+                        name="precio"
+                        min="0"
+                        max="50"
+                    />
+                    <input
+                        type="text"
+                        placeholder="Quiero buscar por producto 🔍"
+                        class="display-block search-bar text-align-center"
+                    />
+                </form>
+            </div>
+            <div class="featured-products">
+                <!-- Slider de productos destacados -->
+                <img src="/images/products/iphone.jpg" alt="" width="350px" />
+            </div>
 
+            <div class="display-flex">
+                <button class="bg-primary" id="boton-vender">
+                    <a href="https://www.google.com.ar" class="text-muted"
+                        >¡Quiero vender!</a
+                    >
+                </button>
+            </div>
+        </main>
 
-    <footer>
-        <i class="far fa-credit-card text-secondary"></i>
-        <h4>Pagá con tarjeta o en efectivo</h4>
-        <p>Con MercadoLiebreCash tenés cuotas sin interés con tarjeta o efectivoen puntos de pago. ¡Y siempre es seguro!
-        </p>
-        <i class="fas fa-gift text-secondary"></i>
-        <h4>Envío gratis desde los $ 2.500</h4>
-        <p>Solo por estar registrad@ en MercadoLiebre tenés envíos gratis en miles de productos. Es un beneficio de
-            MercadoPuntos.</p>
-        <i class="fas fa-gift text-secondary"></i>
-        <h4>Seguridad de principio a fin</h4>
-        <p>¿No te gusta? ¡Devolvelo! En MercadoLiebre no hay nada que no puedas hacer porque estás siempre prtegid@.</p>
-        <p>Copyright © 1999-2019 MercadoLiebre S.R.L.</p>
-    </footer>
-</body>
-
+        <footer>
+            <i class="far fa-credit-card text-secondary"></i>
+            <h4>Pagá con tarjeta o en efectivo</h4>
+            <p>
+                Con MercadoLiebreCash tenés cuotas sin interés con tarjeta o
+                efectivoen puntos de pago. ¡Y siempre es seguro!
+            </p>
+            <i class="fas fa-gift text-secondary"></i>
+            <h4>Envío gratis desde los $ 2.500</h4>
+            <p>
+                Solo por estar registrad@ en MercadoLiebre tenés envíos gratis
+                en miles de productos. Es un beneficio de MercadoPuntos.
+            </p>
+            <i class="fas fa-gift text-secondary"></i>
+            <h4>Seguridad de principio a fin</h4>
+            <p>
+                ¿No te gusta? ¡Devolvelo! En MercadoLiebre no hay nada que no
+                puedas hacer porque estás siempre prtegid@.
+            </p>
+            <p>Copyright © 1999-2019 MercadoLiebre S.R.L.</p>
+        </footer>
+    </body>
 </html>
