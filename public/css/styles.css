@@ -111,8 +111,8 @@ body {
     background-color: #1259c3;
 }
 
-.bg.success {
-    background-color: #9b1fdd;
+.bg-success {
+    background-color: #39b54a;
 }
 
 .bg-warning {
@@ -151,6 +151,10 @@ p {
     display: block;
 }
 
+.display-inline-block {
+    display: inline-block;
+}
+
 .display-none {
     display: none;
 }
@@ -165,11 +169,6 @@ p {
 
 .p-r-5 {
     padding-right: 5%;
-}
-
-.display-flex {
-    display: flex;
-    justify-content: center;
 }
 
 #boton-vender {

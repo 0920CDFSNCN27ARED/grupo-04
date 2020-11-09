@@ -27,7 +27,28 @@
     color: #fff;
 }
 
-.nav {
+.nav-location-anchor {
+    text-decoration: none;
+}
+
+.nav-location-container {
+    font-size: 0.8em;
+    margin: 1em 0;
+
+    display: flex;
+    align-items: baseline;
+}
+
+.nav-location-box {
+    padding: 0.5em 0.8em;
+    border-radius: 5000px;
+    margin-left: 0.5em;
+}
+
+.nav-location-anchor:link,
+.nav-location-anchor:visited {
+    color: inherit;
+    font-weight: 600;
 }
 
 .nav-item {
