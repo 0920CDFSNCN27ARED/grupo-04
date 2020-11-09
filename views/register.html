@@ -1,57 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
         <meta charset="UTF-8" />
+        <title>Bienvenidxs a Desapego</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <link rel="stylesheet" href="/css/styles.css" />
-        <title>Formulario Registro</title>
-        <img
-            class="nav-logo2"
-            src="/images/logo-desapego.svg"
-            alt="Logo de Desapego"
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+            rel="stylesheet"
         />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+        />
+        <link rel="stylesheet" href="/css/styles.css" />
+        <link rel="stylesheet" href="/css/navigation.css" />
+        <link rel="stylesheet" href="/css/index.css" />
+        <link rel="stylesheet" href="/css/forms.css" />
+        <link rel="stylesheet" href="/css/slider.css" />
+        <link rel="stylesheet" href="/css/productDetail.css" />
+        <link rel="stylesheet" href="/css/register.css" />
     </head>
+
     <body>
-        <div class="register-box">
-            <h1>Formulario Registro</h1>
-            <input
-                class="controls"
-                type="text"
-                name="nombres"
-                id="nombres"
-                placeholder="Ingrese su Nombre"
-            />
-            <input
-                class="controls"
-                type="text"
-                name="apellidos"
-                id="apellidos"
-                placeholder="Ingrese su Apellido"
-            />
-            <input
-                class="controls"
-                type="email"
-                name="correo"
-                id="correo"
-                placeholder="Ingrese su Correo"
-            />
-            <input
-                class="controls"
-                type="password"
-                name="correo"
-                id="correo"
-                placeholder="Ingrese su Contraseña"
-            />
-            <input
-                class="controls"
-                class="controls"
-                type="text"
-                name="dirección"
-                id="direccion"
-                placeholder="Ingrese su Dirección"
-            />
-            <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
+        <header>
+            <div class="nav-container">
+                <img
+                    class="nav-logo"
+                    src="/images/logo-desapego.svg"
+                    alt="Logo de Desapego"
+                />
+            </div>
+        </header>
+        <form action="register.html" method="get"></form>
+
+        <div class="register">
+            <h1>Formulario de registración</h1>
+            <form>
+                <input
+                    class="controls"
+                    type="text"
+                    name="nombres"
+                    id="nombres"
+                    placeholder="Nombre"
+                />
+                <input
+                    class="controls"
+                    type="text"
+                    name="apellidos"
+                    id="apellidos"
+                    placeholder="Apellido"
+                />
+                <input
+                    class="controls"
+                    type="email"
+                    name="correo"
+                    id="correo"
+                    placeholder="Email"
+                />
+                <input
+                    class="controls"
+                    type="password"
+                    name="correo"
+                    id="correo"
+                    placeholder="Contraseña"
+                />
+                <input
+                    class="controls"
+                    class="controls"
+                    type="text"
+                    name="dirección"
+                    id="direccion"
+                    placeholder="Ingresá tu dirección"
+                />
+                <p>
+                    Estoy de acuerdo con <a href="#">Terminos y Condiciones</a>
+                </p>
+            </form>
         </div>
     </body>
 </html>
