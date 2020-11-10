@@ -31,51 +31,63 @@
                 />
             </div>
         </header>
-        <form action="register.html" method="get"></form>
-
-        <div class="register">
-            <h1>Formulario de registración</h1>
-            <form>
-                <input
-                    class="controls"
-                    type="text"
-                    name="nombres"
-                    id="nombres"
-                    placeholder="Nombre"
-                />
-                <input
-                    class="controls"
-                    type="text"
-                    name="apellidos"
-                    id="apellidos"
-                    placeholder="Apellido"
-                />
-                <input
-                    class="controls"
-                    type="email"
-                    name="correo"
-                    id="correo"
-                    placeholder="Email"
-                />
-                <input
-                    class="controls"
-                    type="password"
-                    name="correo"
-                    id="correo"
-                    placeholder="Contraseña"
-                />
-                <input
-                    class="controls"
-                    class="controls"
-                    type="text"
-                    name="dirección"
-                    id="direccion"
-                    placeholder="Ingresá tu dirección"
-                />
-                <p>
-                    Estoy de acuerdo con <a href="#">Terminos y Condiciones</a>
-                </p>
-            </form>
+        <div class="register-container">
+            <div class="register">
+                <h1>Formulario de Registración</h1>
+                <form action="register.html" method="get">
+                    <label for="nombres" class="display-none">Nombres</label>
+                    <input
+                        class="controls"
+                        type="text"
+                        name="nombres"
+                        id="nombres"
+                        placeholder="Nombre"
+                    />
+                    <label for="apellidos" class="display-none"
+                        >Apellidos</label
+                    >
+                    <input
+                        class="controls"
+                        type="text"
+                        name="apellidos"
+                        id="apellidos"
+                        placeholder="Apellido"
+                    />
+                    <label for="correo" class="display-none"
+                        >Correo Electrónico</label
+                    >
+                    <input
+                        class="controls"
+                        type="email"
+                        name="correo"
+                        id="correo"
+                        placeholder="Email"
+                    />
+                    <label for="password" class="display-none"
+                        >Contraseña</label
+                    >
+                    <input
+                        class="controls"
+                        type="password"
+                        name="password"
+                        id="password"
+                        placeholder="Contraseña"
+                    />
+                    <label for="direccion" class="display-none"
+                        >Dirección</label
+                    >
+                    <input
+                        class="controls"
+                        type="text"
+                        name="direccion"
+                        id="direccion"
+                        placeholder="Ingresá tu dirección"
+                    />
+                    <input type="checkbox" name="tyc-accepted" required />Estoy
+                    de acuerdo con <a href="#">Terminos y Condiciones</a>
+                    <button type="submit">Registrarme</button>
+                </form>
+            </div>
         </div>
     </body>
 </html>
