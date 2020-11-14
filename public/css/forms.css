@@ -1,19 +1,19 @@
-.form-container-distance {
+.form-index-container {
     padding: 2em 1.5em;
 }
 
-.form-distance {
+.form-index {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.form-distance > label {
+.form-index > label {
     margin: 0.5em 0;
 }
 
-.form-distance > input {
+.form-index > input {
     margin: 0.5em 0;
 }
 
@@ -22,15 +22,15 @@
     width: 80%;
 }
 
-.search-bar {
+.form-index-search-bar {
     border-radius: 50px;
     width: 80%;
 }
 
-.form-distance > input + label {
+.form-index > input + label {
     margin-top: 1em;
 }
 
 #precio {
-    margin-bottom: 1em;
+    margin-bottom: 16px;
 }
