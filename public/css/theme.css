@@ -68,3 +68,7 @@ body {
 .bg-light {
     background-color: #ffffff;
 }
+
+.link {
+    text-decoration: none;
+}
