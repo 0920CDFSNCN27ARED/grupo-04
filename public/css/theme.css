@@ -30,7 +30,11 @@ body {
 }
 
 .text-muted {
-    color: #ebebeb;
+    color: #e2e2e2;
+}
+
+.text-light {
+    color: #ffffff;
 }
 
 .bg-primary {
@@ -59,4 +63,8 @@ body {
 
 .bg-muted {
     background-color: #ebebeb;
+}
+
+.bg-light {
+    background-color: #ffffff;
 }

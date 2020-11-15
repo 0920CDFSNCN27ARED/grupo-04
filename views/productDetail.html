@@ -72,7 +72,9 @@
         </header>
         <main>
             <div class="product-container">
-                <div class="product-images-container">
+                <div
+                    class="product-images-container display-flex flex-direction-column"
+                >
                     <div class="product-image-primary">
                         <img
                             src="images/product-detail/mac1.jpg"
@@ -80,8 +82,10 @@
                             class="product-image-primary"
                         />
                     </div>
-                    <div class="product-image-secondary-container">
-                        <div class="product-image-secondary-item">
+                    <div class="product-image-secondary-container display-flex">
+                        <div
+                            class="product-image-secondary-item display-flex flex-direction-row"
+                        >
                             <img
                                 src="images/product-detail/mac2.jpg"
                                 alt=""
@@ -105,7 +109,14 @@
                     </div>
                 </div>
                 <div class="product-text-container">
-                    <p class="product-title">Macbook Pro 13''</p>
+                    <div
+                        class="product-header display-flex justify-content-space-between align-items-center"
+                    >
+                        <p class="product-title font-size-1-5 font-weight-600">
+                            Macbook Pro 13''
+                        </p>
+                        <i class="far fa-heart product-add-favourite"></i>
+                    </div>
                     <p class="product-price text-secondary">$200.000</p>
                     <div class="product-details">
                         <p>
@@ -120,50 +131,85 @@
                             de eDRAM.
                         </p>
                     </div>
+                    <p
+                        class="product-views font-size-0-8 font-style-italic text-dark"
+                    >
+                        <i class="far fa-eye text-dark"></i> 26
+                    </p>
                 </div>
                 <div class="product-purchase-container">
-                    <div class="product-buttons-container">
-                        <button class="product-button-add-to-basket bg-success">
+                    <div
+                        class="product-buttons-container display-flex flex-direction-column justify-content-center align-items-center"
+                    >
+                        <button
+                            class="product-button-add-to-basket text-light bg-success"
+                        >
                             Comprar
                         </button>
                         <button
-                            class="product-button-message-to-seller bg-secondary"
+                            class="product-button-message-to-seller text-light bg-secondary"
                         >
                             Mensaje al Vendedor
                         </button>
                     </div>
-                    <div class="product-seller-container">
-                        <div class="product-seller-info">
-                            <div class="product-seller-img-container">
-                                <img
-                                    src="/images/seller-detail/vendedor.jpg"
-                                    alt=""
-                                    class="product-seller-img"
-                                />
-                            </div>
-                            <div class="product-seller-name-and-stars">
-                                <p class="product-seller-name">Juana Pérez</p>
-                                <div class="product-seller-stars">
-                                    <i class="fas fa-star"></i
-                                    ><i class="fas fa-star"></i
-                                    ><i class="fas fa-star"></i
-                                    ><i class="fas fa-star"></i
-                                    ><i class="far fa-star"></i>
-                                </div>
+                </div>
+                <div
+                    class="product-seller-container display-flex justify-content-center"
+                >
+                    <div
+                        class="product-seller-info display-flex justify-content-center align-items-flex-start bg-light"
+                    >
+                        <div class="product-seller-img-container">
+                            <img
+                                src="/images/seller-detail/vendedor.jpg"
+                                alt=""
+                                class="product-seller-img"
+                            />
+                        </div>
+                        <div
+                            class="product-seller-name-and-stars display-flex flex-direction-column justify-content-center align-items-center"
+                        >
+                            <p class="product-seller-name">Juana Pérez</p>
+                            <div class="product-seller-stars">
+                                <i class="fas fa-star"></i
+                                ><i class="fas fa-star"></i
+                                ><i class="fas fa-star"></i
+                                ><i class="fas fa-star"></i
+                                ><i class="far fa-star"></i>
                             </div>
                         </div>
-                        <div class="product-seller-payment-methods">
-                            <p class="product-seller-payment-text">
-                                Medios de pago aceptados:
-                            </p>
-                            <div class="product-seller-payment-icons">
-                                <i class="fas fa-credit-card text-primary"></i>
-                                <i
-                                    class="far fa-money-bill-alt text-primary"
-                                ></i>
-                                <i class="fas fa-university text-primary"></i>
-                                <i class="fas fa-mobile-alt text-primary"></i>
-                            </div>
+                    </div>
+                </div>
+                <div
+                    class="product-payment-methods-container display-flex flex-direction-column align-items-center bg-light"
+                >
+                    <p
+                        class="product-payment-text font-size-1-1 font-weight-600 text-align-center"
+                    >
+                        Medios de pago aceptados:
+                    </p>
+                    <div
+                        class="product-payment-icons-container display-flex justify-content-space-evenly width-100"
+                    >
+                        <div
+                            class="product-payment-icon-item bg-muted display-flex justify-content-center align-items-center"
+                        >
+                            <i class="fas fa-credit-card text-primary"></i>
+                        </div>
+                        <div
+                            class="product-payment-icon-item bg-muted display-flex justify-content-center align-items-center"
+                        >
+                            <i class="far fa-money-bill-alt text-primary"></i>
+                        </div>
+                        <div
+                            class="product-payment-icon-item bg-muted display-flex justify-content-center align-items-center"
+                        >
+                            <i class="fas fa-university text-primary"></i>
+                        </div>
+                        <div
+                            class="product-payment-icon-item bg-muted display-flex justify-content-center align-items-center"
+                        >
+                            <i class="fas fa-mobile-alt text-primary"></i>
                         </div>
                     </div>
                 </div>

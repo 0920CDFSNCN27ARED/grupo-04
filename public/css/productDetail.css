@@ -1,6 +1,4 @@
 .product-images-container {
-    display: flex;
-    flex-direction: column;
     padding: 1em;
 }
 
@@ -10,13 +8,10 @@
 }
 
 .product-image-secondary-container {
-    display: flex;
     width: 100%;
 }
 
 .product-image-secondary-item {
-    display: flex;
-    flex-direction: row;
     width: 33.3%;
 }
 
@@ -33,22 +28,18 @@
 }
 
 .product-title {
-    font-size: 1.5em;
-    font-weight: 600;
     margin-top: 0.4em;
     margin-bottom: 0.4em;
+}
+
+.product-add-favourite {
+    margin-right: 1em;
+    cursor: pointer;
 }
 
 .product-price {
     font-size: 1.2em;
     margin-top: 0em;
-}
-
-.product-buttons-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .product-button-add-to-basket,
@@ -60,21 +51,18 @@
     border-radius: 5000px;
     border-style: solid;
     border-width: 0;
-    color: #fff;
     margin: 0.2em;
 }
 
 .product-seller-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .product-seller-info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    margin: 0.5em 15%;
     border-radius: 5000px;
     padding: 0.5em 0;
+    width: 70%;
 }
 
 .product-seller-img-container {
@@ -84,10 +72,29 @@
 .product-seller-img {
     width: 100%;
     object-fit: contain;
+    margin-right: 15px;
 }
 
 .product-seller-name-and-stars {
+    margin-left: 15px;
 }
 
-.product-seller-payment-method {
+.product-seller-name {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.product-payment-methods-container {
+    padding: 1em;
+    margin: 1em;
+}
+
+.product-payment-text {
+    margin-top: 0;
+}
+
+.product-payment-icon-item {
+    width: 40px;
+    height: 40px;
+    border-radius: 5000px;
 }
