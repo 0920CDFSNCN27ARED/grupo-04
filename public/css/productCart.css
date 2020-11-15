@@ -1,0 +1,23 @@
+.cart-top-banner {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.cart-title {
+    margin-left: 2rem;
+}
+
+.cart-basket-icon {
+    margin-right: 2rem;
+}
+
+.cart-product-image-container {
+    width: 50%;
+    padding: 1em;
+}
+
+.cart-product-image {
+    width: 100%;
+    object-fit: contain;
+    margin-right: 15px;
+}
