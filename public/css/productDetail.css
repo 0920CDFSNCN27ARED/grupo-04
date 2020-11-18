@@ -2,8 +2,12 @@
     padding: 1em;
 }
 
-.product-image-primary {
+.product-image-primary-container {
     background-color: #fff;
+    width: 100%;
+}
+
+.product-image-primary {
     width: 100%;
 }
 

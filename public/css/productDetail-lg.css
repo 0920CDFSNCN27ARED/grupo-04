@@ -1,0 +1,12 @@
+.product-images-container-lg {
+    flex-direction: row;
+}
+
+.product-image-primary-container-lg {
+    width: 40%;
+}
+
+.product-image-secondary-container-lg {
+    width: 40%;
+    flex-direction: column;
+}

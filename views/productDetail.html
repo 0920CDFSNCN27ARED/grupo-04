@@ -38,6 +38,11 @@
             href="/css/productDetail-md.css"
             media="(min-width: 481px)"
         />
+        <link
+            rel="stylesheet"
+            href="/css/productDetail-lg.css"
+            media="(min-width: 769px)"
+        />
     </head>
     <body class="bg-muted">
         <header>
@@ -97,16 +102,20 @@
         <main>
             <div class="product-container">
                 <div
-                    class="product-images-container display-flex flex-direction-column"
+                    class="product-images-container display-flex flex-direction-column product-images-container-lg"
                 >
-                    <div class="product-image-primary">
+                    <div
+                        class="product-image-primary-container product-image-primary-container-lg"
+                    >
                         <img
                             src="images/product-detail/mac1.jpg"
                             alt=""
                             class="product-image-primary"
                         />
                     </div>
-                    <div class="product-image-secondary-container display-flex">
+                    <div
+                        class="product-image-secondary-container display-flex product-image-secondary-container-lg"
+                    >
                         <div
                             class="product-image-secondary-item display-flex flex-direction-row"
                         >
