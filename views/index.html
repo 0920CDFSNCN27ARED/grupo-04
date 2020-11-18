@@ -15,14 +15,33 @@
         <link rel="stylesheet" href="/css/base.css" />
         <link rel="stylesheet" href="/css/theme.css" />
         <link rel="stylesheet" href="/css/styles.css" />
+        <link
+            rel="stylesheet"
+            href="/css/styles-md.css"
+            media="(min-width: 481px)"
+        />
+        <link
+            rel="stylesheet"
+            href="/css/styles-lg.css"
+            media="(min-width: 769px)"
+        />
         <link rel="stylesheet" href="/css/forms.css" />
         <link rel="stylesheet" href="/css/index.css" />
+
+        <link rel="stylesheet" href="/css/forms.css" />
         <link rel="stylesheet" href="/css/footer.css" />
+        <link
+            rel="stylesheet"
+            href="/css/footer-md.css"
+            media="(min-width: 481px)"
+        />
     </head>
 
     <body class="bg-muted">
         <header>
-            <div class="nav-container">
+            <div
+                class="nav-container display-flex flex-direction-column justify-content-center align-items-center"
+            >
                 <img
                     class="nav-logo"
                     src="/images/logo-desapego.svg"
@@ -31,6 +50,7 @@
                 <div class="menu-hamburger">
                     <i class="fas fa-bars menu-hamburger-icon"></i>
                 </div>
+
                 <nav class="nav">
                     <ul class="nav-list">
                         <li class="nav-item">
@@ -48,8 +68,7 @@
                         </li>-->
                         <li class="nav-item">
                             <a class="nav-anchor" href="/login"
-                                >Ingresá a Desapego
-                                <i class="fas fa-sign-in-alt"></i
+                                >Ingresar <i class="fas fa-sign-in-alt"></i
                             ></a>
                         </li>
                         <li class="nav-item">
@@ -60,6 +79,17 @@
                         </li>
                     </ul>
                 </nav>
+            </div>
+            <div
+                class="nav-location-container bg-secondary text-light display-flex justify-content-center align-items-center"
+            >
+                Estás comprando desde
+                <span
+                    class="nav-location-box bg-muted display-inline-block text-primary"
+                >
+                    <a href="#" class="nav-location-anchor">Rosario</a>
+                    <i class="fas fa-map-marker-alt"></i
+                ></span>
             </div>
         </header>
         <main>
@@ -145,54 +175,56 @@
         </main>
 
         <footer class="bg-dark text-light text-align-center">
-            <article
-                class="footer-article display-flex flex-direction-column justify-content-center align-items-center"
-            >
-                <div
-                    class="footer-article-item-container display-flex justify-content-center align-items-center bg-muted"
+            <div class="footer-articles-info-container-md">
+                <article
+                    class="footer-article footer-article-md display-flex flex-direction-column justify-content-center align-items-center"
                 >
-                    <i class="far fa-credit-card text-secondary"></i>
-                </div>
-                <h4 class="footer-article-title font-size-0-9">
-                    Pagá con tarjeta o en efectivo
-                </h4>
-                <p class="footer-article-text font-size-0-8">
-                    Los vendedores aceptan múltiples formas de pago.
-                </p>
-            </article>
-            <article
-                class="footer-article display-flex flex-direction-column justify-content-center align-items-center"
-            >
-                <div
-                    class="footer-article-item-container display-flex justify-content-center align-items-center bg-muted"
+                    <div
+                        class="footer-article-item-container display-flex justify-content-center align-items-center bg-muted"
+                    >
+                        <i class="far fa-credit-card text-secondary"></i>
+                    </div>
+                    <h4 class="footer-article-title font-size-0-9">
+                        Pagá con tarjeta o en efectivo
+                    </h4>
+                    <p class="footer-article-text font-size-0-8">
+                        Los vendedores aceptan múltiples formas de pago.
+                    </p>
+                </article>
+                <article
+                    class="footer-article footer-article-md display-flex flex-direction-column justify-content-center align-items-center"
                 >
-                    <i class="fas fa-gift text-secondary"></i>
-                </div>
-                <h4 class="footer-article-title font-size-0-9">
-                    Envío sin costo
-                </h4>
-                <p class="footer-article-text font-size-0-8">
-                    Te contactas directamente con el vendedor para coordinar la
-                    entrega.
-                </p>
-            </article>
-            <article
-                class="footer-article display-flex flex-direction-column justify-content-center align-items-center"
-            >
-                <div
-                    class="footer-article-item-container display-flex justify-content-center align-items-center bg-muted"
+                    <div
+                        class="footer-article-item-container display-flex justify-content-center align-items-center bg-muted"
+                    >
+                        <i class="fas fa-gift text-secondary"></i>
+                    </div>
+                    <h4 class="footer-article-title font-size-0-9">
+                        Envío sin costo
+                    </h4>
+                    <p class="footer-article-text font-size-0-8">
+                        Te contactas directamente con el vendedor para coordinar
+                        la entrega.
+                    </p>
+                </article>
+                <article
+                    class="footer-article footer-article-md display-flex flex-direction-column justify-content-center align-items-center"
                 >
-                    <i class="fas fa-user-shield text-secondary"></i>
-                </div>
-                <h4 class="footer-article-title font-size-0-9">
-                    Seguridad de principio a fin
-                </h4>
-                <p class="footer-article-text font-size-0-8">
-                    Las identidades de nuestros vendedores han sido validadas
-                    bajo un estricto proceso de control.
-                    <a href="#" class="link text-muted">Conocé más</a>
-                </p>
-            </article>
+                    <div
+                        class="footer-article-item-container display-flex justify-content-center align-items-center bg-muted"
+                    >
+                        <i class="fas fa-user-shield text-secondary"></i>
+                    </div>
+                    <h4 class="footer-article-title font-size-0-9">
+                        Seguridad de principio a fin
+                    </h4>
+                    <p class="footer-article-text font-size-0-8">
+                        Las identidades de nuestros vendedores han sido
+                        validadas bajo un estricto proceso de control.
+                        <a href="#" class="link text-muted">Conocé más</a>
+                    </p>
+                </article>
+            </div>
             <article>
                 <p class="font-size-0-8">Copyright © 2020 Desapego S.A.</p>
             </article>

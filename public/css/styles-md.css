@@ -1,0 +1,24 @@
+@media (min-width: 768px) {
+    .nav-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background-color: #cccccc;
+    }
+
+    .nav-location-container {
+    }
+
+    .nav-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        list-style-type: none;
+    }
+
+    .menu-hamburger {
+        display: none;
+    }
+}
