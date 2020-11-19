@@ -12,7 +12,7 @@
 
 -   Cometer más errores sin miedo a sentirnos ridículos. =)
 
--   Intentar entender más los comando de GIT.
+-   Intentar entender más los comandos de GIT.
 
 3. Continuar haciendo:
 
