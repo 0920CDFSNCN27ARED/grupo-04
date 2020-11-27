@@ -8,22 +8,25 @@ app.listen(3000, () => {
     console.log("Servidor funcionando");
 });
 
+app.set("view engine", "ejs");
+app.set("views", __dirname + "/views");
+
 app.get("/", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "views/index.html"));
+    res.render("index");
 });
 
 app.get("/register", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "views/register.html"));
+    res.render("register");
 });
 
 app.get("/login", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "views/login.html"));
+    res.render("login");
 });
 
 app.get("/productDetail", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "views/productDetail.html"));
+    res.render("productDetail");
 });
 
 app.get("/productCart", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "views/productCart.html"));
+    res.render("productCart");
 });
