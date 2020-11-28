@@ -11,8 +11,17 @@ app.listen(3000, () => {
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
 
+getProducts = () => {
+    const dbJson = fs.readFileSync(
+        path.resolve(__dirname, "../data/productsDataBase.json"),
+        { encoding: "utf-8" }
+    );
+    return JSON.parse(dbJson);
+};
+
 app.get("/", (req, res) => {
     res.render("index");
+    const productos = getProducts();
 });
 
 app.get("/register", (req, res) => {
