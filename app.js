@@ -12,6 +12,9 @@ app.listen(3000, () => {
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
 
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
 getProducts = () => {
     const dbJson = fs.readFileSync(
         path.resolve(__dirname, "data/productsDataBase.json"),
