@@ -4,6 +4,11 @@
         <%- include("partials/head-base", {title: "Bienvenido a Desapego"}) %>
 
         <link rel="stylesheet" href="/css/index.css" />
+        <link
+            rel="stylesheet"
+            href="/css/index-lg.css"
+            media="(min-width: 769px)"
+        />
     </head>
 
     <body class="bg-muted">
@@ -62,11 +67,13 @@
             </div>
         </header>
         <main>
-            <div class="form-index-container bg-primary">
+            <div class="form-index-container bg-medium  form-index-container-lg">
                 <form action="" class="form-index">
-                    <label for="distancia" class="display-block"
-                        >¿Qué se vende cerca?</label
-                    >
+                    <label for="distancia" class="display-block text-light"></label>
+                        <span
+                            class="nav-location-box bg-muted text-primary"
+                        >¿Qué se vende cerca?</span
+                    ></label>
                     <input
                         type="range"
                         id="distancia"
@@ -75,7 +82,8 @@
                         max="50"
                     />
                     <label for="precio" class="display-block"
-                        >¿Cuánto quiero gastar?</label
+                        >                <span
+                    class="nav-location-box bg-muted text-primary">¿Cuánto quiero gastar?</span></label
                     >
                     <input
                         type="range"
@@ -91,55 +99,54 @@
                     />
                 </form>
             </div>
-            <div class="featured-products">
-                <!-- Slider de productos destacados 
-                <img src="/images/products/iphone.jpg" alt="" width="350px" />
-            </div>-->
-
-                <div>
-                    <!-- TODO Slider de productos destacados -->
-                    <div class="featured-products-item-container">
-                        <div class="featured-products-image-container">
-                            <img src="" alt="" />
-                        </div>
-                        <p>iPhone X</p>
-                        <p>$90.000</p>
+            <div
+                class="featured-products display-flex justify-content-center width-100 featured-products-lg"
+            >
+                <!-- TODO Slider de productos destacados -->
+                <% const productos = getProducts(); for (const producto of
+                productos) { %>
+                <div
+                    class="featured-products-item-container padding-10 featured-products-item-container-lg"
+                >
+                    <div class="featured-products-image-container width-100">
+                        <img
+                            src="/images/products/<%= producto.image %>"
+                            alt=""
+                            class="width-100"
+                        />
                     </div>
-                    <div class="featured-products-image-container">
-                        <img src="/images/products/tv.jpg" alt="" />
-                    </div>
-                    <div class="featured-products-image-container">
-                        <img src="/images/products/ventilador.jpg" alt="" />
-                    </div>
-                    <div class="featured-products-image-container">
-                        <img src="/images/products/macbookpro.jpg" alt="" />
-                    </div>
+                    <p class="font-weight-600"><%= producto.name %></p>
+                    <p class="text-success font-weight-600">
+                        $<%= producto.price %>
+                    </p>
                 </div>
-
-                <div class="slider">
-                    <ul>
-                        <li>
-                            <img src="/images/products/iphone.jpg" alt="" />
-                        </li>
-                        <li>
-                            <img src="/images/products/macbookpro.jpg" alt="" />
-                        </li>
-                        <li><img src="/images/products/tv.jpg" alt="" /></li>
-                        <li>
-                            <img src="/images/products/ventilador.jpg" alt="" />
-                        </li>
-                        <li>
-                            <img src="/images/products/desapegate.jpg" alt="" />
-                        </li>
-                    </ul>
-                </div>
+                <% } %>
             </div>
-            <div class="display-flex">
-                <button class="bg-primary" id="boton-vender">
-                    <a href="https://www.google.com.ar" class="text-muted"
-                        >¡Quiero vender!</a
+            <div class="slider">
+                <ul>
+                    <li>
+                        <img src="/images/products/iphone.jpg" alt="" />
+                    </li>
+                    <li>
+                        <img src="/images/products/macbookpro.jpg" alt="" />
+                    </li>
+                    <li><img src="/images/products/tv.jpg" alt="" /></li>
+                    <li>
+                        <img src="/images/products/ventilador.jpg" alt="" />
+                    </li>
+                    <li>
+                        <img src="/images/products/desapegate.jpg" alt="" />
+                    </li>
+                </ul>
+            </div>
+            <div class="display-flex justify-content-center">
+                <a href="https://www.google.com.ar" class=""
+                    ><button
+                        class="bg-primary cursor-pointer boton-vender text-light"
                     >
-                </button>
+                        ¡Quiero vender!
+                    </button></a
+                >
             </div>
         </main>
 

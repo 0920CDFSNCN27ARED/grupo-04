@@ -61,6 +61,10 @@ body {
     background-color: #666;
 }
 
+.bg-medium {
+    background-color: #cccccc;
+}
+
 .bg-muted {
     background-color: #ebebeb;
 }

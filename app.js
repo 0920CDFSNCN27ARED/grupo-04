@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const fs = require("fs");
 
 app.use(express.static(path.resolve(__dirname, "public")));
 
@@ -13,7 +14,7 @@ app.set("views", __dirname + "/views");
 
 getProducts = () => {
     const dbJson = fs.readFileSync(
-        path.resolve(__dirname, "../data/productsDataBase.json"),
+        path.resolve(__dirname, "data/productsDataBase.json"),
         { encoding: "utf-8" }
     );
     return JSON.parse(dbJson);
@@ -21,7 +22,6 @@ getProducts = () => {
 
 app.get("/", (req, res) => {
     res.render("index");
-    const productos = getProducts();
 });
 
 app.get("/register", (req, res) => {

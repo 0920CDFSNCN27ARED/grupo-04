@@ -1,0 +1,11 @@
+.featured-products-lg {
+    flex-direction: row;
+}
+
+.featured-products-item-container-lg {
+    width: 23%;
+}
+
+.form-index-container-lg {
+    flex-direction: row;
+}

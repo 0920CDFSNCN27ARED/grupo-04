@@ -14,11 +14,13 @@
     align-items: center;
 }
 
-#boton-vender {
-    border: 8px solid #1259c3;
+.boton-vender {
+    border-radius: 10px;
+    border-style: none;
     text-align: center;
     font-size: 1.2em;
     padding: 5%;
+    font-weight: 500;
 }
 
 /**
