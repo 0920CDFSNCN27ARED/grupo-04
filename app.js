@@ -20,22 +20,18 @@ getProducts = () => {
     return JSON.parse(dbJson);
 };
 
-app.get("/", (req, res) => {
-    res.render("index");
-});
+const indexRouter = require("./routes/index");
+const registerRouter = require("./routes/register");
+const loginRouter = require("./routes/login");
+const productDetailController = require("./routes/product-detail");
+const productCartController = require("./routes/product-cart");
 
-app.get("/register", (req, res) => {
-    res.render("register");
-});
+app.use("/", indexRouter);
 
-app.get("/login", (req, res) => {
-    res.render("login");
-});
+app.use("/register", registerRouter);
 
-app.get("/productDetail", (req, res) => {
-    res.render("productDetail");
-});
+app.use("/login", loginRouter);
 
-app.get("/productCart", (req, res) => {
-    res.render("productCart");
-});
+app.use("/productDetail", productDetailController);
+
+app.use("/productCart", productCartController);
