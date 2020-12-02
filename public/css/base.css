@@ -131,6 +131,10 @@
     font-size: 1.5rem;
 }
 
+.font-size-1-6 {
+    font-size: 1.6rem;
+}
+
 .font-weight-500 {
     font-weight: 500;
 }
@@ -171,6 +175,10 @@
     width: 20%;
 }
 
+.height-300 {
+    height: 300px;
+}
+
 .border-red {
     border: red 2px solid;
 }
@@ -205,4 +213,20 @@
 
 .cursor-pointer {
     cursor: pointer;
+}
+
+/*
+
+++++++++++++
++ POSITION +
+++++++++++++
+
+*/
+
+.position-absolute {
+    position: absolute;
+}
+
+.bottom-0 {
+    bottom: 0;
 }

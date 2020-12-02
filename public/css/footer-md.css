@@ -9,3 +9,8 @@
     width: 33.3%;
     margin: 1rem 0;
 }
+
+.footer-404-md {
+    position: absolute;
+    bottom: 0;
+}

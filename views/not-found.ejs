@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include("partials/head-base", {title: "Página no encontrada"}) %>
+
+        <link rel="stylesheet" href="/css/index.css" />
+        <link
+            rel="stylesheet"
+            href="/css/index-lg.css"
+            media="(min-width: 769px)"
+        />
+        <link
+            rel="stylesheet"
+            href="/css/footer-lg.css"
+            media="(min-width: 769px)"
+        />
+    </head>
+
+    <body class="bg-muted">
+        <header><%- include("partials/header") %></header>
+        <main class="">
+            <div
+                class="display-flex align-items-center flex-direction-column justify-content-center height-300"
+            >
+                <i
+                    class="fas fa-exclamation-triangle text-align-center font-size-1-6 text-secondary"
+                ></i>
+                <p class="text-align-center padding-10">
+                    Parece que la página a la que intentás acceder no existe
+                </p>
+                <button
+                    onclick="location.href='/'"
+                    class="button bg-primary text-light cursor-pointer"
+                >
+                    Volver al inicio
+                </button>
+            </div>
+        </main>
+
+        <footer
+            class="bg-dark text-light text-align-center footer-404-md footer-404-lg"
+        >
+            <%- include("partials/footer") %>
+        </footer>
+    </body>
+</html>
