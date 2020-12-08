@@ -25,7 +25,7 @@
                         class="product-image-primary-container product-image-primary-container-lg"
                     >
                         <img
-                            src="images/product-detail/mac1.jpg"
+                            src="/images/products/<%= product.image %>"
                             alt=""
                             class="product-image-primary"
                         />
@@ -51,7 +51,7 @@
                         </div>
                         <div class="product-image-secondary-item">
                             <img
-                                src="images/product-detail/mac4.jpg"
+                                src=""
                                 alt=""
                                 class="product-image-secondary"
                             />
@@ -63,29 +63,22 @@
                         class="product-header display-flex justify-content-space-between align-items-center"
                     >
                         <p class="product-title font-size-1-5 font-weight-600">
-                            Macbook Pro 13''
+                            <%= product.name %>
                         </p>
                         <i class="far fa-heart product-add-favourite"></i>
                     </div>
-                    <p class="product-price text-secondary">$200.000</p>
+                    <p class="product-price text-secondary">
+                        <%= product.price %>
+                    </p>
                     <div class="product-details">
-                        <p>
-                            Pantalla de 13.3 pulgadas (diagonal) retroiluminada
-                            por LED con tecnología IPS; resolución nativa de
-                            2560 x 1600 a 227 pixeles por pulgada compatible con
-                            millones de colores.
-                        </p>
-                        <p>
-                            Intel Core i5 de 4 núcleos y 1.4 GHz de octava
-                            generación (Turbo Boost de hasta 3.9 GHz) con 128 MB
-                            de eDRAM.
-                        </p>
+                        <p><%= product.description %></p>
                     </div>
                     <p
                         class="product-views font-size-0-8 font-style-italic text-dark"
                     >
                         <i class="far fa-eye text-dark"></i> 26
                     </p>
+                    <p><%= product.location %></p>
                 </div>
                 <div class="product-purchase-container">
                     <div
