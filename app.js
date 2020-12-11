@@ -26,8 +26,6 @@ getProducts = () => {
 const indexRouter = require("./routes/index");
 const registerRouter = require("./routes/register");
 const loginRouter = require("./routes/login");
-const productDetailController = require("./routes/product-detail"); // MOD
-const productCartController = require("./routes/product-cart"); // MOD
 const productRouter = require("./routes/product");
 
 app.use("/", indexRouter);
@@ -37,10 +35,6 @@ app.use("/register", registerRouter);
 app.use("/login", loginRouter);
 
 app.use("/product", productRouter);
-
-app.use("/productDetail", productDetailController);
-
-app.use("/productCart", productCartController);
 
 app.use((req, res, next) => {
     res.status(404).render("not-found");
