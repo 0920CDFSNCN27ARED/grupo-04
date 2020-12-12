@@ -230,3 +230,16 @@
 .bottom-0 {
     bottom: 0;
 }
+
+/*
+
+++++++++++++
++ ANCHORS  +
+++++++++++++
+
+*/
+
+.anchor {
+    text-decoration: none;
+    color: #000;
+}

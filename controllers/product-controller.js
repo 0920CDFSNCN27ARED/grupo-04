@@ -1,6 +1,8 @@
+const toThousand = require("../utils/toThousand");
+
 const productController = {
-    create: (req, res) => {
-        res.send("Crear un producto");
+    showCreate: (req, res) => {
+        res.render("product/productCreate");
     },
     showDetail: (req, res) => {
         const products = getProducts();
@@ -16,10 +18,13 @@ const productController = {
             );
         }
 
-        res.render("productDetail", { product: productDetail });
+        res.render("product/productDetail", {
+            product: productDetail,
+            toThousand,
+        });
     },
     showCart: (req, res) => {
-        res.render("productCart");
+        res.render("product/productCart");
     },
 };
 

@@ -1,6 +1,9 @@
+const getProducts = require("../utils/getProducts");
+const productsList = getProducts();
+
 const indexController = {
     show: (req, res) => {
-        res.render("index");
+        res.render("index", { products: productsList });
     },
 };
 

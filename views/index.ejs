@@ -43,7 +43,7 @@
                     />
                     <input
                         type="text"
-                        placeholder="Quiero buscar por producto 🔍"
+                        placeholder="Quiero buscar por product 🔍"
                         class="display-block form-index-search-bar text-align-center"
                     />
                 </form>
@@ -51,23 +51,24 @@
             <div
                 class="featured-products display-flex justify-content-center width-100 featured-products-lg"
             >
-                <!-- TODO Slider de productos destacados -->
-                <% const productos = getProducts(); for (const producto of
-                productos) { %>
+                <%  for (const product of
+                products) { %>
                 <div
-                    class="featured-products-item-container padding-10 featured-products-item-container-lg"
+                    class="featured-products-item-container bg-light padding-10 featured-products-item-container-lg"
                 >
+                <a href="/product/<%= product.id %>" class="anchor">
                     <div class="featured-products-image-container width-100">
                         <img
-                            src="/images/products/<%= producto.image %>"
+                            src="/images/products/<%= product.image %>"
                             alt=""
                             class="width-100"
                         />
                     </div>
-                    <p class="font-weight-600"><%= producto.name %></p>
+                    <p class="font-weight-600"><%= product.name %></p>
                     <p class="text-success font-weight-600">
-                        $<%= producto.price %>
+                        $<%= product.price %>
                     </p>
+                    </a>
                 </div>
                 <% } %>
             </div>

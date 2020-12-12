@@ -1,5 +1,5 @@
 .product-images-container {
-    padding: 1em;
+    border-radius: 5%;
 }
 
 .product-image-primary-container {
@@ -25,12 +25,6 @@
     width: 100%;
 }
 
-.product-text-container {
-    background-color: #fff;
-    margin: 1em;
-    padding: 0.5em;
-}
-
 .product-title {
     margin-top: 0.4em;
     margin-bottom: 0.4em;
@@ -46,15 +40,12 @@
     margin-top: 0em;
 }
 
-.product-seller-container {
+.product-seller-and-payment {
     margin-top: 10px;
-    margin-bottom: 10px;
 }
 
 .product-seller-info {
-    border-radius: 5000px;
-    padding: 0.5em 0;
-    width: 70%;
+    padding-top: 15px;
 }
 
 .product-seller-img-container {
@@ -74,11 +65,6 @@
 .product-seller-name {
     margin-top: 5px;
     margin-bottom: 5px;
-}
-
-.product-payment-methods-container {
-    padding: 1em;
-    margin: 1em;
 }
 
 .product-payment-text {
