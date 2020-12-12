@@ -1,0 +1,8 @@
+.create-product-form-container-lg {
+    display: flex;
+    justify-content: center;
+}
+
+.create-product-form {
+    width: 60%;
+}

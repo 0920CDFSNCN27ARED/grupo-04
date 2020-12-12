@@ -1,3 +1,7 @@
+textarea {
+    resize: none;
+}
+
 /**
 
 +++++++++
@@ -135,78 +139,6 @@
 .login-box a:hover {
     color: #fff;
 }
-
-/*
-TO DO
-
-LOGIN VIEJO, ¿QUEDA?
-*/
-
-/* .box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    padding: 40px;
-    background: rgba (0, 0, 0, -8);
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
-
-.box h2 {
-    margin: 0 0 30px;
-    padding: 0;
-    color: #1259c3;
-    text-align: center;
-}
-
-.box .inputBox {
-    position: relative;
-}
-
-.box .inputBox input {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
-    color: grey;
-    letter-spacing: 1px;
-    margin-bottom: 30px;
-    border: none;
-    border-bottom: 1px solid #1259c3;
-    outline: none;
-    background: transparent;
-}
-
-.box .inputBox label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #1259c3;
-    pointer-events: none;
-    transition: 0.5s;
-}
-
-.box .inputBox input:focus ~ label,
-.box .inputBox input:valid ~ label {
-    top: -18px;
-    left: 0;
-    color: purple;
-    font-size: 12px;
-}
-
-.box input[type="submit"] {
-    background: transparent;
-    border: purple;
-    outline: purple;
-    color: #1259c3;
-    background: whitesmokes;
-    cursor: pointer;
-    border-radius: 5px;
-} */
 
 /**
 
@@ -370,4 +302,42 @@ LOGIN VIEJO, ¿QUEDA?
 
 .register a:hover {
     color: #fff;
+}
+
+/**
+
+++++++++++++++++++
++ PRODUCT CREATE +
+++++++++++++++++++
+
+*/
+
+.product-create-title {
+    padding: 10px 15px;
+    font-weight: 500;
+}
+
+.create-product-form > div > label {
+    padding: 10px 0;
+}
+
+.create-product-form input,
+.create-product-form textarea {
+    border-style: none;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+.create-product-form input {
+    height: 25px;
+}
+
+.create-product-form button {
+    height: 30px;
+    border-style: none;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    margin-top: 15px;
 }

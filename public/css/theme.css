@@ -5,6 +5,10 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
+button {
+    font-family: inherit;
+}
+
 .text-primary {
     color: #9b1fdd;
 }

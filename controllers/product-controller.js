@@ -1,8 +1,12 @@
+const getProducts = require("../utils/getProducts");
 const toThousand = require("../utils/toThousand");
 
 const productController = {
     showCreate: (req, res) => {
         res.render("product/productCreate");
+    },
+    create: (req, res) => {
+        res.send("OK");
     },
     showDetail: (req, res) => {
         const products = getProducts();
