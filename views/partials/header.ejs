@@ -14,7 +14,7 @@
     <nav class="nav">
         <ul class="nav-list">
             <li class="nav-item">
-                <a class="nav-anchor" href="/productCart"
+                <a class="nav-anchor" href="/product/productCart"
                     >Mis compras <i class="fas fa-shopping-basket"></i
                 ></a>
             </li>
@@ -31,6 +31,9 @@
                 ></a>
             </li>
             <li class="nav-item">
+                <a class="nav-anchor" href="/register">Registrate</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-anchor" href="/product/create">Vender</a>
             </li>
             <li class="nav-item">
@@ -40,11 +43,36 @@
     </nav>
 </div>
 <div
-    class="nav-location-container bg-secondary text-light display-flex justify-content-center align-items-center"
+    class="nav-bottom-container display-flex justify-content-space-between aling-items-center width-100 nav-bottom-container-md"
 >
-    Estás comprando desde
-    <span class="nav-location-box bg-muted display-inline-block text-primary">
-        <a href="#" class="nav-location-anchor">Rosario</a>
-        <i class="fas fa-map-marker-alt"></i
-    ></span>
+    <div
+        class="nav-location-container bg-secondary text-light display-flex justify-content-center align-items-center width-100 nav-location-container-md"
+    >
+        Estás comprando desde
+        <span
+            class="nav-location-box bg-muted display-inline-block text-primary"
+        >
+            <a href="#" class="nav-location-anchor">Rosario</a>
+            <i class="fas fa-map-marker-alt"></i
+        ></span>
+    </div>
+    <div
+        class="index-search-bar-container display-flex justify-content-center align-items-center bg-secondary width-100 index-search-bar-container-md"
+    >
+        <form class="width-80">
+            <div
+                class="index-search-bar-container width-100 display-flex justify-content-center align-items-baseline"
+            >
+                <label for=""></label>
+                <input
+                    type="text "
+                    class="index-search-bar width-100 padding-x-5 bg-muted"
+                    placeholder="Quiero buscar por producto"
+                />
+                <button type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </form>
+    </div>
 </div>

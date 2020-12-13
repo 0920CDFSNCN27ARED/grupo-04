@@ -20,6 +20,8 @@
     "homepage": "https://github.com/0920CDFSNCN27ARED/grupo-04#readme",
     "dependencies": {
         "ejs": "^3.1.5",
-        "express": "^4.17.1"
+        "express": "^4.17.1",
+        "method-override": "^3.0.0",
+        "multer": "^1.4.2"
     }
 }

@@ -1,0 +1,15 @@
+.nav-bottom-container-md {
+    flex-direction: row;
+}
+
+.nav-location-container-md {
+    width: 40%;
+    justify-content: flex-start;
+}
+
+.index-search-bar-container-md {
+    width: 50%;
+    flex-grow: 1;
+    justify-content: flex-end;
+    padding-right: 10px;
+}

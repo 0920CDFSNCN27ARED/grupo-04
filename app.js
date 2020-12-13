@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const fs = require("fs");
+const methodOverride = require("method-override");
 
 app.use(express.static(path.resolve(__dirname, "public")));
 
@@ -11,6 +12,8 @@ app.listen(3000, () => {
 
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
+
+app.use(methodOverride("_method"));
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());

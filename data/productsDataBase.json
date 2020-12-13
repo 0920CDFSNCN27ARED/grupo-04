@@ -3,11 +3,10 @@
         "id": 1,
         "name": "Cafetera Moulinex Dolce Gusto",
         "description": "Cafetera Dolce Gusto Lumio. La cafetera Dolce Gusto Lumio es de variedad automática que ha llegado con un diseño radical al que nos tenía acostumbrados Dolce Gusto.En este post te contamos todo lo que necesitas saber sobre ella, desde sus características técnicas hasta la calidad de las cápsulas o price.",
-        "price": 12000,
+        "price": 13000,
         "discount": 50,
-        "image": "img-cafetera-moulinex.jpg",
-        "category": "in-sale",
-        "location": "Almagro"
+        "image": "image-1607719038466.jpg",
+        "category": "in-sale"
     },
     {
         "id": 2,
@@ -16,8 +15,7 @@
         "price": 99999,
         "discount": 3,
         "image": "img-macbook-pro-2019.jpg",
-        "category": "in-sale",
-        "location": "Almagro"
+        "category": "in-sale"
     },
     {
         "id": 3,
@@ -26,8 +24,7 @@
         "price": 72999,
         "discount": 25,
         "image": "img-samsung-galaxy-s10.jpg",
-        "category": "in-sale",
-        "location": "Almagro"
+        "category": "in-sale"
     },
     {
         "id": 4,
@@ -36,8 +33,7 @@
         "price": 47900,
         "discount": 10,
         "image": "img-heladera-whirpool.jpg",
-        "category": "in-sale",
-        "location": "Almagro"
+        "category": "in-sale"
     },
     {
         "id": 5,
@@ -46,38 +42,7 @@
         "price": 53000,
         "discount": 20,
         "image": "img-camara-nikon.jpg",
-        "category": "in-sale",
-        "location": "Almagro"
-    },
-    {
-        "id": 6,
-        "name": "Aire Acondicionado 3200w Frio / Calor",
-        "description": "AIRE SPLIT 3200W TACA-3200WCHSA/KC FC TCL. Capacidad frio 3200 Watts. Capacidad calor 3300 Watts. Potencia Electrica(W)frio 996. Potencia Electrica(W)calor 1028. Eficiencia energética calor C. Eficiencia energética frio A. Frigorias 2750 UNIDAD INTERIOR. Peso Bruto 10kg. Peso Neto 7 kg",
-        "price": 20999,
-        "discount": 12,
-        "image": "img-aire-acondicionado.jpg",
-        "category": "in-sale",
-        "location": "Almagro"
-    },
-    {
-        "id": 7,
-        "name": "Notebook Lenovo I3 Intel 8gb Ram",
-        "description": "PROCESADOR / CHIPSET. CPU: Intel Core i3(8a generación) 8130U / 2.2 GHz. Velocidad turbo máxima: 3, 4 GHz. Numero de núcleos: Doble núcleo. Cache: 4 MB. Arquitectura de 64 bit: ss. MEMORIA CACHÉ. Tamaño instalada: 4 MB. ALMACENAMIENTO. Interfaz Serial ATA - 600",
-        "price": 36700,
-        "discount": 5,
-        "image": "img-laptop-lenovo.jpg",
-        "category": "in-sale",
-        "location": "Almagro"
-    },
-    {
-        "id": 8,
-        "name": "Apple iPhone 11 Pro Dual SIM 256 GB",
-        "description": "¡El nuevo smartphone que lo tiene todo! Con este lanzamiento, Apple ha superado todos sus récords. Su diseño se destaca por sus líneas finas y distinguidas a partir de una sola hoja de vidrio resistente, combinada con aluminio de excelente calidad.",
-        "price": 148000,
-        "discount": 2,
-        "image": "img-iphone-11.jpg",
-        "category": "in-sale",
-        "location": "Almagro"
+        "category": "in-sale"
     },
     {
         "id": 9,
@@ -86,38 +51,7 @@
         "price": 11399,
         "discount": 0,
         "image": "img-apple-magic-keyboard.jpg",
-        "category": "visited",
-        "location": "Almagro"
-    },
-    {
-        "id": 10,
-        "name": "Mouse Inalámbrico Logitech M280",
-        "description": "Uso más cómodo para la mano derecha gracias a la forma contorneada con recubrimiento de goma blanda. Duración de las pilas hasta 18 meses, gracias al diseño para ahorrar energía.El M280 entra automáticamente en estado de suspensión cuando no se está usando.",
-        "price": 1200,
-        "discount": 10,
-        "image": "img-mouse-logitech.jpg",
-        "category": "visited",
-        "location": "Almagro"
-    },
-    {
-        "id": 11,
-        "name": "Parlante Inalámbrico Bose Soundtouch 10",
-        "description": "Parlante Inalámbrico Bose Soundtouch 10. SoundTouch®.La manera más sencilla de reproducir música en todo su hogar de forma inalámbrica. Características. » Marca: Bose. » Modelo: SoundTouch. » Color: Negro",
-        "price": 29990,
-        "discount": 12,
-        "image": "img-parlante-bose.jpg",
-        "category": "visited",
-        "location": "Almagro"
-    },
-    {
-        "id": 12,
-        "name": "Home Theatre Sony Bdv-e4100",
-        "description": "El sonido Surround de 5.1 canales y 1000 W proporciona un audio de verdadero impacto en los efectos especiales de películas y efectos de sonido de música y deportes. Con la tecnología Near Field Communication(NFC) podés disfrutar de Sonido One- Touch para reproducir música de forma instantánea",
-        "price": 32990,
-        "discount": 0,
-        "image": "img-home-theater-sony.jpg",
-        "category": "visited",
-        "location": "Almagro"
+        "category": "visited"
     },
     {
         "id": 13,
@@ -126,18 +60,7 @@
         "price": 34990,
         "discount": 0,
         "image": "img-tv-samsung-smart.jpg",
-        "category": "visited",
-        "location": "Almagro"
-    },
-    {
-        "id": 14,
-        "name": "Sony S6700 Reproductor De Blu-ray ",
-        "description": "Disfruta de tus películas favoritas con hasta cuatro veces más detalles que Full HD, gracias a la conversión de señales 4K. Cuando se conecta a un televisor compatible,un procesador de video avanzado convierte el video estándar en una señal cercana a la resolución 4K (3840 x 2160). Con ocho millones de píxeles, obtendrás imágenes más nítidas y detalladas, y la mayor calidad de la image te permite sentarte más cerca de la pantalla para que te sientas como en el cine.",
-        "price": 10999,
-        "discount": 5,
-        "image": "img-sony-blueray.jpg",
-        "category": "visited",
-        "location": "Almagro"
+        "category": "visited"
     },
     {
         "id": 15,
@@ -146,17 +69,22 @@
         "price": 15979,
         "discount": 12,
         "image": "img-bicicleta-fierce.jpg",
-        "category": "visited",
-        "location": "Almagro"
+        "category": "visited"
     },
     {
-        "id": 16,
-        "name": "Sony Srs-xb12 Parlante Bluetooth Portátil",
-        "description": "Deja que la música dance cobre vida con EXTRA BASS™ Anima el ambiente con EXTRA BASS™1. Un radiador pasivo trabaja con el parlante monoaural para potenciar los tonos bajos y mejorar los graves, a pesar del tamaño compacto. ",
-        "price": 4699,
-        "discount": 0,
-        "image": "img-parlante-sony.jpg",
-        "category": "visited",
-        "location": "Almagro"
+        "id": 17,
+        "name": "Kindle Paperwrite",
+        "price": 30000,
+        "description": "Amazon 5W USB Official OEM Charger and Power Adapter for Fire Tablets and Kindle eReaders - Black",
+        "location": "Rosario",
+        "image": "image-1607873399474.jpg"
+    },
+    {
+        "id": 18,
+        "name": "Auriculares",
+        "price": 2321,
+        "description": "sdsad",
+        "location": "Rosario",
+        "image": "image-1607822730667.jpg"
     }
 ]
