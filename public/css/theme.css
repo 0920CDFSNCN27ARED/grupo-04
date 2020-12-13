@@ -5,6 +5,10 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
+input {
+    font-family: inherit;
+}
+
 button {
     font-family: inherit;
     cursor: pointer;

@@ -6,26 +6,36 @@
         <link rel="stylesheet" href="/css/index.css" />
         <link
             rel="stylesheet"
+            href="/css/index-md.css"
+            media="(min-width: 481px)"
+        />
+        <link
+            rel="stylesheet"
             href="/css/index-lg.css"
             media="(min-width: 769px)"
         />
     </head>
 
     <body class="bg-muted">
-        <header>
-            <%- include("partials/header") %>
-        </header>
+        <header><%- include("partials/header") %></header>
         <main>
-            <div class="form-index-container bg-medium  form-index-container-lg">
+            <div class="form-index-container bg-medium form-index-container-lg">
                 <form action="" class="form-index width-100">
-                    <label for="distancia" class="display-block text-light"></label>
+                    <label
+                        for="distancia"
+                        class="text-light text-align-center width-100"
+                    >
                         <span
-                            class="form-index-label bg-muted text-primary"
-                        >¿Qué se vende cerca?</span
-                    ></label>
-                    <div class="display-flex  align-items-baseline index-range-container">
+                            class="form-index-label bg-muted text-primary display-block"
+                            >¿Qué se vende cerca?</span
+                        ></label
+                    >
+                    <div
+                        class="display-flex justify-content-center align-items-center width-100 index-range-container"
+                    >
                         <p>- km</p>
                         <input
+                            class="display-block"
                             type="range"
                             id="distancia"
                             name="distancia"
@@ -34,11 +44,15 @@
                         />
                         <p>+ km</p>
                     </div>
-                    <label for="precio" class="display-block"
-                        >                <span
-                    class="form-index-label bg-muted text-primary">¿Cuánto quiero gastar?</span></label
+                    <label for="precio" class="width-100 text-align-center">
+                        <span
+                            class="form-index-label bg-muted text-primary display-block"
+                            >¿Cuánto quiero gastar?</span
+                        ></label
                     >
-                    <div class="display-flex align-items-baseline index-range-container">
+                    <div
+                        class="display-flex justify-content-center align-items-center width-100 index-range-container"
+                    >
                         <p>$</p>
                         <input
                             type="range"
@@ -49,38 +63,45 @@
                         />
                         <p>$$$</p>
                     </div>
-                    <button class="button" type="submit">
-                        Buscar
-                    </button>
+                    <button class="button" type="submit">Buscar</button>
                 </form>
-                <form class="form-index">
-                    <input
-                        type="text"
-                        placeholder="Quiero buscar por producto 🔍"
-                        class="display-block form-index-search-bar text-align-center"
-                    />
+                <form class="width-100">
+                    <div
+                        class="index-search-bar-container width-100 display-flex justify-content-center align-items-baseline"
+                    >
+                        <label for=""></label>
+                        <input
+                            type="text "
+                            class="index-search-bar width-100 padding-x-5 bg-muted"
+                            placeholder="Quiero buscar por producto"
+                        />
+                        <button type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
                 </form>
             </div>
             <div
                 class="featured-products display-flex justify-content-center width-100 featured-products-lg"
             >
-                <%  for (const product of
-                products) { %>
+                <% for (const product of products) { %>
                 <div
-                    class="featured-products-item-container bg-light padding-10 featured-products-item-container-lg"
+                    class="featured-products-item-container bg-light padding-10 featured-products-item-container-md featured-products-item-container-lg"
                 >
-                <a href="/product/<%= product.id %>" class="anchor">
-                    <div class="featured-products-image-container width-100">
-                        <img
-                            src="/images/products/<%= product.image %>"
-                            alt=""
-                            class="width-100"
-                        />
-                    </div>
-                    <p class="font-weight-600"><%= product.name %></p>
-                    <p class="text-success font-weight-600">
-                        $<%= product.price %>
-                    </p>
+                    <a href="/product/<%= product.id %>" class="anchor">
+                        <div
+                            class="featured-products-image-container width-100"
+                        >
+                            <img
+                                src="/images/products/<%= product.image %>"
+                                alt=""
+                                class="width-100"
+                            />
+                        </div>
+                        <p class="font-weight-600"><%= product.name %></p>
+                        <p class="text-success font-weight-600">
+                            $<%= product.price %>
+                        </p>
                     </a>
                 </div>
                 <% } %>
@@ -102,10 +123,16 @@
                     </li>
                 </ul>
             </div>
-            <div class="display-flex justify-content-center">
-                <a href="https://www.google.com.ar" class=""
+            <div
+                class="boton-vender-container padding-y-15 display-flex align-items-center bg-secondary justify-content-center"
+            >
+                <p class="text-light padding-x-20 text-align-center">
+                    ¿Interesado en vender? En Desapego podés encontrar
+                    compradores cerca tuyo.
+                </p>
+                <a href="/product/create" class=""
                     ><button
-                        class="bg-primary cursor-pointer boton-vender text-light"
+                        class="bg-primary button cursor-pointer boton-vender text-light"
                     >
                         ¡Quiero vender!
                     </button></a
