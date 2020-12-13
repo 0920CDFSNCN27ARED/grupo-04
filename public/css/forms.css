@@ -21,17 +21,19 @@ textarea {
     align-items: center;
 }
 
+.form-index-label {
+    padding: 0.5rem 0.8rem;
+    border-radius: 24px;
+    margin-left: 0.5em;
+    width: 100%;
+}
+
 .form-index > label {
     margin: 0.5em 0;
 }
 
 .form-index > input {
     margin: 0.5em 0;
-}
-
-#distancia,
-#precio {
-    width: 80%;
 }
 
 .form-index-search-bar {
@@ -43,8 +45,12 @@ textarea {
     margin-top: 1em;
 }
 
-#precio {
-    margin-bottom: 16px;
+.form-index input {
+    border-style: none;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    height: 25px;
 }
 
 /**
@@ -341,3 +347,11 @@ textarea {
     border-radius: 20px;
     margin-top: 15px;
 }
+
+/**
+
++++++++++++++++++++
++ PRODUCT DETAILS +
++++++++++++++++++++
+
+*/

@@ -7,6 +7,7 @@ body {
 
 button {
     font-family: inherit;
+    cursor: pointer;
 }
 
 .text-primary {
@@ -86,8 +87,9 @@ button {
     font-weight: 400;
     padding: 0.5em;
     width: 50%;
-    border-radius: 5000px;
+    border-radius: 24px;
     border-style: solid;
     border-width: 0;
     margin: 0.2em;
+    width: 100%;
 }

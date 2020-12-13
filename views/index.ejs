@@ -17,33 +17,46 @@
         </header>
         <main>
             <div class="form-index-container bg-medium  form-index-container-lg">
-                <form action="" class="form-index">
+                <form action="" class="form-index width-100">
                     <label for="distancia" class="display-block text-light"></label>
                         <span
-                            class="nav-location-box bg-muted text-primary"
+                            class="form-index-label bg-muted text-primary"
                         >¿Qué se vende cerca?</span
                     ></label>
-                    <input
-                        type="range"
-                        id="distancia"
-                        name="distancia"
-                        min="0"
-                        max="50"
-                    />
+                    <div class="display-flex  align-items-baseline index-range-container">
+                        <p>- km</p>
+                        <input
+                            type="range"
+                            id="distancia"
+                            name="distancia"
+                            min="0"
+                            max="50"
+                        />
+                        <p>+ km</p>
+                    </div>
                     <label for="precio" class="display-block"
                         >                <span
-                    class="nav-location-box bg-muted text-primary">¿Cuánto quiero gastar?</span></label
+                    class="form-index-label bg-muted text-primary">¿Cuánto quiero gastar?</span></label
                     >
-                    <input
-                        type="range"
-                        id="precio"
-                        name="precio"
-                        min="0"
-                        max="50"
-                    />
+                    <div class="display-flex align-items-baseline index-range-container">
+                        <p>$</p>
+                        <input
+                            type="range"
+                            id="precio"
+                            name="precio"
+                            min="0"
+                            max="50"
+                        />
+                        <p>$$$</p>
+                    </div>
+                    <button class="button" type="submit">
+                        Buscar
+                    </button>
+                </form>
+                <form class="form-index">
                     <input
                         type="text"
-                        placeholder="Quiero buscar por product 🔍"
+                        placeholder="Quiero buscar por producto 🔍"
                         class="display-block form-index-search-bar text-align-center"
                     />
                 </form>
