@@ -56,8 +56,9 @@ textarea {
 */
 
 .login-box {
-    width: 320px;
-    height: 420px;
+    width: 50%;
+    length: 50%;
+    margin: auto;
     background-color: rgba(49, 50, 134, 0.253);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
     background: rgba (0, 0, 0, -8);
@@ -66,11 +67,17 @@ textarea {
     left: 50%;
     /* position: absolute;
     transform: translate(-50%, -50%); */
-    box-sizing: border-box;
+
     padding: 70px 30px;
     border-radius: 10px;
-    margin: 20px;
 }
+
+@media (min-width: 768px) {
+    .login-box {
+        width: 75%;
+    }
+}
+
 /* 
 .login-box .avatar {
     width: 100px;
