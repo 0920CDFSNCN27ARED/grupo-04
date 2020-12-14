@@ -30,6 +30,9 @@ const indexRouter = require("./routes/index");
 const registerRouter = require("./routes/register");
 const loginRouter = require("./routes/login");
 const productRouter = require("./routes/product");
+const logMiddleware = require("./middlewares/logMiddleware");
+
+app.use(logMiddleware);
 
 app.use("/", indexRouter);
 
