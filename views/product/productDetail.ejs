@@ -18,7 +18,7 @@
         <header><%- include("../partials/header") %></header>
         <main>
             <h1
-                class="product-title font-size-1-3 text-align-center padding-10"
+                class="product-title font-size-1-2 text-align-center padding-10"
             >
                 <%= product.name %>
             </h1>
@@ -72,13 +72,13 @@
                             class="product-header display-flex justify-content-space-between align-items-center"
                         >
                             <p
-                                class="product-title font-size-1-5 font-weight-600"
+                                class="product-title font-size-1-3 font-weight-600"
                             >
                                 <%= product.name %>
                             </p>
                             <i class="far fa-heart product-add-favourite"></i>
                         </div>
-                        <p class="product-price text-secondary">
+                        <p class="product-price text-secondary font-weight-600">
                             &#36;<%= toThousand(product.price) %>
                         </p>
                         <div class="product-details">
@@ -168,30 +168,48 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product-purchase-container">
-                        <div
-                            class="product-buttons-container display-flex flex-direction-column justify-content-center align-items-center product-buttons-container-lg"
-                        >
-                            <button
-                                onclick="window.location.href='/productCart'"
-                                class="product-button-add-to-basket button text-light bg-success"
-                            >
-                                Comprar
-                            </button>
-                            <button
-                                class="product-button-message-to-seller button text-light bg-secondary"
-                            >
-                                Mensaje al Vendedor
-                            </button>
-                        </div>
-                    </div>
                     <div
-                        class="product-actions-container display-flex flex-direction-column align-items-center justify-content-center"
+                        class="product-actions-container display-flex flex-direction-column align-items-center justify-content-center product-actions-container-md"
                     >
-                        <div class="product-edit-container width-100">
+                        <div
+                            class="product-buy-container width-50 product-action-md"
+                        >
+                            <form
+                                action="/product/productCart/<%= product.id %> "
+                                class="product-edit-form margin-x-5"
+                                method="GET"
+                            >
+                                <button class="button bg-success text-light">
+                                    Comprar
+                                </button>
+                            </form>
+                        </div>
+                        <div
+                            class="product-message-container width-50 product-action-md"
+                        >
+                            <form
+                                action=""
+                                method="GET"
+                                class="product-delete-form margin-x-5"
+                            >
+                                <input
+                                    type="number"
+                                    name="id"
+                                    value="<%= product.id %>"
+                                    hidden
+                                />
+                                <button class="button bg-secondary text-light">
+                                    Mensaje
+                                </button>
+                            </form>
+                        </div>
+
+                        <div
+                            class="product-edit-container width-50 product-action-md"
+                        >
                             <form
                                 action="/product/<%= product.id %>/edit"
-                                class="product-edit-form margin-x-10"
+                                class="product-edit-form margin-x-5"
                                 method="GET"
                             >
                                 <button class="button bg-warning text-light">
@@ -199,11 +217,13 @@
                                 </button>
                             </form>
                         </div>
-                        <div class="product-delete-container width-100">
+                        <div
+                            class="product-delete-container width-50 product-action-md"
+                        >
                             <form
                                 action="/product/?_method=DELETE"
                                 method="POST"
-                                class="product-delete-form margin-x-10"
+                                class="product-delete-form margin-x-5"
                             >
                                 <input
                                     type="number"

@@ -1,9 +1,10 @@
 .product-container-lg {
     display: flex;
+    justify-content: center;
 }
 
 .column-1-lg {
-    width: 60%;
+    width: 40%;
 }
 
 .column-2-lg {
@@ -16,10 +17,6 @@
 
 .product-images-container-lg {
     flex-direction: row;
-}
-
-.product-image-primary-container-lg {
-    width: 40%;
 }
 
 .product-image-secondary-container-lg {

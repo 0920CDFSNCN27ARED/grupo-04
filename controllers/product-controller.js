@@ -101,7 +101,15 @@ const productController = {
         res.render("product/productDeleteConfirmation");
     },
     showCart: (req, res) => {
-        res.render("product/productCart");
+        const products = getProducts();
+
+        const addedToCartProduct = products.find((product) => {
+            return product.id == req.params.id;
+        });
+
+        res.render("product/productCart", {
+            addedToCartProduct: addedToCartProduct,
+        });
     },
 };
 
