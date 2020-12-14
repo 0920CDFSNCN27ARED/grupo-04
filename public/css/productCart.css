@@ -12,8 +12,7 @@
 }
 
 .cart-product-image-container {
-    width: 50%;
-    padding: 1em;
+    margin-top: 10px;
 }
 
 .cart-product-image {

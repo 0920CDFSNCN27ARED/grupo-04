@@ -163,6 +163,18 @@
     width: 80%;
 }
 
+.width-70 {
+    width: 70%;
+}
+
+.width-60 {
+    width: 60%;
+}
+
+.width-50 {
+    width: 50%;
+}
+
 .width-25 {
     width: 25%;
 }
@@ -238,6 +250,11 @@
 
 .margin-15 {
     margin: 15px;
+}
+
+.margin-x-5 {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .margin-x-10 {

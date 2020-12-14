@@ -25,26 +25,33 @@
             <i class="fas fa-shopping-cart cart-basket-icon"></i>
         </div>
         <main class="display-flex justify-content-center align-items-center">
-            <div class="cart-container width-80">
+            <div class="cart-container padding-x-15">
                 <div class="cart-product">
-                    <div class="cart-product-image-container bg-light">
+                    <div
+                        class="cart-product-image-container bg-light width-100"
+                    >
                         <img
-                            src="/images/product-detail/mac1.jpg"
+                            src="/images/products/<%= addedToCartProduct.image %>"
                             alt=""
                             class="cart-product-image"
                         />
                     </div>
-                    <p class="cart-product-name">Macbook Pro 13''</p>
+                    <p class="cart-product-name font-weight-600">
+                        <%= addedToCartProduct.name %>
+                    </p>
                     <div class="display-flex align-items-baseline">
                         <p>1 unidad</p>
                         <i class="far fa-plus-square"></i
                         ><i class="far fa-minus-square"></i>
                     </div>
-                    <p>$200.000</p>
+                    <p class="text-success font-weight-600">
+                        &#36;<%= addedToCartProduct.price %>
+                    </p>
+                    <p><%= addedToCartProduct.description %></p>
                 </div>
                 <div class="product-purchase-container">
                     <div
-                        class="product-buttons-container display-flex flex-direction-column justify-content-center align-items-center"
+                        class="product-buttons-container display-flex flex-direction-column justify-content-center align-items-center width-80"
                     >
                         <button
                             class="product-button-add-to-basket button text-light bg-success"
