@@ -1,34 +1,11 @@
-1. Comenzar a hacer:
+1. Semana 1:
 
--   Reuniones semanales (al menos 2) para revisar y debatir los hitos del sprint.
--   Revisar las clases de playground a veces uno se olvida de los temas, son muchos y en poco tiempo.
--   Tomarse un tiempo para volver a mirar los videos de las clases de Pablo.
+-   La primera semana fue bastante difícil, estábamos con poco tiempo por nuestros trabajos así que casi que no hicimos nada. Esa semana fue una semana para descansar.
 
-2. Hacer más:
+2. Semana 2:
 
--   Pensar en mejoras para más adelante aunque no sepamos cómo implementarlas y buscar en Github. 
+-   La segunda semana hablamos varias veces, los dos estábamos bastante mareados con la cantidad de temas y pensábamos que teníamos que volver a repasar antes de poder avanzar ya que así las ideas se nos mezclaban todas. Estuvimos viendo algunos ejercicios de playground (yo, Diego, vengo bastante atrasado con las ejercitación del sitio de DH) y viendo las dudas que fueron subiendo los otros alumnos del curso al la red del discord
 
--   Ver tutoriales y videos explicativos de JS, HTML y CSS en youtube en nuestros tiempos libres.
+3. Semana 3:
 
--   Cometer más errores sin miedo a sentirnos ridículos. =)
-
--   Intentar entender más los comandos de GIT.
-
-3. Continuar haciendo:
-
--   Comunicación fluida.
--   Pair coding.
--   Espíritu colaborativo.
--   Búsqueda de mejora continua.
--   Todas aquellas cosas que contribuyan al buen clima dentro del grupo.
--   Ofrecer ayuda a otro miembro del grupo si terminamos antes con lo nuestro.
-
-4. Hacer menos:
-
--   Foco en el diseño y los colores…... ya vendrán tiempos para subir la vara en esos ítems.
-
-5. Dejar de hacer:
-
--   Desesperarnos por tener "el mejor" sitio siendo aún “principiantes” en la materia.
-
--   No pretender quemar las etapas del procesos del aprendizaje.
+-   Nos dedicamos a hacer paircoding. Ramiro por su parte había armado las rutas, los controlados y los partials.... Yo por mi parte traté de mejorar sin éxito el responsive del “login” y el “register”. Creé la carpeta del middleware y sus respectivo archivos : logmiddleware.js y logDBMiddelware.js (aunque estos puntos no eran necesarios para esta entrega lo hice mientras miraba los videos de playground y me sirve para fijar el conocimiento) Esta semana intentaré hacerlos mismo con express-validator.
