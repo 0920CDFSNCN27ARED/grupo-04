@@ -5,3 +5,5 @@ const registerController = {
 };
 
 module.exports = registerController;
+
+// creat: function(req,res){res.send(req.body)}
