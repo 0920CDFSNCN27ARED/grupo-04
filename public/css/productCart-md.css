@@ -1,0 +1,13 @@
+.seller-and-payment-methods-container-md {
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.product-buttons-container-md {
+    flex-direction: row;
+}
+
+.product-button-buy-md,
+.product-button-cancel-md {
+    width: 40%;
+}

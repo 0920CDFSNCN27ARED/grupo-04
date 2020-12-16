@@ -109,6 +109,7 @@ const productController = {
 
         res.render("product/productCart", {
             addedToCartProduct: addedToCartProduct,
+            toThousand,
         });
     },
 };

@@ -3,9 +3,9 @@
         "id": 1,
         "name": "Cafetera Moulinex Dolce Gusto",
         "price": 13000,
-        "discount": 50,
-        "image": "img-cafetera-moulinex.jpg",
-        "category": "in-sale"
+        "description": "Macbook Pro 2019 Mpxq2ll/a Intel Core i5 2.3 Ghz 8gb RAM 128gb SSD Pantalla 13.3\" Retina Apple Nueva Original. Importada de USA. Se entrega con la factura de compra para contar con la garantía del fabricante",
+        "location": "Mar del Plata",
+        "image": "img-cafetera-moulinex.jpg"
     },
     {
         "id": 2,
@@ -46,14 +46,6 @@
         "description": "El teclado mágico combina un diseño elegante con una batería recargable incorporada y funciones clave mejoradas. Con un mecanismo de tijera estable debajo de cada tecla, así como un recorrido de teclas optimizado y un perfil bajo, el Teclado Mágico ofrece una experiencia de escritura notablemente cómoda y precisa.",
         "location": "Misiones",
         "image": "img-apple-magic-keyboard.jpg"
-    },
-    {
-        "id": 13,
-        "name": "Smart TV Samsung 4K 50",
-        "price": 34990,
-        "description": "Con el Smart TV Samsung UN50MU6100, viví una nueva experiencia visual con la resolución 4K, que te presentará imágenes con gran detalle y de alta calidad. Ahora todo lo que veas cobrará vida con brillo y colores más reales. Gracias a su tamaño de 50\", podrás transformar tu espacio en una sala de cine y transportarte a donde quieras.",
-        "location": "Bariloche",
-        "image": "img-tv-samsung-smart.jpg"
     },
     {
         "id": 15,

@@ -175,6 +175,10 @@
     width: 50%;
 }
 
+.width-30 {
+    width: 30%;
+}
+
 .width-25 {
     width: 25%;
 }
@@ -190,18 +194,6 @@
 .height-300 {
     height: 300px;
 }
-
-.border-red {
-    border: red 2px solid;
-}
-
-/*
-
-++++++++
-+ PADDING +
-++++++++
-
-*/
 
 .padding-5 {
     padding: 5px;
@@ -267,6 +259,16 @@
     margin-bottom: 15px;
 }
 
+.margin-y-5 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.margin-y-10 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 /*
 
 ++++++++
@@ -306,4 +308,20 @@
 .anchor {
     text-decoration: none;
     color: #000;
+}
+
+/*
+
++++++++++++
++ TESTING +
++++++++++++
+
+*/
+
+.border-red {
+    border: red 2px solid;
+}
+
+.border-blue {
+    border: blue 2px solid;
 }

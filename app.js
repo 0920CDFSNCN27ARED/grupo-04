@@ -18,13 +18,13 @@ app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-getProducts = () => {
-    const dbJson = fs.readFileSync(
-        path.resolve(__dirname, "data/productsDataBase.json"),
-        { encoding: "utf-8" }
-    );
-    return JSON.parse(dbJson);
-};
+// getProducts = () => {
+//     const dbJson = fs.readFileSync(
+//         path.resolve(__dirname, "data/productsDataBase.json"),
+//         { encoding: "utf-8" }
+//     );
+//     return JSON.parse(dbJson);
+// };
 
 const indexRouter = require("./routes/index");
 const registerRouter = require("./routes/register");

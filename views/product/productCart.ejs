@@ -6,12 +6,12 @@
         <link rel="stylesheet" href="/css/productDetail.css" />
         <link
             rel="stylesheet"
-            href="/css/productDetail-md.css"
+            href="/css/productCart-md.css"
             media="(min-width: 481px)"
         />
         <link
             rel="stylesheet"
-            href="/css/productDetail-lg.css"
+            href="/css/productCart-lg.css"
             media="(min-width: 769px)"
         />
     </head>
@@ -28,63 +28,82 @@
             <div class="cart-container padding-x-15">
                 <div class="cart-product">
                     <div
-                        class="cart-product-image-container bg-light width-100"
+                        class="cart-product-image-container bg-light width-90 padding-10"
                     >
                         <img
                             src="/images/products/<%= addedToCartProduct.image %>"
                             alt=""
-                            class="cart-product-image"
+                            class="cart-product-image width-100"
                         />
                     </div>
-                    <p class="cart-product-name font-weight-600">
+                    <p
+                        class="cart-product-name font-weight-600 text-align-center"
+                    >
                         <%= addedToCartProduct.name %>
                     </p>
-                    <div class="display-flex align-items-baseline">
-                        <p>1 unidad</p>
-                        <i class="far fa-plus-square"></i
-                        ><i class="far fa-minus-square"></i>
-                    </div>
-                    <p class="text-success font-weight-600">
-                        &#36;<%= addedToCartProduct.price %>
-                    </p>
-                    <p><%= addedToCartProduct.description %></p>
-                </div>
-                <div class="product-purchase-container">
                     <div
-                        class="product-buttons-container display-flex flex-direction-column justify-content-center align-items-center width-80"
+                        class="cart-ammount-and-price-container display-flex justify-content-space-between align-items-center"
                     >
-                        <button
-                            class="product-button-add-to-basket button text-light bg-success"
-                            onclick="window.location.href='/'"
+                        <div
+                            class="display-flex justify-content-flex-start align-items-baseline width-50"
                         >
-                            Continuar Compra
-                        </button>
-                        <button
-                            class="product-button-message-to-seller button text-light bg-danger"
+                            <p>
+                                <span
+                                    class="cart-ammount-number bg-light text-secondary font-weight-600"
+                                    >1</span
+                                >
+                                unidad
+                            </p>
+                            <div class="cart-ammount-controls-container">
+                                <i
+                                    class="far fa-plus-square cart-ammount-controls"
+                                ></i
+                                ><i
+                                    class="far fa-minus-square cart-ammount-controls"
+                                ></i>
+                            </div>
+                        </div>
+                        <p
+                            class="cart-price bg-light text-success font-weight-600"
                         >
-                            Vaciar Carrito
-                        </button>
+                            &#36;<%= toThousand(addedToCartProduct.price) %>
+                        </p>
                     </div>
+                </div>
+                <div
+                    class="product-buttons-container display-flex justify-content-center product-buttons-container-md"
+                >
+                    <button
+                        class="product-button-buy button text-light bg-success product-button-buy-md"
+                        onclick="window.location.href='/'"
+                    >
+                        Continuar Compra
+                    </button>
+                    <button
+                        class="product-button-cancel button text-light bg-danger product-button-cancel-md"
+                    >
+                        Vaciar Carrito
+                    </button>
                 </div>
             </div>
             <div
-                class="product-seller-container display-flex justify-content-center"
+                class="seller-and-payment-methods-container bg-light padding-y-15 width-100 display-flex flex-direction-column seller-and-payment-methods-container-md"
             >
                 <div
-                    class="product-seller-info display-flex justify-content-center align-items-flex-start bg-light"
+                    class="cart-seller-container display-flex justify-content-space-evenly align-content-center"
                 >
-                    <div class="product-seller-img-container">
+                    <div class="cart-seller-img-container width-30">
                         <img
                             src="/images/seller-detail/vendedor.jpg"
                             alt=""
-                            class="product-seller-img"
+                            class="cart-seller-img width-100"
                         />
                     </div>
                     <div
-                        class="product-seller-name-and-stars display-flex flex-direction-column justify-content-center align-items-center"
+                        class="cart-seller-name-and-stars display-flex flex-direction-column justify-content-space-evenly"
                     >
-                        <p class="product-seller-name">Juana Pérez</p>
-                        <div class="product-seller-stars">
+                        <p class="cart-seller-name">Juana Pérez</p>
+                        <div class="cart-seller-stars">
                             <i class="fas fa-star"></i
                             ><i class="fas fa-star"></i
                             ><i class="fas fa-star"></i
@@ -93,37 +112,37 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div
-                class="product-payment-methods-container display-flex flex-direction-column align-items-center bg-light"
-            >
-                <p
-                    class="product-payment-text font-size-1-1 font-weight-600 text-align-center"
-                >
-                    Medios de pago aceptados:
-                </p>
                 <div
-                    class="product-payment-icons-container display-flex justify-content-space-evenly width-100"
+                    class="product-payment-methods-container display-flex flex-direction-column align-items-center padding-y-15"
                 >
-                    <div
-                        class="product-payment-icon-item bg-muted display-flex justify-content-center align-items-center"
+                    <p
+                        class="product-payment-text font-size-0-9 font-weight-600 text-align-center"
                     >
-                        <i class="fas fa-credit-card text-primary"></i>
-                    </div>
+                        Medios de pago aceptados:
+                    </p>
                     <div
-                        class="product-payment-icon-item bg-muted display-flex justify-content-center align-items-center"
+                        class="product-payment-icons-container display-flex justify-content-space-evenly width-100"
                     >
-                        <i class="far fa-money-bill-alt text-primary"></i>
-                    </div>
-                    <div
-                        class="product-payment-icon-item bg-muted display-flex justify-content-center align-items-center"
-                    >
-                        <i class="fas fa-university text-primary"></i>
-                    </div>
-                    <div
-                        class="product-payment-icon-item bg-muted display-flex justify-content-center align-items-center"
-                    >
-                        <i class="fas fa-mobile-alt text-primary"></i>
+                        <div
+                            class="product-payment-icon-item bg-muted display-flex justify-content-center align-items-center"
+                        >
+                            <i class="fas fa-credit-card text-primary"></i>
+                        </div>
+                        <div
+                            class="product-payment-icon-item bg-muted display-flex justify-content-center align-items-center"
+                        >
+                            <i class="far fa-money-bill-alt text-primary"></i>
+                        </div>
+                        <div
+                            class="product-payment-icon-item bg-muted display-flex justify-content-center align-items-center"
+                        >
+                            <i class="fas fa-university text-primary"></i>
+                        </div>
+                        <div
+                            class="product-payment-icon-item bg-muted display-flex justify-content-center align-items-center"
+                        >
+                            <i class="fas fa-mobile-alt text-primary"></i>
+                        </div>
                     </div>
                 </div>
             </div>
