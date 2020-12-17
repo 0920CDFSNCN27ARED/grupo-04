@@ -19,6 +19,7 @@
     },
     "homepage": "https://github.com/0920CDFSNCN27ARED/grupo-04#readme",
     "dependencies": {
+        "bcrypt": "^5.0.0",
         "ejs": "^3.1.5",
         "express": "^4.17.1",
         "express-session": "^1.17.1",
