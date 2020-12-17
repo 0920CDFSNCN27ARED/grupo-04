@@ -24,7 +24,7 @@ const productController = {
             path.join(__dirname, "../data/productsDataBase.json"),
             JSON.stringify(products, null, 4)
         );
-        res.redirect("product/" + createdProductId);
+        res.redirect("product/" + createdProductId); // esto es una ruta
     },
     showDetail: (req, res) => {
         const products = getProducts();

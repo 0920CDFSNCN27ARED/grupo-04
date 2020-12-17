@@ -85,7 +85,7 @@
                         </div>
                         <p class="font-weight-600"><%= product.name %></p>
                         <p class="text-success font-weight-600">
-                            $<%= product.price %>
+                            $<%= toThousand(product.price) %> <%= moneda %>
                         </p>
                     </a>
                 </div>
