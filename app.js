@@ -3,6 +3,7 @@ const app = express();
 const path = require("path");
 const fs = require("fs");
 const methodOverride = require("method-override");
+const session = require("express-session");
 
 app.use(express.static(path.resolve(__dirname, "public")));
 
@@ -16,6 +17,7 @@ app.set("views", __dirname + "/views");
 app.use(methodOverride("_method"));
 
 app.use(express.urlencoded({ extended: false }));
+
 app.use(express.json());
 
 // getProducts = () => {
@@ -33,6 +35,8 @@ const productRouter = require("./routes/product");
 const logMiddleware = require("./middlewares/logMiddleware");
 
 app.use(logMiddleware);
+
+app.use(session({ secret: "secreto !" }));
 
 app.use("/", indexRouter);
 
