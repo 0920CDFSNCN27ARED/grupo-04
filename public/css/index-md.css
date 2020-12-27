@@ -1,3 +1,12 @@
+.form-index-input-container-container-md {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-index-input-container-md {
+    width: 45%;
+}
+
 .featured-products-item-container-md {
     width: 41%;
 }

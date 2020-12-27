@@ -20,50 +20,72 @@
         <header><%- include("partials/header") %></header>
         <main>
             <div class="form-index-container bg-medium form-index-container-lg">
-                <form action="" class="form-index width-100">
-                    <label
-                        for="distancia"
-                        class="text-light text-align-center width-100"
-                    >
-                        <span
-                            class="form-index-label bg-muted text-primary display-block"
-                            >¿Qué se vende cerca?</span
-                        ></label
-                    >
+                <form action="" class="form-index form-index-md form-index-lg">
                     <div
-                        class="display-flex justify-content-center align-items-center width-100 index-range-container"
+                        class="form-index-input-container-container width-100 form-index-input-container-container-md form-index-input-container-container-lg"
                     >
-                        <p>- km</p>
-                        <input
-                            class="display-block"
-                            type="range"
-                            id="distancia"
-                            name="distancia"
-                            min="0"
-                            max="50"
-                        />
-                        <p>+ km</p>
+                        <div
+                            class="form-index-input-container width-100 form-index-input-container-md form-index-input-container-lg"
+                        >
+                            <label
+                                for="distancia"
+                                class="text-light text-align-center width-100"
+                            >
+                                <span
+                                    class="form-index-label bg-muted text-primary display-block"
+                                    >¿Qué se vende cerca?</span
+                                ></label
+                            >
+                            <div
+                                class="display-flex justify-content-center align-items-center width-100 index-range-container"
+                            >
+                                <p>- km</p>
+                                <input
+                                    class="display-block"
+                                    type="range"
+                                    id="distancia"
+                                    name="distancia"
+                                    min="0"
+                                    max="50"
+                                />
+                                <p>+ km</p>
+                            </div>
+                        </div>
+                        <div
+                            class="form-index-input-container width-100 form-index-input-container-md form-index-input-container-lg"
+                        >
+                            <label
+                                for="precio"
+                                class="width-100 text-align-center"
+                            >
+                                <span
+                                    class="form-index-label bg-muted text-primary display-block"
+                                    >¿Cuánto quiero gastar?</span
+                                ></label
+                            >
+                            <div
+                                class="display-flex justify-content-center align-items-center width-100 index-range-container"
+                            >
+                                <p>$</p>
+                                <input
+                                    type="range"
+                                    id="precio"
+                                    name="precio"
+                                    min="0"
+                                    max="50"
+                                />
+                                <p>$$$</p>
+                            </div>
+                        </div>
                     </div>
-                    <label for="precio" class="width-100 text-align-center">
-                        <span
-                            class="form-index-label bg-muted text-primary display-block"
-                            >¿Cuánto quiero gastar?</span
-                        ></label
-                    >
-                    <div
-                        class="display-flex justify-content-center align-items-center width-100 index-range-container"
-                    >
-                        <p>$</p>
-                        <input
-                            type="range"
-                            id="precio"
-                            name="precio"
-                            min="0"
-                            max="50"
-                        />
-                        <p>$$$</p>
+                    <div class="">
+                        <button
+                            class="button form-index-button bg-primary text-light form-index-button-lg"
+                            type="submit"
+                        >
+                            Buscar
+                        </button>
                     </div>
-                    <button class="button" type="submit">Buscar</button>
                 </form>
             </div>
             <div

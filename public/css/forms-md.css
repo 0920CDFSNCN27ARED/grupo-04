@@ -5,6 +5,7 @@
 .nav-location-container-md {
     width: 40%;
     justify-content: flex-start;
+    padding-left: 10px;
 }
 
 .index-search-bar-container-md {
