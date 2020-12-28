@@ -82,6 +82,42 @@ button {
     background-color: #ffffff;
 }
 
+.border-primary {
+    border-color: #9b1fdd;
+}
+
+.border-secondary {
+    border-color: #1259c3;
+}
+
+.border-success {
+    border-color: #39b54a;
+}
+
+.border-warning {
+    border-color: #eea83f;
+}
+
+.border-danger {
+    border-color: #b80f22;
+}
+
+.border-dark {
+    border-color: #666;
+}
+
+.border-medium {
+    border-color: #cccccc;
+}
+
+.border-muted {
+    border-color: #ebebeb;
+}
+
+.border-light {
+    border-color: #ffffff;
+}
+
 .link {
     text-decoration: none;
 }

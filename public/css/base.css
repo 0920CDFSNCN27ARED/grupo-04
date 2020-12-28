@@ -325,3 +325,23 @@
 .border-blue {
     border: blue 2px solid;
 }
+
+/*
+
++++++++++++
++ BORDER  +
++++++++++++
+
+*/
+
+.border-style-solid {
+    border-style: solid;
+}
+
+.border-width-1 {
+    border-width: 1px;
+}
+
+.border-width-2 {
+    border-width: 2px;
+}

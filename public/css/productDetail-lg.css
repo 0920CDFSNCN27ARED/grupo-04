@@ -9,10 +9,14 @@
 
 .column-2-lg {
     margin: 0 15px;
-    width: 35%;
+    width: 40%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+}
+
+.product-seller-and-payment-md,
+.product-actions-container-md {
+    width: 100%;
 }
 
 .product-images-container-lg {

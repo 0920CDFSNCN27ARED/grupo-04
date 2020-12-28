@@ -14,13 +14,3 @@
     justify-content: flex-end;
     padding-right: 10px;
 }
-
-.product-actions-container-md {
-    flex-direction: row;
-    justify-content: space-around;
-    margin-top: 15px;
-}
-
-.product-action-md {
-    width: 40%;
-}
