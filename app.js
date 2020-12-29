@@ -29,10 +29,11 @@ app.use(express.json());
 // };
 
 const indexRouter = require("./routes/index");
-const registerRouter = require("./routes/register");
+const registerRouter = require("./routes/auth-router");
 const loginRouter = require("./routes/login");
 const productRouter = require("./routes/product");
 const logMiddleware = require("./middlewares/logMiddleware");
+const authRouter = require("./routes/auth-router");
 
 app.use(logMiddleware);
 
@@ -40,11 +41,13 @@ app.use(session({ secret: "secreto !" }));
 
 app.use("/", indexRouter);
 
-app.use("/register", registerRouter);
+//app.use("/register", router);
 
-app.use("/login", loginRouter);
+//app.use("/login", loginRouter);
 
 app.use("/product", productRouter);
+
+app.use("/auth", authRouter);
 
 app.use((req, res, next) => {
     res.status(404).render("not-found");
