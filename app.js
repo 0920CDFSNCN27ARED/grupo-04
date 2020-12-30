@@ -7,7 +7,7 @@ const session = require("express-session");
 
 app.use(express.static(path.resolve(__dirname, "public")));
 
-app.listen(3000, () => {
+app.listen(3001, () => {
     console.log("Servidor funcionando");
 });
 
