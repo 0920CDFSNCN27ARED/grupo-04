@@ -25,65 +25,73 @@
             <i class="fas fa-shopping-cart cart-basket-icon"></i>
         </div>
         <main class="display-flex justify-content-center align-items-center">
-            <div class="cart-container padding-x-15">
-                <div class="cart-product">
-                    <div
-                        class="cart-product-image-container bg-light width-90 padding-10"
-                    >
-                        <img
-                            src="/images/products/<%= addedToCartProduct.image %>"
-                            alt=""
-                            class="cart-product-image width-100"
-                        />
+            <div class="cart-container padding-x-15 cart-container-lg">
+                <div class="column-1-lg">
+                    <div class="cart-product">
+                        <div
+                            class="cart-product-image-container bg-light width-90 padding-10"
+                        >
+                            <img
+                                src="/images/products/<%= addedToCartProduct.image %>"
+                                alt=""
+                                class="cart-product-image width-100"
+                            />
+                        </div>
                     </div>
+                </div>
+                <div class="column-2-lg">
                     <p
                         class="cart-product-name font-weight-600 text-align-center"
                     >
                         <%= addedToCartProduct.name %>
                     </p>
                     <div
-                        class="cart-ammount-and-price-container display-flex justify-content-space-between align-items-center"
+                        class="selling-container padding-x-15 selling-container-md selling-container-lg"
                     >
                         <div
-                            class="display-flex justify-content-flex-start align-items-baseline width-50"
+                            class="cart-ammount-and-price-container display-flex justify-content-space-between align-items-center cart-ammount-and-price-container-md cart-ammount-and-price-container-lg"
                         >
-                            <p>
-                                <span
-                                    class="cart-ammount-number bg-light text-secondary font-weight-600"
-                                    >1</span
-                                >
-                                unidad
-                            </p>
-                            <div class="cart-ammount-controls-container">
-                                <i
-                                    class="far fa-plus-square cart-ammount-controls"
-                                ></i
-                                ><i
-                                    class="far fa-minus-square cart-ammount-controls"
-                                ></i>
+                            <div
+                                class="display-flex justify-content-flex-start align-items-baseline width-50 cart-ammount-container-md cart-ammount-container-lg"
+                            >
+                                <p>
+                                    <span
+                                        class="cart-ammount-number bg-light text-secondary font-weight-600"
+                                        >1</span
+                                    >
+                                    unidad
+                                </p>
+                                <div class="cart-ammount-controls-container">
+                                    <i
+                                        class="far fa-plus-square cart-ammount-controls"
+                                    ></i
+                                    ><i
+                                        class="far fa-minus-square cart-ammount-controls"
+                                    ></i>
+                                </div>
                             </div>
+                            <p
+                                class="cart-price bg-light text-success font-weight-600"
+                            >
+                                &#36;<%= toThousand(addedToCartProduct.price) %>
+                            </p>
                         </div>
-                        <p
-                            class="cart-price bg-light text-success font-weight-600"
+                        <div
+                            class="product-buttons-container display-flex justify-content-center product-buttons-container-md"
                         >
-                            &#36;<%= toThousand(addedToCartProduct.price) %>
-                        </p>
+                            <button
+                                class="product-button-buy button text-light bg-success product-button-buy-md"
+                                onclick="window.location.href='/'"
+                            >
+                                Pagar
+                            </button>
+                            <button
+                                class="product-button-cancel button text-light bg-danger product-button-cancel-md"
+                            >
+                                Vaciar Carrito
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <div
-                    class="product-buttons-container display-flex justify-content-center product-buttons-container-md"
-                >
-                    <button
-                        class="product-button-buy button text-light bg-success product-button-buy-md"
-                        onclick="window.location.href='/'"
-                    >
-                        Continuar Compra
-                    </button>
-                    <button
-                        class="product-button-cancel button text-light bg-danger product-button-cancel-md"
-                    >
-                        Vaciar Carrito
-                    </button>
                 </div>
             </div>
             <div
