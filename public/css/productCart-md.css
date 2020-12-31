@@ -1,31 +1,7 @@
-.seller-and-payment-methods-container-md {
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.selling-container-md {
+.cart-container-md {
     display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.cart-ammount-and-price-container-md {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-}
-
-.cart-ammount-container-md {
-    width: 100%;
 }
 
 .product-buttons-container-md {
-    flex-direction: column;
-    align-items: center;
     width: 100%;
-}
-
-.product-button-buy-md,
-.product-button-cancel-md {
-    width: 50%;
 }

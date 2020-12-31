@@ -1,34 +1,4 @@
-.cart-container-lg {
-    display: flex;
-    width: 80%;
-}
-
-.column-1-lg {
-    width: 60%;
-}
-
-.selling-container-lg {
-    flex-direction: column;
-    align-content: flex-start;
-}
-
-.cart-ammount-and-price-container-lg {
-    flex-direction: row;
-    align-items: baseline;
-    width: 100%;
-}
-
-.cart-ammount-container-lg {
-    width: fit-content;
-}
-
-.product-buttons-container-md {
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-}
-
-.product-button-buy-md,
-.product-button-cancel-md {
-    width: 45%;
+.product-button-buy-lg,
+.product-button-cancel-lg {
+    width: 50%;
 }
