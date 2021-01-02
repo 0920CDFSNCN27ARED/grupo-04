@@ -59,7 +59,7 @@
     <div
         class="nav-search-container nav-bottom-element nav-search-container display-flex justify-content-center align-items-center width-100 index-search-bar-container-md"
     >
-        <form class="width-80">
+        <form class="width-80" action="/search" method="GET">
             <div
                 class="index-search-bar-container width-100 display-flex justify-content-center align-items-baseline"
             >
@@ -68,6 +68,7 @@
                     type="text "
                     class="index-search-bar width-100 padding-x-5 bg-muted"
                     placeholder="Quiero buscar por producto"
+                    name="search"
                 />
                 <button type="submit">
                     <i class="fas fa-search"></i>
