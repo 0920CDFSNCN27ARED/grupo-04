@@ -1,13 +1,7 @@
-.seller-and-payment-methods-container-md {
-    flex-direction: row;
-    justify-content: space-around;
+.cart-container-md {
+    display: flex;
 }
 
 .product-buttons-container-md {
-    flex-direction: row;
-}
-
-.product-button-buy-md,
-.product-button-cancel-md {
-    width: 40%;
+    width: 100%;
 }

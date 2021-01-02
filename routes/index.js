@@ -3,6 +3,7 @@ const router = express.Router();
 const indexController = require("../controllers/index-controller");
 
 router.get("/", indexController.show);
+router.get("/search", indexController.search);
 
 router.get("/pruebaSession", function (req, res) {
     if (req.session.numeroVisitas == undefined) {

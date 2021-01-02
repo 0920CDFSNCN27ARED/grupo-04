@@ -19,16 +19,16 @@
     <body class="bg-muted">
         <header><%- include("../partials/header") %></header>
         <div
-            class="cart-top-banner display-flex justify-content-space-between align-items-center bg-primary width-100 text-light"
+            class="cart-top-banner display-flex justify-content-space-between align-items-center bg-primary width-100 text-light padding-y-15"
         >
-            <h1 class="cart-title font-size-1-2">Tu carrito</h1>
+            <h1 class="cart-title font-size-1">Tu carrito</h1>
             <i class="fas fa-shopping-cart cart-basket-icon"></i>
         </div>
         <main class="display-flex justify-content-center align-items-center">
-            <div class="cart-container padding-x-15">
-                <div class="cart-product">
+            <div class="cart-container padding-x-15 cart-container-md">
+                <div class="cart-product display-flex padding-y-15">
                     <div
-                        class="cart-product-image-container bg-light width-90 padding-10"
+                        class="cart-product-image-container bg-light padding-10"
                     >
                         <img
                             src="/images/products/<%= addedToCartProduct.image %>"
@@ -36,115 +36,52 @@
                             class="cart-product-image width-100"
                         />
                     </div>
-                    <p
-                        class="cart-product-name font-weight-600 text-align-center"
-                    >
-                        <%= addedToCartProduct.name %>
-                    </p>
-                    <div
-                        class="cart-ammount-and-price-container display-flex justify-content-space-between align-items-center"
-                    >
-                        <div
-                            class="display-flex justify-content-flex-start align-items-baseline width-50"
-                        >
-                            <p>
-                                <span
-                                    class="cart-ammount-number bg-light text-secondary font-weight-600"
-                                    >1</span
-                                >
-                                unidad
-                            </p>
-                            <div class="cart-ammount-controls-container">
-                                <i
-                                    class="far fa-plus-square cart-ammount-controls"
-                                ></i
-                                ><i
-                                    class="far fa-minus-square cart-ammount-controls"
-                                ></i>
-                            </div>
-                        </div>
+
+                    <div class="cart-product-info">
                         <p
-                            class="cart-price bg-light text-success font-weight-600"
+                            class="cart-product-name font-weight-400 text-align-center font-size-0-8"
                         >
-                            &#36;<%= toThousand(addedToCartProduct.price) %>
+                            <%= addedToCartProduct.name %>
                         </p>
+
+                        <div
+                            class="cart-ammount-and-price-container display-flex justify-content-space-between align-items-center width-100"
+                        >
+                            <form action="">
+                                <select name="" id="">
+                                    <option value="1">1</option>
+                                </select>
+                            </form>
+                            <p class="cart-price font-weight-600 font-size-0-8">
+                                &#36;<%= toThousand(addedToCartProduct.price) %>
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div
-                    class="product-buttons-container display-flex justify-content-center product-buttons-container-md"
+                    class="product-buttons-container display-flex justify-content-center padding-y-15 product-buttons-container-md"
                 >
                     <button
-                        class="product-button-buy button text-light bg-success product-button-buy-md"
+                        class="product-button-buy button text-light bg-success product-button-buy-md product-button-buy-lg"
                         onclick="window.location.href='/'"
                     >
-                        Continuar Compra
+                        Pagar
                     </button>
                     <button
-                        class="product-button-cancel button text-light bg-danger product-button-cancel-md"
+                        class="product-button-cancel button text-light bg-danger product-button-cancel-md product-button-cancel-lg"
                     >
                         Vaciar Carrito
                     </button>
                 </div>
             </div>
             <div
-                class="seller-and-payment-methods-container bg-light padding-y-15 width-100 display-flex flex-direction-column seller-and-payment-methods-container-md"
+                class="cart-seller-container font-size-0-8 padding-x-15 width-100"
             >
-                <div
-                    class="cart-seller-container display-flex justify-content-space-evenly align-content-center"
-                >
-                    <div class="cart-seller-img-container width-30">
-                        <img
-                            src="/images/seller-detail/vendedor.jpg"
-                            alt=""
-                            class="cart-seller-img width-100"
-                        />
-                    </div>
-                    <div
-                        class="cart-seller-name-and-stars display-flex flex-direction-column justify-content-space-evenly"
-                    >
-                        <p class="cart-seller-name">Juana Pérez</p>
-                        <div class="cart-seller-stars">
-                            <i class="fas fa-star"></i
-                            ><i class="fas fa-star"></i
-                            ><i class="fas fa-star"></i
-                            ><i class="fas fa-star"></i
-                            ><i class="far fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="product-payment-methods-container display-flex flex-direction-column align-items-center padding-y-15"
-                >
-                    <p
-                        class="product-payment-text font-size-0-9 font-weight-600 text-align-center"
-                    >
-                        Medios de pago aceptados:
-                    </p>
-                    <div
-                        class="product-payment-icons-container display-flex justify-content-space-evenly width-100"
-                    >
-                        <div
-                            class="product-payment-icon-item bg-muted display-flex justify-content-center align-items-center"
-                        >
-                            <i class="fas fa-credit-card text-primary"></i>
-                        </div>
-                        <div
-                            class="product-payment-icon-item bg-muted display-flex justify-content-center align-items-center"
-                        >
-                            <i class="far fa-money-bill-alt text-primary"></i>
-                        </div>
-                        <div
-                            class="product-payment-icon-item bg-muted display-flex justify-content-center align-items-center"
-                        >
-                            <i class="fas fa-university text-primary"></i>
-                        </div>
-                        <div
-                            class="product-payment-icon-item bg-muted display-flex justify-content-center align-items-center"
-                        >
-                            <i class="fas fa-mobile-alt text-primary"></i>
-                        </div>
-                    </div>
-                </div>
+                <p>Tu vendedor es: Juana Perez</p>
+                <p>
+                    Una vez realizado el pago, el vendedor se pondrá en contacto
+                    con vos para coordinar la entrega
+                </p>
             </div>
         </main>
         <footer class="bg-dark text-light text-align-center">
