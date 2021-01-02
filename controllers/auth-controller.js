@@ -20,12 +20,13 @@ module.exports = {
             //avatar: req.file.filename,
         };
 
+        res.send(newUser);
+
         //users.push(newUser);
 
         //saveUsers(users);
 
         // res.redirect("auth/login");
-        res.send(newUser);
     },
 
     showLogin: (req, res) => {
