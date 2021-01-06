@@ -9,6 +9,7 @@ const productController = {
         res.render("product/productCreate");
     },
     create: (req, res, next) => {
+        // necesito next??
         const products = getProducts();
         const createdProductId = products[products.length - 1].id + 1;
         const createdProduct = {
