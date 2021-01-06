@@ -4,45 +4,43 @@ const path = require("path");
 const fs = require("fs");
 const { render } = require("ejs");
 
+const getFromDB = require("../utils/getFromDB");
+const getOneFromDB = require("../utils/getOneFromDB");
+const getLastId = require("../utils/getLastId");
+const saveInDB = require("../utils/saveInDB");
+
 const productController = {
     showCreate: (req, res) => {
         res.render("product/productCreate");
     },
     create: (req, res, next) => {
         // necesito next??
-        const products = getProducts();
-        const createdProductId = products[products.length - 1].id + 1;
-        const createdProduct = {
-            id: Number(createdProductId),
+        const products = getFromDB("productsDataBase");
+
+        const newProductId = getLastId(products);
+
+        const newProduct = {
+            id: Number(newProductId),
             name: req.body.name,
             price: Number(req.body.price),
             description: req.body.description,
             location: req.body.location,
             image: req.files[0].filename,
         };
-        products.push(createdProduct);
-        fs.writeFileSync(
-            path.join(__dirname, "../data/productsDataBase.json"),
-            JSON.stringify(products, null, 4)
-        );
-        res.redirect("product/" + createdProductId); // esto es una ruta
+
+        saveInDB(products, newProduct, "productsDataBase");
+
+        res.redirect("product/" + newProductId); // esto es una ruta
     },
     showDetail: (req, res) => {
-        const products = getProducts();
-        const productDetail = products.find((product) => {
-            return req.params.id == product.id;
-        });
-        if (productDetail == null) {
-            return (
-                res
-                    // TO DO vincular con vista 404
-                    .status(404)
-                    .send("404 not found. <br> ¡Houston, poseemos problemas!")
-            );
+        const product = getOneFromDB(req.params.id, "productsDataBase");
+
+        if (!product) {
+            return res.status(404).render("not-found");
         }
 
         res.render("product/productDetail", {
-            product: productDetail,
+            product,
             toThousand,
         });
     },
