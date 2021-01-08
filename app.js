@@ -11,6 +11,8 @@ const loginRouter = require("./routes/login");
 const productRouter = require("./routes/product");
 const logMiddleware = require("./middlewares/logMiddleware");
 const authRouter = require("./routes/auth-router");
+const authenticate = require("./middlewares/auth/authenticate");
+const getProducts = require("./utils/getProducts");
 
 // APP CONFIG
 const app = express();
@@ -31,12 +33,21 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(logMiddleware);
 
+//copiado de la clase de Pablo
+//app.get("/", authenticate, (req, res, next) => {
+//  const products = getProducts();
+//res.render("index", {
+//  products: products,
+//user: req.loggedUser,
+//  });
+//});
+
 // ROUTES
 app.use("/", indexRouter);
 
-//app.use("/register", router);
+//app.use("/auth/register", router);
 
-//app.use("/login", loginRouter);
+//app.use("/auth/login", loginRouter);
 
 app.use("/product", productRouter);
 

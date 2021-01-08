@@ -9,7 +9,11 @@
         <div class="register-container">
             <div class="register">
                 <h1>Formulario de Registración</h1>
-                <form action="/auth/register" method="POST">
+                <form
+                    action="/auth/register"
+                    method="POST"
+                    enctype="multipart/form-data"
+                >
                     <label for="nombres" class="display-none">Nombres</label>
                     <input
                         class="controls"
@@ -68,6 +72,8 @@
                         id="direccion"
                         placeholder="Ingresá tu dirección"
                     />
+                    <h4 for="direccion">Elegí tu foto de usuario</h4>
+                    <input type="file" name="avatar" />
                     <input type="checkbox" name="tyc-accepted" required />Estoy
                     de acuerdo con <a href="#">Terminos y Condiciones</a>
                     <button type="submit">Registrarme</button>

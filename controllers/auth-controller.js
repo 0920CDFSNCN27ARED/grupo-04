@@ -3,7 +3,21 @@ const saveUsers = require("../utils/saveUsers");
 const bcrypt = require("bcrypt");
 
 module.exports = {
-    login: () => {},
+    login: (req, res) => {
+        const users = getUsers;
+        const user = users.find((user) => {
+            return (
+                user.user == req.body.user &&
+                bcrypt.compareSync(req.body.pass, user.pass)
+            );
+        });
+        if (!user) return res.direct("/auth/login");
+
+        req.session.loggedUserId = user.id;
+
+        return res.direct("/");
+    },
+
     register: (req, res) => {
         const users = getUsers();
 
@@ -17,16 +31,16 @@ module.exports = {
             id: newId,
             ...req.body,
             pass: bcrypt.hashSync(req.body.password, 10),
-            //avatar: req.file.filename,
+            avatar: req.file.filename,
         };
 
-        res.send(newUser);
+        //res.send(newUser);
 
-        //users.push(newUser);
+        users.push(newUser);
 
-        //saveUsers(users);
+        saveUsers(users);
 
-        // res.redirect("auth/login");
+        res.redirect("login");
     },
 
     showLogin: (req, res) => {
