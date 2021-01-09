@@ -20,7 +20,6 @@ var upload = multer({ storage: storage });
 
 router.get("/productCart/:id", productController.showCart);
 router.get("/create", productController.showCreate);
-router.get("/productDeleteConfirmation", productController.deleteConfirmation);
 router.get("/:id", productController.showDetail);
 router.get("/:id/edit", productController.showEdit);
 router.post("/", upload.any(), productController.create); //TO DO change to upload.single()

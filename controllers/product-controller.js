@@ -8,6 +8,8 @@ const getFromDB = require("../utils/getFromDB");
 const getOneFromDB = require("../utils/getOneFromDB");
 const getLastId = require("../utils/getLastId");
 const saveInDB = require("../utils/saveInDB");
+const editInDB = require("../utils/editInDB");
+const deleteFromDB = require("../utils/deleteFromDB");
 
 const productController = {
     showCreate: (req, res) => {
@@ -45,14 +47,16 @@ const productController = {
         });
     },
     showEdit: (req, res) => {
-        const products = getProducts();
+        const products = getFromDB("productsDataBase");
+
         const productToEdit = products.find(
             (product) => product.id == req.params.id
         );
+
         res.render("product/productEdit", { productToEdit: productToEdit });
     },
     edit: (req, res) => {
-        const products = getProducts();
+        const products = getFromDB("productsDataBase");
 
         const selectedProduct = products.find((product) => {
             return product.id == req.body.id;
@@ -72,32 +76,18 @@ const productController = {
             image: filename,
         };
 
-        products.splice(products.indexOf(selectedProduct), 1, editedProduct);
+        editInDB(products, selectedProduct, editedProduct, "productsDataBase");
 
-        fs.writeFileSync(
-            path.join(__dirname, "../data/productsDataBase.json"),
-            JSON.stringify(products, null, 4)
-        );
         res.redirect("/product/" + editedProduct.id);
     },
     delete: (req, res) => {
-        const products = getProducts();
+        const deleted = deleteFromDB(req.body.id, "productsDataBase");
 
-        const selectedProduct = products.find((product) => {
-            return product.id == req.body.id;
-        });
+        if (!deleted) {
+            res.send("ANDUVO MAL");
+        }
 
-        products.splice(products.indexOf(selectedProduct), 1);
-
-        fs.writeFileSync(
-            path.join(__dirname, "../data/productsDataBase.json"),
-            JSON.stringify(products, null, 4)
-        );
-
-        res.redirect("/product/productDeleteConfirmation");
-    },
-    deleteConfirmation: (req, res) => {
-        res.render("product/productDeleteConfirmation");
+        res.render("product/productDeleted"); // es una vista, sin barra al principio
     },
     showCart: (req, res) => {
         const products = getProducts();
