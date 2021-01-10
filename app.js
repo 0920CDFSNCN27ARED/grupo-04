@@ -45,9 +45,9 @@ app.use(logMiddleware);
 // ROUTES
 app.use("/", indexRouter);
 
-//app.use("/auth/register", router);
+//app.use("/register", router);
 
-//app.use("/auth/login", loginRouter);
+//app.use("/login", loginRouter);
 
 app.use("/product", productRouter);
 

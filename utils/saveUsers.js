@@ -1,14 +1,12 @@
 const fs = require("fs");
 const path = require("path");
 
-function saveUsers() {
-    const dbJson = fs.readFileSync(
+function saveUsers(users) {
+    const usersJSON = JSON.stringify(users, null, 2);
+    fs.writeFileSync(
         path.resolve(__dirname, "../data/usersDataBase.json"),
-        {
-            encoding: "utf-8",
-        }
+        usersJSON
     );
-    return JSON.parse(dbJson);
 }
 
 module.exports = saveUsers;
