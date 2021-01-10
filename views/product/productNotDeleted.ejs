@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include("../partials/head-base", {title: "Detalle del producto"}) %>
+        <link rel="stylesheet" href="/css/productDetail.css" />
+        <link
+            rel="stylesheet"
+            href="/css/productDetail-md.css"
+            media="(min-width: 481px)"
+        />
+        <link
+            rel="stylesheet"
+            href="/css/productDetail-lg.css"
+            media="(min-width: 769px)"
+        />
+    </head>
+    <body class="bg-muted">
+        <header><%- include("../partials/header") %></header>
+        <main class="">
+            <div
+                class="display-flex align-items-center flex-direction-column justify-content-center height-300"
+            >
+                <i
+                    class="fas fa-exclamation-triangle text-align-center font-size-1-6 text-warning"
+                ></i>
+                <p class="text-align-center padding-10">
+                    El producto no se ha podido borrar.
+                </p>
+                <button
+                    onclick="location.href='/'"
+                    class="button bg-primary text-light cursor-pointer"
+                >
+                    Volver al inicio
+                </button>
+            </div>
+        </main>
+        <footer class="bg-dark text-light text-align-center">
+            <%- include("../partials/footer") %>
+        </footer>
+    </body>
+</html>

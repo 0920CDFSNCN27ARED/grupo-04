@@ -70,13 +70,5 @@
         "description": "Auriculares Sony",
         "location": "Rosario",
         "image": "image-1607822730667.jpg"
-    },
-    {
-        "id": 19,
-        "name": "TEST",
-        "price": 45000,
-        "description": "rwerwerew",
-        "location": "werwerewr",
-        "image": "image-1609943724897.png"
     }
 ]

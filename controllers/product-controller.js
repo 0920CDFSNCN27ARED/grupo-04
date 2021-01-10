@@ -27,7 +27,7 @@ const productController = {
             price: Number(req.body.price),
             description: req.body.description,
             location: req.body.location,
-            image: req.files[0].filename,
+            image: req.file.filename,
         };
 
         saveInDB(products, newProduct, "productsDataBase");
@@ -53,6 +53,10 @@ const productController = {
             (product) => product.id == req.params.id
         );
 
+        if (!productToEdit) {
+            return res.status(404).render("not-found");
+        }
+
         res.render("product/productEdit", { productToEdit: productToEdit });
     },
     edit: (req, res) => {
@@ -62,10 +66,11 @@ const productController = {
             return product.id == req.body.id;
         });
 
-        let filename =
-            req.files.length == 0
-                ? selectedProduct.image
-                : req.files[0].filename;
+        if (!selectedProduct) {
+            return res.status(404).render("not-found");
+        }
+
+        let filename = req.file ? req.file.filename : selectedProduct.image;
 
         const editedProduct = {
             id: Number(req.body.id),
@@ -84,13 +89,13 @@ const productController = {
         const deleted = deleteFromDB(req.body.id, "productsDataBase");
 
         if (!deleted) {
-            res.send("ANDUVO MAL");
+            res.render("product/productNotDeleted");
+        } else {
+            res.render("product/productDeleted"); // es una vista, sin barra al principio
         }
-
-        res.render("product/productDeleted"); // es una vista, sin barra al principio
     },
     showCart: (req, res) => {
-        const products = getProducts();
+        const products = getFromDB("productsDataBase"); // TO DO que almacene con session si hay cosas o no. Si no tiene cosas mostrar el carrito vacío
 
         const addedToCartProduct = products.find((product) => {
             return product.id == req.params.id;
