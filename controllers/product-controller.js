@@ -1,7 +1,4 @@
-const getProducts = require("../utils/getProducts");
 const toThousand = require("../utils/toThousand");
-const path = require("path");
-const fs = require("fs");
 const { render } = require("ejs");
 
 const getFromDB = require("../utils/getFromDB");
