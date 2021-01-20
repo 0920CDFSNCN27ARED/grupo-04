@@ -33,13 +33,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(logMiddleware);
 
+app.locals.user = null;
+app.use(authenticate);
+
 //copiado de la clase de Pablo
 //app.get("/", authenticate, (req, res, next) => {
 //  const products = getProducts();
-//res.render("index", {
-//  products: products,
-//user: req.loggedUser,
-//  });
+//  res.render("index", {
+//       products: products,
+//     user: req.loggedUser,
+//});
 //});
 
 // ROUTES

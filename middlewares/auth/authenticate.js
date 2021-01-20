@@ -1,6 +1,6 @@
 const getUsers = require("../../utils/getUsers");
 
-function authenticate(req, res, netx) {
+function authenticate(req, res, next) {
     const id = req.session.loggedUserId;
 
     if (!id) return next();
@@ -17,6 +17,7 @@ function authenticate(req, res, netx) {
     }
 
     res.locals.user = loggedUser;
+    //req.loggedUser = loggedUser;
 
     next();
 }

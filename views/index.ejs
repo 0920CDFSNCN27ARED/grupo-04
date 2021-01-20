@@ -18,6 +18,9 @@
 
     <body class="bg-muted">
         <header><%- include("partials/header") %></header>
+
+        <h1>Hola, <%= user ? user.nombres : "Invitado !!"%></h1>
+
         <main>
             <div class="form-index-container bg-medium form-index-container-lg">
                 <form action="" class="form-index form-index-md form-index-lg">
@@ -88,6 +91,7 @@
                     </div>
                 </form>
             </div>
+
             <div
                 class="featured-products display-flex justify-content-center width-100 featured-products-lg"
             >

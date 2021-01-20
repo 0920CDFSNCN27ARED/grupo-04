@@ -3,6 +3,7 @@ const router = express.Router();
 const productController = require("../controllers/product-controller");
 const multer = require("multer");
 const path = require("path");
+const assertSignedIn = require("../middlewares/auth/assertSignedIn");
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -19,7 +20,7 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 router.get("/productCart/:id", productController.showCart);
-router.get("/create", productController.showCreate);
+router.get("/create", assertSignedIn, productController.showCreate);
 router.get("/:id", productController.showDetail);
 router.get("/:id/edit", productController.showEdit);
 router.post("/", upload.single("image"), productController.create);

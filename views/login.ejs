@@ -5,7 +5,7 @@
     <body>
         <header><%- include("partials/header-simple") %></header>
     </body>
-        <form action="/auth/login" method="post"></form>
+        <form action="/auth/login" method="POST"></form>
         <!-- TO DO
 
                 LOGIN VIEJO, ¿QUEDA? -->
@@ -29,7 +29,7 @@
         <div class="login-box">
             <!-- <img src="/images/isologo2.png" class="avatar" alt="Avatar Image" /> -->
             <h1>Login</h1>
-            <form>
+            <form action="/auth/login" method="POST">
                 <!-- USERNAME INPUT -->
                 <label for="user">Usuario</label>
                 <input

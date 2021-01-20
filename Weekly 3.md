@@ -14,4 +14,4 @@
 4. Semana 4 (del 04/01 al 10/01):
 
 -   Se agregó funcionalidad a la barra de búsquedas, y se solucionaron problemas con el código. Se agregaron mejoras en product-controller.
--   Se comprobó que se alimenta crrectamente la base de usuarios al registrarse (usersDataBase.json).
+-   Se comprobó que se alimenta corectamente la base de usuarios al registrarse (usersDataBase.json).

@@ -1,25 +1,13 @@
 [
   {
     "id": 1,
-    "nombres": "Diego",
+    "nombres": "Simon",
     "apellido": "valdes",
-    "correo": "diegovaldes2011@gmail.com",
-    "password": "die123",
-    "direccion": "Italia 955",
+    "user": "Simon",
+    "correo": "simon@gmail.com",
+    "password": "$2b$10$HaN4dhlWwhQAe22.X/FHjuHMiHWbU6wXDBdYp4wOkajrbmdMJbBwK",
+    "direccion": "calle1234",
     "tyc-accepted": "on",
-    "pass": "$2b$10$Dd1kEQHULphJtI8xmaKyK.Amg3h28xKpF6nd3SJMmHEy2Ys3n2nRy",
-    "avatar": "af679392728e9fafc366ba6e4383904e"
-  },
-  {
-    "id": 2,
-    "nombres": "Laura",
-    "apellido": "Ramirez",
-    "user": "Laura2021",
-    "correo": "laura.ramirez@gmail.com",
-    "password": "lau123",
-    "direccion": "calle2021",
-    "tyc-accepted": "on",
-    "pass": "$2b$10$XhaWYkPfbz9wHTNDLP7R1.AFUhHVSePsPiKq1opL2KNA6fXpEOefS",
-    "avatar": "772f636ad7cda38e9f559cf137f0ed8c"
+    "avatar": "c1ab9ae4676cb55590d26a28bb30ed80"
   }
 ]
