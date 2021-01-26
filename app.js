@@ -26,14 +26,11 @@ app.listen(3001, () => {
 
 // MIDDLEWARES
 app.use(express.static(path.resolve(__dirname, "public")));
-
 app.use(session({ secret: "secreto !" }));
 app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-
 app.use(logMiddleware);
-
 app.locals.user = null;
 app.use(authenticate);
 

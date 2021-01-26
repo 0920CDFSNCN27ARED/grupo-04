@@ -1,13 +1,13 @@
 [
-  {
-    "id": 1,
-    "nombres": "Simon",
-    "apellido": "valdes",
-    "user": "Simon",
-    "correo": "simon@gmail.com",
-    "password": "$2b$10$HaN4dhlWwhQAe22.X/FHjuHMiHWbU6wXDBdYp4wOkajrbmdMJbBwK",
-    "direccion": "calle1234",
-    "tyc-accepted": "on",
-    "avatar": "c1ab9ae4676cb55590d26a28bb30ed80"
-  }
+    {
+        "id": 1,
+        "nombres": "Simon",
+        "apellido": "valdes",
+        "user": "Simon",
+        "correo": "simon@gmail.com",
+        "password": "$2b$10$HaN4dhlWwhQAe22.X/FHjuHMiHWbU6wXDBdYp4wOkajrbmdMJbBwK",
+        "direccion": "calle1234",
+        "tyc-accepted": "on",
+        "avatar": "c1ab9ae4676cb55590d26a28bb30ed80"
+    }
 ]
