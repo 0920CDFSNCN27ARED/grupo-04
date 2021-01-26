@@ -23,10 +23,10 @@ var upload = multer({ storage: storage });
 
 router.get("/productCart/:id", productController.showCart);
 router.get("/create", assertSignedIn, productController.showCreate);
-router.get("/:id", authenticate, assertSignedIn, productController.showDetail);
+router.get("/:id", assertSignedIn, productController.showDetail);
 router.get(
     "/:id/edit",
-    authenticate,
+
     assertSignedIn,
     assertIsAdmin,
     productController.showEdit

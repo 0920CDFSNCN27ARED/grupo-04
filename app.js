@@ -31,7 +31,7 @@ app.use(session({ secret: "secreto !" }));
 app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(logger);
+
 app.use(logMiddleware);
 
 app.locals.user = null;
