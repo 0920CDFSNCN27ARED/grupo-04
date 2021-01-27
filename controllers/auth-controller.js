@@ -15,6 +15,12 @@ module.exports = {
 
         req.session.loggedUserId = user.id;
 
+        if (req.body.rememberMe != undefined) {
+            res.cookie("rememberMe", user.id, {
+                maxAge: 1000 * 60 * 60,
+            });
+        }
+
         return res.redirect("/");
     },
 
@@ -48,5 +54,10 @@ module.exports = {
     },
     showRegister: (req, res) => {
         res.render("register");
+    },
+    logOut: (req, res) => {
+        req.session.loggedUserId = null;
+        res.cookie("rememberMe", null);
+        res.redirect("/");
     },
 };

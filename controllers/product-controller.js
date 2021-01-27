@@ -38,9 +38,14 @@ const productController = {
             return res.status(404).render("not-found");
         }
 
+        const users = getFromDB("usersDataBase");
+        const user = users.find((user) => user.id == product.idUsuario);
+        const userImage = user.avatar;
+
         res.render("product/productDetail", {
             product,
             toThousand,
+            userImage,
         });
     },
     showEdit: (req, res) => {

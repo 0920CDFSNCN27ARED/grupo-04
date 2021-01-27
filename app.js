@@ -13,6 +13,8 @@ const logMiddleware = require("./middlewares/logMiddleware");
 const authRouter = require("./routes/auth-router");
 const authenticate = require("./middlewares/auth/authenticate");
 const getProducts = require("./utils/getProducts");
+const rememberMe = require("./middlewares/auth/remember-me");
+// const toThousand = require("./utils/toThousand");
 
 // APP CONFIG
 const app = express();
@@ -20,7 +22,7 @@ const app = express();
 // VIEW ENGINE CONFIG
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
-app.listen(3001, () => {
+app.listen(3000, () => {
     console.log("Servidor funcionando");
 });
 
@@ -31,7 +33,9 @@ app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(logMiddleware);
+// app.use(toThousand);
 app.locals.user = null;
+// app.use(rememberMe);
 app.use(authenticate);
 
 //copiado de la clase de Pablo

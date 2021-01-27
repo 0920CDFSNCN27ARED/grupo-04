@@ -20,7 +20,7 @@ router.post("/login", authController.login);
 
 router.get("/register", authController.showRegister);
 router.post("/register", upload.single("avatar"), authController.register);
-
+router.delete("/login", authController.logOut);
 //app.post("/register", upload.single("avatar"), authController.register);
 //});
 
