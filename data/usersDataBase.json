@@ -8,6 +8,18 @@
         "password": "$2b$10$HaN4dhlWwhQAe22.X/FHjuHMiHWbU6wXDBdYp4wOkajrbmdMJbBwK",
         "direccion": "calle1234",
         "tyc-accepted": "on",
-        "avatar": "c1ab9ae4676cb55590d26a28bb30ed80"
+        "avatar": "c1ab9ae4676cb55590d26a28bb30ed80",
+        "admin": true
+    },
+    {
+        "id": 2,
+        "nombres": "Laura",
+        "apellido": "Martinez",
+        "user": "Laura",
+        "correo": "laura@gmail.com",
+        "password": "$2b$10$kSwJf5m2LSR3Gb1Msphi.uAYE1kfBsSHzGGfUpLrLgrQ1YYlQr8Pi",
+        "direccion": "calle 5678",
+        "tyc-accepted": "on",
+        "avatar": "595d1698e5815e9ec009aedc6602497e"
     }
 ]
