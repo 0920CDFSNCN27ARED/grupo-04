@@ -70,5 +70,13 @@
         "description": "Auriculares Sony",
         "location": "Rosario",
         "image": "image-1607822730667.jpg"
+    },
+    {
+        "id": 19,
+        "name": "Letras y Números",
+        "price": 500,
+        "description": "Juego para niños",
+        "location": "caba",
+        "image": "image-1611767814964.jpg"
     }
 ]
