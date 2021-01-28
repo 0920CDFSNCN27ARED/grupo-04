@@ -57,7 +57,9 @@ module.exports = {
     },
     logOut: (req, res) => {
         req.session.loggedUserId = null;
+        //req.session.destroy();
         res.cookie("rememberMe", null);
+        //res.clearCookie("rememberMe");
         res.redirect("/");
     },
 };
