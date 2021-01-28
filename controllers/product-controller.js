@@ -44,7 +44,7 @@ const productController = {
 
         res.render("product/productDetail", {
             product,
-            toThousand,
+            // toThousand,
             userImage,
         });
     },
@@ -105,7 +105,7 @@ const productController = {
 
         res.render("product/productCart", {
             addedToCartProduct: addedToCartProduct,
-            toThousand,
+            // toThousand,
         });
     },
 };

@@ -14,7 +14,7 @@ const authRouter = require("./routes/auth-router");
 const authenticate = require("./middlewares/auth/authenticate");
 const getProducts = require("./utils/getProducts");
 const rememberMe = require("./middlewares/auth/remember-me");
-// const toThousand = require("./utils/toThousand");
+const toThousand = require("./utils/toThousand");
 
 // APP CONFIG
 const app = express();
@@ -33,8 +33,10 @@ app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(logMiddleware);
-// app.use(toThousand);
+
 app.locals.user = null;
+app.locals.toThousand = toThousand;
+
 // app.use(rememberMe);
 app.use(authenticate);
 
