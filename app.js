@@ -4,10 +4,10 @@ const path = require("path");
 const fs = require("fs");
 const methodOverride = require("method-override");
 const session = require("express-session");
+const cookieParser = require("cookie-parser");
 
 const indexRouter = require("./routes/index");
 const registerRouter = require("./routes/auth-router");
-const loginRouter = require("./routes/login");
 const productRouter = require("./routes/product");
 const logMiddleware = require("./middlewares/logMiddleware");
 const authRouter = require("./routes/auth-router");
@@ -28,6 +28,7 @@ app.listen(3000, () => {
 
 // MIDDLEWARES
 app.use(express.static(path.resolve(__dirname, "public")));
+app.use(cookieParser());
 app.use(session({ secret: "secreto !" }));
 app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: false }));
@@ -37,24 +38,11 @@ app.use(logMiddleware);
 app.locals.user = null;
 app.locals.toThousand = toThousand;
 
-// app.use(rememberMe);
+app.use(rememberMe);
 app.use(authenticate);
-
-//copiado de la clase de Pablo
-//app.get("/", authenticate, (req, res, next) => {
-//  const products = getProducts();
-//  res.render("index", {
-//       products: products,
-//     user: req.loggedUser,
-//});
-//});
 
 // ROUTES
 app.use("/", indexRouter);
-
-//app.use("/register", router);
-
-//app.use("/login", loginRouter);
 
 app.use("/product", productRouter);
 
