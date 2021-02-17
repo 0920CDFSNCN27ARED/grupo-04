@@ -189,16 +189,16 @@ INSERT INTO paymentmethods VALUES
 (DEFAULT, "bitcoin");
 
 
--- -----------
--- orderStatus
--- -----------
+-- -------------
+-- orderStatuses
+-- -------------
 
-CREATE TABLE orderStatus (
+CREATE TABLE orderStatuses (
 	id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	name VARCHAR(20) NOT NULL
 );
 
-INSERT INTO orderstatus VALUES
+INSERT INTO orderStatuses VALUES
 (DEFAULT, "on cart"),
 (DEFAULT, "paid"),
 (DEFAULT, "delivered"),
@@ -216,7 +216,7 @@ CREATE TABLE orders (
 	paymentMethodId INT UNSIGNED NOT NULL,
 	createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
 	updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-	FOREIGN KEY (orderStatusId) REFERENCES orderStatus(id),
+	FOREIGN KEY (orderStatusId) REFERENCES orderStatuses(id),
 	FOREIGN KEY (userId) REFERENCES users(id),
 	FOREIGN KEY (paymentMethodId) REFERENCES paymentMethods(id)
 );
@@ -277,4 +277,3 @@ insert into product_order (id, orderId, productId, itemPrice, quantity) values (
 insert into product_order (id, orderId, productId, itemPrice, quantity) values (18, 16, 25, 3118, 4);
 insert into product_order (id, orderId, productId, itemPrice, quantity) values (19, 17, 20, 17783, 3);
 insert into product_order (id, orderId, productId, itemPrice, quantity) values (20, 4, 5, 7621, 5);
-
