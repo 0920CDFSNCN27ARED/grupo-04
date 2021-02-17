@@ -1,6 +1,8 @@
 const getProducts = require("../utils/getProducts");
 const toThousand = require("../utils/toThousand");
 
+const { User, UserCategory } = require("../database/models");
+
 const indexController = {
     show: (req, res) => {
         const productsList = getProducts();
@@ -36,6 +38,21 @@ const indexController = {
             moneda: "ARS",
             toThousand,
         });
+    },
+    //
+    // TEST de modelos
+    //
+    users: async (req, res) => {
+        const users = await User.findAll({
+            include: User.CATEGORY_ALIAS,
+        });
+        res.send(users);
+    },
+    categories: async (req, res) => {
+        const categories = await UserCategory.findAll({
+            include: UserCategory.USERS_LIST_ALIAS,
+        });
+        res.send(categories);
     },
 };
 

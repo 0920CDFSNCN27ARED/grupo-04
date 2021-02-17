@@ -5,6 +5,15 @@ const indexController = require("../controllers/index-controller");
 router.get("/", indexController.show);
 router.get("/search", indexController.search);
 
+//
+// TEST de modelos
+//
+router.get("/users", indexController.users);
+router.get("/categories", indexController.categories);
+//
+//
+//
+
 router.get("/pruebaSession", function (req, res) {
     if (req.session.numeroVisitas == undefined) {
         req.session.numeroVisitas = 0;
