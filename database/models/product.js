@@ -26,6 +26,7 @@ module.exports = (sequelize, DataTypes) => {
 
     Product.USER_ALIAS = "user";
     Product.CATEGORY_ALIAS = "category";
+    Product.ORDERS_ALIAS = "orders";
 
     Product.associate = function (models) {
         Product.belongsTo(models.User, {
@@ -35,6 +36,13 @@ module.exports = (sequelize, DataTypes) => {
         Product.belongsTo(models.ProductCategory, {
             as: Product.CATEGORY_ALIAS,
             foreingKey: "categoryId",
+        });
+        Product.belongsToMany(models.Order, {
+            as: Product.ORDERS_ALIAS,
+            through: "order_product",
+            foreingKey: "productId",
+            // otherKey: "orderId",
+            timestamps: false,
         });
     };
 

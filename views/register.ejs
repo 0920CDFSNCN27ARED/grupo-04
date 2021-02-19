@@ -14,41 +14,39 @@
                     method="POST"
                     enctype="multipart/form-data"
                 >
-                    <label for="nombres" class="display-none">Nombres</label>
+                    <label for="firstName" class="display-none">Nombre</label>
                     <input
                         class="controls"
                         type="text"
-                        name="nombres"
-                        id="nombres"
+                        name="firstName"
+                        id="firstName"
                         placeholder="Nombre"
                     />
-                    <label for="apellidos" class="display-none"
-                        >Apellidos</label
-                    >
+                    <label for="lastName" class="display-none">Apellido</label>
                     <input
                         class="controls"
                         type="text"
-                        name="apellido"
-                        id="apellido"
+                        name="lastName"
+                        id="lastName"
                         placeholder="Apellido"
                     />
-                    <label for="user" class="display-none">Usuario</label>
+                    <!-- <label for="user" class="display-none">Usuario</label>
                     <input
                         class="controls"
                         type="text"
                         name="user"
                         id="user"
                         placeholder="Usuario"
-                    />
-                    <label for="correo" class="display-none"
+                    /> -->
+                    <label for="email" class="display-none"
                         >Correo Electrónico</label
                     >
                     <input
                         class="controls"
                         type="email"
-                        name="correo"
-                        id="correo"
-                        placeholder="Email"
+                        name="email"
+                        id="email"
+                        placeholder="Correo Electrónico"
                     />
                     <label for="password" class="display-none"
                         >Contraseña</label
@@ -60,30 +58,95 @@
                         id="password"
                         placeholder="Contraseña"
                     />
-                    <label for="direccion" class="display-none"
-                        >Dirección</label
+                    <label for="passwordConfirmation" class="display-none"
+                        >Confirmación de Contraseña</label
                     >
                     <input
                         class="controls"
                         type="password"
-                        name="password_confirm"
-                        id="password_confirm"
+                        name="passwordConfirmation"
+                        id="passwordConfirmation"
                         placeholder="Confirmar contraseña"
                     />
-                    <label for="direccion" class="display-none"
-                        >Dirección</label
+                    <h4>Dirección</h4>
+                    <label for="city" class="display-none">Ciudad</label>
+                    <input
+                        class="controls"
+                        type="text"
+                        name="city"
+                        id="city"
+                        placeholder="Ciudad"
+                    />
+                    <label for="state" class="display-none">Provincia</label>
+                    <input
+                        class="controls"
+                        type="text"
+                        name="state"
+                        id="state"
+                        placeholder="Provincia"
+                    />
+                    <label for="street" class="display-none">Calle</label>
+                    <input
+                        class="controls"
+                        type="text"
+                        name="street"
+                        id="street"
+                        placeholder="Calle"
+                    />
+                    <label for="houseNumber" class="display-none">Número</label>
+                    <input
+                        class="controls"
+                        type="text"
+                        name="houseNumber"
+                        id="houseNumber"
+                        placeholder="Número"
+                    />
+                    <label for="floor" class="display-none">Piso</label>
+                    <input
+                        class="controls"
+                        type="text"
+                        name="floor"
+                        id="floor"
+                        placeholder="Piso"
+                    />
+                    <label for="apartment" class="display-none"
+                        >Departamento</label
                     >
                     <input
                         class="controls"
                         type="text"
-                        name="direccion"
-                        id="direccion"
-                        placeholder="Ingresá tu dirección"
+                        name="apartment"
+                        id="apartment"
+                        placeholder="Departamento"
                     />
-                    <h4 for="direccion">Elegí tu foto de usuario</h4>
+                    <label for="phoneNumber" class="display-none"
+                        >Teléfono</label
+                    >
+                    <input
+                        class="controls"
+                        type="text"
+                        name="phoneNumber"
+                        id="phoneNumber"
+                        placeholder="Teléfono"
+                    />
+                    <h4>Elegí tu foto de usuario</h4>
                     <input type="file" name="avatar" />
-                    <input type="checkbox" name="tyc-accepted" required />Estoy
-                    de acuerdo con <a href="#">Terminos y Condiciones</a>
+                    <label for="termsAndConditions" class="display-none"
+                        >Términos y condiciones</label
+                    >
+                    <div class="display-flex">
+                        <p class="">
+                            Estoy de acuerdo con los
+                            <a href="#">Terminos y Condiciones</a>
+                        </p>
+                        <input
+                            type="checkbox"
+                            name="termsAndConditions"
+                            id="termsAndConditions"
+                            class="display-block"
+                            required
+                        />
+                    </div>
                     <button type="submit">Registrarme</button>
                 </form>
             </div>

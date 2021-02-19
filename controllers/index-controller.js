@@ -68,7 +68,11 @@ const indexController = {
     },
     products: async (req, res) => {
         const products = await Product.findAll({
-            include: [Product.USER_ALIAS, Product.CATEGORY_ALIAS],
+            include: [
+                Product.USER_ALIAS,
+                Product.CATEGORY_ALIAS,
+                Product.ORDERS_ALIAS, // TODO No acepta como válido el nombre del modelo en through y solo arroja la primera orden del array
+            ],
         });
         res.send(products);
     },
@@ -84,6 +88,7 @@ const indexController = {
                 Order.STATUS_ALIAS,
                 Order.USER_ALIAS,
                 Order.PAYMENT_METHOD_ALIAS,
+                Order.PRODUCTS_ALIAS, // TODO No acepta como válido el nombre del modelo en through y solo arroja el primer producto del array
             ],
         });
         res.send(orders);

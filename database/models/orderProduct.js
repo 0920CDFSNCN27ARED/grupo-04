@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const alias = "ProductOrder";
+    const alias = "OrderProduct";
 
     const cols = {
         id: {
@@ -14,17 +14,10 @@ module.exports = (sequelize, DataTypes) => {
     };
 
     const config = {
-        tableName: "product_order",
+        tableName: "order_product",
     };
 
-    const ProductOrder = sequelize.define(alias, cols, config);
+    const OrderProduct = sequelize.define(alias, cols, config);
 
-    //** TO DO */
-    // N:M !!!!!
-
-    // ProductOrder.associate = (models) => {
-    //     ProductOrder.
-    // }
-
-    return ProductOrder;
+    return OrderProduct;
 };

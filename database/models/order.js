@@ -19,6 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     Order.STATUS_ALIAS = "orderStatus";
     Order.USER_ALIAS = "user";
     Order.PAYMENT_METHOD_ALIAS = "paymentMethod";
+    Order.PRODUCTS_ALIAS = "products";
 
     Order.associate = (models) => {
         Order.belongsTo(models.OrderStatus, {
@@ -32,6 +33,13 @@ module.exports = (sequelize, DataTypes) => {
         Order.belongsTo(models.PaymentMethod, {
             as: Order.PAYMENT_METHOD_ALIAS,
             foreignKey: "paymentMethodId",
+        });
+        Order.belongsToMany(models.Product, {
+            as: Order.PRODUCTS_ALIAS,
+            through: "order_product",
+            foreignKey: "orderId",
+            // otherKey: "productId",
+            timestamps: false,
         });
     };
 

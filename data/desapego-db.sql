@@ -246,10 +246,10 @@ insert into orders (id, statusId, userId, paymentMethodId) values (20, 2, 1, 5);
 
 
 -- -------------
--- product_order
+-- order_product
 -- -------------
 
-CREATE TABLE product_order (
+CREATE TABLE order_product (
 	id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	orderId INT UNSIGNED NOT NULL,
 	productId INT UNSIGNED NOT NULL,
@@ -259,23 +259,23 @@ CREATE TABLE product_order (
 	FOREIGN KEY (productId) REFERENCES products(id)
 );
 
-insert into product_order (id, orderId, productId, itemPrice, quantity) values (1, 7, 28, 2273, 4);
-insert into product_order (id, orderId, productId, itemPrice, quantity) values (2, 9, 49, 13056, 3);
-insert into product_order (id, orderId, productId, itemPrice, quantity) values (3, 15, 25, 5254, 5);
-insert into product_order (id, orderId, productId, itemPrice, quantity) values (4, 5, 33, 15232, 5);
-insert into product_order (id, orderId, productId, itemPrice, quantity) values (5, 14, 26, 7760, 4);
-insert into product_order (id, orderId, productId, itemPrice, quantity) values (6, 14, 15, 2145, 4);
-insert into product_order (id, orderId, productId, itemPrice, quantity) values (7, 18, 39, 14472, 4);
-insert into product_order (id, orderId, productId, itemPrice, quantity) values (8, 1, 29, 18288, 3);
-insert into product_order (id, orderId, productId, itemPrice, quantity) values (9, 2, 37, 15336, 4);
-insert into product_order (id, orderId, productId, itemPrice, quantity) values (10, 17, 1, 949, 4);
-insert into product_order (id, orderId, productId, itemPrice, quantity) values (11, 14, 8, 8295, 3);
-insert into product_order (id, orderId, productId, itemPrice, quantity) values (12, 18, 22, 4378, 3);
-insert into product_order (id, orderId, productId, itemPrice, quantity) values (13, 3, 22, 19521, 4);
-insert into product_order (id, orderId, productId, itemPrice, quantity) values (14, 19, 4, 8688, 3);
-insert into product_order (id, orderId, productId, itemPrice, quantity) values (15, 16, 27, 16740, 1);
-insert into product_order (id, orderId, productId, itemPrice, quantity) values (16, 18, 31, 8378, 2);
-insert into product_order (id, orderId, productId, itemPrice, quantity) values (17, 8, 43, 1902, 1);
-insert into product_order (id, orderId, productId, itemPrice, quantity) values (18, 16, 25, 3118, 4);
-insert into product_order (id, orderId, productId, itemPrice, quantity) values (19, 17, 20, 17783, 3);
-insert into product_order (id, orderId, productId, itemPrice, quantity) values (20, 4, 5, 7621, 5);
+insert into order_product (id, orderId, productId, itemPrice, quantity) values (1, 7, 28, 2273, 4);
+insert into order_product (id, orderId, productId, itemPrice, quantity) values (2, 9, 49, 13056, 3);
+insert into order_product (id, orderId, productId, itemPrice, quantity) values (3, 15, 25, 5254, 5);
+insert into order_product (id, orderId, productId, itemPrice, quantity) values (4, 5, 33, 15232, 5);
+insert into order_product (id, orderId, productId, itemPrice, quantity) values (5, 14, 26, 7760, 4);
+insert into order_product (id, orderId, productId, itemPrice, quantity) values (6, 14, 15, 2145, 4);
+insert into order_product (id, orderId, productId, itemPrice, quantity) values (7, 18, 39, 14472, 4);
+insert into order_product (id, orderId, productId, itemPrice, quantity) values (8, 1, 29, 18288, 3);
+insert into order_product (id, orderId, productId, itemPrice, quantity) values (9, 2, 37, 15336, 4);
+insert into order_product (id, orderId, productId, itemPrice, quantity) values (10, 17, 1, 949, 4);
+insert into order_product (id, orderId, productId, itemPrice, quantity) values (11, 14, 8, 8295, 3);
+insert into order_product (id, orderId, productId, itemPrice, quantity) values (12, 18, 22, 4378, 3);
+insert into order_product (id, orderId, productId, itemPrice, quantity) values (13, 3, 22, 19521, 4);
+insert into order_product (id, orderId, productId, itemPrice, quantity) values (14, 19, 4, 8688, 3);
+insert into order_product (id, orderId, productId, itemPrice, quantity) values (15, 16, 27, 16740, 1);
+insert into order_product (id, orderId, productId, itemPrice, quantity) values (16, 18, 31, 8378, 2);
+insert into order_product (id, orderId, productId, itemPrice, quantity) values (17, 8, 43, 1902, 1);
+insert into order_product (id, orderId, productId, itemPrice, quantity) values (18, 16, 25, 3118, 4);
+insert into order_product (id, orderId, productId, itemPrice, quantity) values (19, 17, 20, 17783, 3);
+insert into order_product (id, orderId, productId, itemPrice, quantity) values (20, 4, 5, 7621, 5);
