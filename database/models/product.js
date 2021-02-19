@@ -14,7 +14,8 @@ module.exports = (sequelize, DataTypes) => {
         image: DataTypes.STRING(50),
         stock: DataTypes.INTEGER.UNSIGNED,
         isBanned: DataTypes.INTEGER.UNSIGNED,
-        productCategoryId: DataTypes.INTEGER.UNSIGNED,
+        categoryId: DataTypes.INTEGER.UNSIGNED,
+        userId: DataTypes.INTEGER.UNSIGNED,
     };
 
     const config = {
@@ -22,6 +23,20 @@ module.exports = (sequelize, DataTypes) => {
     };
 
     const Product = sequelize.define(alias, cols, config);
+
+    Product.USER_ALIAS = "user";
+    Product.CATEGORY_ALIAS = "category";
+
+    Product.associate = function (models) {
+        Product.belongsTo(models.User, {
+            as: Product.USER_ALIAS,
+            foreingKey: "userId",
+        });
+        Product.belongsTo(models.ProductCategory, {
+            as: Product.CATEGORY_ALIAS,
+            foreingKey: "categoryId",
+        });
+    };
 
     return Product;
 };

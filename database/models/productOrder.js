@@ -19,5 +19,12 @@ module.exports = (sequelize, DataTypes) => {
 
     const ProductOrder = sequelize.define(alias, cols, config);
 
+    //** TO DO */
+    // N:M !!!!!
+
+    // ProductOrder.associate = (models) => {
+    //     ProductOrder.
+    // }
+
     return ProductOrder;
 };

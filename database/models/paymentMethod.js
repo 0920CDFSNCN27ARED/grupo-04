@@ -15,5 +15,15 @@ module.exports = (sequelize, DataTypes) => {
     };
 
     const PaymentMethod = sequelize.define(alias, cols, config);
+
+    PaymentMethod.ORDERS_LIST_ALIAS = "orders";
+
+    PaymentMethod.associate = (models) => {
+        PaymentMethod.hasMany(models.Order, {
+            as: PaymentMethod.ORDERS_LIST_ALIAS,
+            foreignKey: "paymentMethodId",
+        });
+    };
+
     return PaymentMethod;
 };

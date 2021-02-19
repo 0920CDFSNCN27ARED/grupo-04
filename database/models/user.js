@@ -30,11 +30,21 @@ module.exports = (sequelize, DataTypes) => {
     const User = sequelize.define(alias, cols, config);
 
     User.CATEGORY_ALIAS = "userCategory";
+    User.PRODUCTS_ALIAS = "products";
+    User.ORDERS_LIST_ALIAS = "orders";
 
     User.associate = function (models) {
         User.belongsTo(models.UserCategory, {
             as: User.CATEGORY_ALIAS,
             foreingKey: "userCategoryId",
+        });
+        User.hasMany(models.Product, {
+            as: User.PRODUCTS_ALIAS,
+            foreingKey: "userId",
+        });
+        User.hasMany(models.Order, {
+            as: User.ORDERS_LIST_ALIAS,
+            foreignKey: "userId",
         });
     };
 

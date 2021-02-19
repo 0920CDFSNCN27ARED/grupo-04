@@ -14,5 +14,15 @@ module.exports = (sequelize, DataTypes) => {
     };
 
     const OrderStatus = sequelize.define(alias, cols, config);
+
+    OrderStatus.ORDERS_LIST_ALIAS = "orders";
+
+    OrderStatus.associate = (models) => {
+        OrderStatus.hasMany(models.Order, {
+            as: OrderStatus.ORDERS_LIST_ALIAS,
+            foreignKey: "statusId",
+        });
+    };
+
     return OrderStatus;
 };
