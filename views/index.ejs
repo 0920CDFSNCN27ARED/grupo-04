@@ -93,31 +93,17 @@
                     </div>
                 </form>
             </div>
-
+            <% if(products.length == 0 && search ){ %>
+            <div>
+                <p>La búsqueda no arrojó resultados</p>
+            </div>
+            <%} %>
             <div
                 class="featured-products display-flex justify-content-center width-100 featured-products-lg"
             >
-                <% for (const product of products) { %>
-                <div
-                    class="featured-products-item-container bg-light padding-10 featured-products-item-container-md featured-products-item-container-lg"
-                >
-                    <a href="/product/<%= product.id %>" class="anchor">
-                        <div
-                            class="featured-products-image-container width-100"
-                        >
-                            <img
-                                src="/images/products/<%= product.image %>"
-                                alt=""
-                                class="width-100"
-                            />
-                        </div>
-                        <p class="font-weight-600"><%= product.name %></p>
-                        <p class="text-success font-weight-600">
-                            $<%= toThousand(product.price) %> <%= moneda %>
-                        </p>
-                    </a>
-                </div>
-                <% } %>
+                <% products.forEach(product => { %> <%-
+                include("./product/partials/product-card", {product}) %> <% });
+                %>
             </div>
             <div class="slider">
                 <ul>

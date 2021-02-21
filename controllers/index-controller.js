@@ -1,6 +1,3 @@
-const getProducts = require("../utils/getProducts");
-const toThousand = require("../utils/toThousand");
-
 const {
     User,
     UserCategory,
@@ -11,40 +8,30 @@ const {
     PaymentMethod,
 } = require("../database/models");
 
+const { Op } = require("sequelize");
+
 const indexController = {
-    show: (req, res) => {
-        const productsList = getProducts();
+    show: async (req, res) => {
+        const products = await Product.findAll();
+
         res.render("index", {
-            products: productsList,
-            moneda: "ARS",
-            toThousand,
+            products,
         });
     },
-    search: (req, res) => {
-        const products = getProducts();
-
+    search: async (req, res) => {
         const searchString = req.query.search;
-
         const searchArray = searchString.split(" ");
 
-        let foundProducts = [];
-        searchArray.forEach((word) => {
-            products.forEach((product) => {
-                if (product.name.toLowerCase().includes(word.toLowerCase())) {
-                    const alreadyFound = foundProducts.find(
-                        (foundProduct) => foundProduct.id == product.id
-                    );
-                    if (!alreadyFound) {
-                        foundProducts.push(product);
-                    }
-                }
-            });
+        const products = await Product.findAll({
+            where: {
+                name: { [Op.substring]: searchString }, // TODO que acepte múltiples palabras
+            },
         });
+        const search = true;
 
         res.render("index", {
-            products: foundProducts,
-            moneda: "ARS",
-            toThousand,
+            products,
+            search,
         });
     },
     //

@@ -17,7 +17,7 @@ const productController = {
     create: async (req, res, next) => {
         // necesito next??
 
-        const newProduct = {
+        Product.create({
             name: req.body.name,
             price: Number(req.body.price),
             description: req.body.description,
@@ -26,13 +26,13 @@ const productController = {
             isBanned: 0, // TODO poner valor default 0 en SQL
             categoryId: req.body.categoryId,
             userId: res.locals.user.id,
-        };
+        });
 
-        return res.send(newProduct); // TODO crear con sequelize nuevo registro en DB
+        res.redirect("/");
 
         // TODO obtener el ID del registro creado para mandarlo a la ruta
         // https://github.com/sequelize/sequelize/issues/4914
-        res.redirect("product/" + newProductId); // esto es una ruta
+        // res.redirect("product/" + newProductId); // esto es una ruta
     },
     showDetail: (req, res) => {
         const product = getOneFromDB(req.params.id, "productsDataBase");
