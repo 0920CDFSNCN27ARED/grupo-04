@@ -42,7 +42,6 @@ module.exports = {
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             email: req.body.email,
-            // password: req.body.password,
             password: bcrypt.hashSync(req.body.password, 10),
             city: req.body.city,
             state: req.body.state,
@@ -52,8 +51,6 @@ module.exports = {
             apartment: req.body.apartment,
             phoneNumber: req.body.phoneNumber,
             avatar: req.file.filename,
-            categoryId: 1, // TO DO modificar DB para que tenga valor default customer
-            isBanned: 0, // TO DO modificar DB para que tenga valor default 0
         });
 
         res.redirect("/auth/login");

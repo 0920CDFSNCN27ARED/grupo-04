@@ -41,8 +41,8 @@ const indexController = {
         const users = await User.findAll({
             include: [
                 User.CATEGORY_ALIAS,
-                // User.PRODUCTS_ALIAS,
-                // User.ORDERS_LIST_ALIAS,
+                User.PRODUCTS_ALIAS,
+                User.ORDERS_LIST_ALIAS,
             ],
         });
         res.send(users);

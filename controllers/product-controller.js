@@ -16,7 +16,6 @@ const productController = {
             description: req.body.description,
             image: req.file.filename,
             stock: req.body.stock,
-            isBanned: 0, // TODO poner valor default 0 en SQL
             categoryId: req.body.categoryId,
             userId: res.locals.user.id,
         });
