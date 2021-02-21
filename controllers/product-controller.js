@@ -1,14 +1,7 @@
-const toThousand = require("../utils/toThousand");
-const { render } = require("ejs");
+// const toThousand = require("../utils/toThousand");
+// const { render } = require("ejs");
 
-const getFromDB = require("../utils/getFromDB");
-const getOneFromDB = require("../utils/getOneFromDB");
-const getLastId = require("../utils/getLastId");
-const saveInDB = require("../utils/saveInDB");
-const editInDB = require("../utils/editInDB");
-const deleteFromDB = require("../utils/deleteFromDB");
-
-const { Product, User } = require("../database/models");
+const { Product } = require("../database/models");
 
 const productController = {
     showCreate: (req, res) => {
@@ -17,7 +10,7 @@ const productController = {
     create: async (req, res, next) => {
         // necesito next??
 
-        Product.create({
+        const result = await Product.create({
             name: req.body.name,
             price: Number(req.body.price),
             description: req.body.description,
@@ -28,14 +21,14 @@ const productController = {
             userId: res.locals.user.id,
         });
 
-        res.redirect("/");
+        const product = result.toJSON();
+        const productId = product.id;
 
-        // TODO obtener el ID del registro creado para mandarlo a la ruta
-        // https://github.com/sequelize/sequelize/issues/4914
-        // res.redirect("product/" + newProductId); // esto es una ruta
+        res.redirect("/product/" + productId);
     },
     showDetail: async (req, res) => {
         const resultProduct = await Product.findOne({
+            include: [Product.USER_ALIAS],
             where: {
                 id: Number(req.params.id),
             },
@@ -47,17 +40,8 @@ const productController = {
 
         const product = resultProduct.toJSON();
 
-        const resultUser = await User.findOne({
-            where: {
-                id: product.UserId,
-            },
-        });
-
-        const user = resultUser.toJSON();
-
         res.render("product/productDetail", {
             product,
-            user,
         });
     },
     showEdit: async (req, res) => {
@@ -111,25 +95,44 @@ const productController = {
 
         return res.redirect("/product/" + req.params.id);
     },
-    delete: (req, res) => {
-        const deleted = deleteFromDB(req.body.id, "productsDataBase");
-
-        if (!deleted) {
-            res.render("product/productNotDeleted");
-        } else {
-            res.render("product/productDeleted"); // es una vista, sin barra al principio
-        }
-    },
-    showCart: (req, res) => {
-        const products = getFromDB("productsDataBase"); // TO DO que almacene con session si hay cosas o no. Si no tiene cosas mostrar el carrito vacío
-
-        const addedToCartProduct = products.find((product) => {
-            return product.id == req.params.id;
+    delete: async (req, res) => {
+        const deleted = await Product.destroy({
+            where: {
+                id: req.body.id,
+            },
         });
 
+        // TODO redirigir a una vista de verificación SI/NO para borrar
+        switch (deleted) {
+            case 0:
+                res.render("product/productNotDeleted");
+                break;
+            case 1:
+                res.render("product/productDeleted"); // es una vista, sin barra al principio
+                break;
+            default:
+                res.status(404).render("not-found");
+                break;
+        }
+    },
+    showCart: async (req, res) => {
+        // TO DO que almacene con session si hay cosas o no. Si no tiene cosas mostrar el carrito vacío
+
+        const resultProduct = await Product.findOne({
+            include: [Product.USER_ALIAS],
+            where: {
+                id: req.params.id,
+            },
+        });
+
+        const product = resultProduct.toJSON();
+
+        if (product.user.id == res.locals.user.id) {
+            return res.render("product/product-own");
+        }
+
         res.render("product/productCart", {
-            addedToCartProduct: addedToCartProduct,
-            // toThousand,
+            product,
         });
     },
 };

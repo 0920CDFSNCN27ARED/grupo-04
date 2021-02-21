@@ -31,7 +31,7 @@
                         class="cart-product-image-container bg-light padding-10"
                     >
                         <img
-                            src="/images/products/<%= addedToCartProduct.image %>"
+                            src="/images/products/<%= product.image %>"
                             alt=""
                             class="cart-product-image width-100"
                         />
@@ -41,7 +41,7 @@
                         <p
                             class="cart-product-name font-weight-400 text-align-center font-size-0-8"
                         >
-                            <%= addedToCartProduct.name %>
+                            <%= product.name %>
                         </p>
 
                         <div
@@ -53,7 +53,7 @@
                                 </select>
                             </form>
                             <p class="cart-price font-weight-600 font-size-0-8">
-                                &#36;<%= toThousand(addedToCartProduct.price) %>
+                                &#36;<%= toThousand(product.price) %>
                             </p>
                         </div>
                     </div>
@@ -77,7 +77,13 @@
             <div
                 class="cart-seller-container font-size-0-8 padding-x-15 width-100 bg-warning"
             >
-                <p>Tu vendedor es: <b>Juana Perez</b></p>
+                <p>
+                    Tu vendedor es:
+                    <b
+                        ><%= `${product.user.firstName}
+                        ${product.user.lastName}` %></b
+                    >
+                </p>
                 <p>
                     Una vez realizado el pago, el vendedor se pondrá en contacto
                     con vos para coordinar la entrega

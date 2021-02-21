@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include("../partials/head-base", {title: "Producto no disponible"})
+        %>
+
+        <link rel="stylesheet" href="/css/index.css" />
+        <link rel="stylesheet" href="/css/not-found.css" />
+        <link
+            rel="stylesheet"
+            href="/css/not-found-lg.css"
+            media="(min-width: 769px)"
+        />
+        <link
+            rel="stylesheet"
+            href="/css/index-lg.css"
+            media="(min-width: 769px)"
+        />
+        <link
+            rel="stylesheet"
+            href="/css/footer-lg.css"
+            media="(min-width: 769px)"
+        />
+    </head>
+
+    <body class="bg-muted">
+        <header><%- include("../partials/header") %></header>
+        <main>
+            <div
+                class="display-flex align-items-center flex-direction-column justify-content-center not-found-container"
+            >
+                <i
+                    class="fas fa-exclamation-triangle text-align-center font-size-1-6 text-secondary"
+                ></i>
+                <p class="text-align-center padding-10">
+                    No podés comprar un producto propio
+                </p>
+                <button
+                    onclick="location.href='/'"
+                    class="button bg-primary text-light cursor-pointer back-to-index-button back-to-index-button-lg"
+                >
+                    Volver al inicio
+                </button>
+            </div>
+        </main>
+
+        <footer class="bg-dark text-light text-align-center">
+            <%- include("../partials/footer") %>
+        </footer>
+    </body>
+</html>

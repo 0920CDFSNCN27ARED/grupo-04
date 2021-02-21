@@ -15,33 +15,36 @@
         <ul class="nav-list">
             <% if(user){%>
             <li class="nav-item">
+                <a class="nav-anchor" href="#"
+                    ><i class="fas fa-user"></i><%= ` ${user.firstName}
+                    ${user.lastName}` %>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-anchor" href="/product/productCart/1"
-                    >Mis compras <i class="fas fa-shopping-basket"></i
+                    ><i class="fas fa-shopping-basket"></i> Mis compras</i
                 ></a>
             </li>
             <li class="nav-item">
-                <a class="nav-anchor" href="/product/create">Vender</a>
+                <a class="nav-anchor" href="/product/create"><i class="fas fa-hand-holding-usd"></i> Vender</a>
             </li>
             <li class="nav-item">
                 <form action="/auth/login?_method=DELETE" method="POST">
-                    <button type="submit" id="logOut">Cerrar Sesión</button>
+                    <button type="submit" id="logOut"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
                 </form>
             </li>
             <% } else { %>
             <li class="nav-item">
                 <a class="nav-anchor" href="/auth/login"
-                    >Ingresar <i class="fas fa-sign-in-alt"></i
-                ></a>
+                    ><i class="fas fa-sign-in-alt"></i
+                > Ingresar</a>
             </li>
             <li class="nav-item">
-                <a class="nav-anchor" href="/auth/register">Registrate</a>
+                <a class="nav-anchor" href="/auth/register"><i class="fas fa-user-edit"></i> Registrate</a>
             </li>
             <% } %>
             <li class="nav-item">
-                <a class="nav-anchor" href="#">Ayuda</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-anchor" href="#">Administración</a>
+                <a class="nav-anchor" href="#"><i class="far fa-question-circle"></i> Ayuda</a>
             </li>
         </ul>
     </nav>

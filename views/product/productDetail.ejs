@@ -108,7 +108,7 @@
                             >
                                 <div class="product-seller-img-container">
                                     <img
-                                        src="/profile_pics/<%= user.avatar %> "
+                                        src="/profile_pics/<%= product.user.avatar %> "
                                         alt=""
                                         class="product-seller-img"
                                     />
@@ -117,8 +117,8 @@
                                     class="product-seller-name-and-stars display-flex flex-direction-column justify-content-center align-items-center"
                                 >
                                     <p class="product-seller-name">
-                                        <%= `${user.firstName} ${user.lastName}`
-                                        %>
+                                        <%= `${product.user.firstName}
+                                        ${product.user.lastName}` %>
                                     </p>
                                     <div class="product-seller-stars">
                                         <i class="fas fa-star"></i
