@@ -10,7 +10,6 @@ module.exports = (sequelize, DataTypes) => {
         name: DataTypes.STRING(50),
         price: DataTypes.INTEGER.UNSIGNED,
         description: DataTypes.STRING(1500),
-        city: DataTypes.STRING(50),
         image: DataTypes.STRING(50),
         stock: DataTypes.INTEGER.UNSIGNED,
         isBanned: DataTypes.INTEGER.UNSIGNED,

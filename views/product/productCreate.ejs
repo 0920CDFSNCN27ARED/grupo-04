@@ -28,6 +28,17 @@
                         <input type="number" id="price" name="price" />
                     </div>
                     <div class="display-flex flex-direction-column padding-5">
+                        <label for="stock">Stock</label>
+                        <input type="number" id="stock" name="stock" />
+                    </div>
+                    <div class="display-flex flex-direction-column padding-5">
+                        <label for="categoryId">Categoría</label>
+                        <select name="categoryId" id="categoryId">
+                            <!-- TODO recorrer caregorias y poner sin valor la primera opción -->
+                            <option value="1">Elegí una categoría...</option>
+                        </select>
+                    </div>
+                    <div class="display-flex flex-direction-column padding-5">
                         <label for="description">Descripción</label>
                         <textarea
                             name="description"
@@ -35,10 +46,6 @@
                             cols="30"
                             rows="10"
                         ></textarea>
-                    </div>
-                    <div class="display-flex flex-direction-column padding-5">
-                        <label for="location">Tu ubicación</label>
-                        <input type="text" id="location" name="location" />
                     </div>
                     <div
                         class="display-flex flex-direction-column product-create-image-input-container padding-5"

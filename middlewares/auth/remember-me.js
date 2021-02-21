@@ -1,6 +1,6 @@
-const getFromDB = require("../../utils/getFromDB");
+const { User } = require("../../database/models");
 
-function rememberMe(req, res, next) {
+async function rememberMe(req, res, next) {
     const rememberMe = req.cookies.rememberMe;
     const loggedUser = req.session.loggedUserId;
 
@@ -12,11 +12,15 @@ function rememberMe(req, res, next) {
         return next();
     }
 
-    const users = getFromDB("usersDataBase");
-    const userToLogin = users.find((user) => user.id == req.cookies.rememberMe);
+    // const users = getFromDB("usersDataBase");
+    // const userToLogin = users.find((user) => user.id == req.cookies.rememberMe);
+
+    const userToLogin = await User.findOne({
+        where: { id: req.cookies.rememberMe },
+    });
 
     if (userToLogin) {
-        req.session.loggedUserId = userToLogin.id;
+        req.session.loggedUserId = userToLogin.toJSON().id;
     }
     next();
 }

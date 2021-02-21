@@ -19,7 +19,9 @@
     <body class="bg-muted">
         <header><%- include("partials/header") %></header>
 
-        <h1>Hola, <%= user ? user.nombres : "Invitado !!"%></h1>
+        <h1>
+            Hola, <%= user ? `${user.firstName} ${user.lastName}` : "invitado"%>
+        </h1>
 
         <main>
             <div class="form-index-container bg-medium form-index-container-lg">

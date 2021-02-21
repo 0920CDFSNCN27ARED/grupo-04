@@ -8,27 +8,30 @@ const saveInDB = require("../utils/saveInDB");
 const editInDB = require("../utils/editInDB");
 const deleteFromDB = require("../utils/deleteFromDB");
 
+const { Product } = require("../database/models");
+
 const productController = {
     showCreate: (req, res) => {
         res.render("product/productCreate");
     },
-    create: (req, res, next) => {
+    create: async (req, res, next) => {
         // necesito next??
-        const products = getFromDB("productsDataBase");
-
-        const newProductId = getLastId(products);
 
         const newProduct = {
-            id: Number(newProductId),
             name: req.body.name,
             price: Number(req.body.price),
             description: req.body.description,
-            location: req.body.location,
             image: req.file.filename,
+            stock: req.body.stock,
+            isBanned: 0, // TODO poner valor default 0 en SQL
+            categoryId: req.body.categoryId,
+            userId: res.locals.user.id,
         };
 
-        saveInDB(products, newProduct, "productsDataBase");
+        return res.send(newProduct); // TODO crear con sequelize nuevo registro en DB
 
+        // TODO obtener el ID del registro creado para mandarlo a la ruta
+        // https://github.com/sequelize/sequelize/issues/4914
         res.redirect("product/" + newProductId); // esto es una ruta
     },
     showDetail: (req, res) => {

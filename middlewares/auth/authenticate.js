@@ -1,14 +1,12 @@
-const getUsers = require("../../utils/getUsers");
+const { User } = require("../../database/models");
 
-function authenticate(req, res, next) {
+async function authenticate(req, res, next) {
     const id = req.session.loggedUserId;
 
     if (!id) return next();
 
-    const users = getUsers();
-
-    const loggedUser = users.find((user) => {
-        return user.id == id;
+    const loggedUser = await User.findOne({
+        where: { id: req.session.loggedUserId },
     });
 
     if (!loggedUser) {
@@ -16,7 +14,7 @@ function authenticate(req, res, next) {
         return next();
     }
 
-    res.locals.user = loggedUser;
+    res.locals.user = loggedUser.toJSON();
 
     next();
 }
