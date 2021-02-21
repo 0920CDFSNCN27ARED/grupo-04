@@ -8,7 +8,7 @@ const saveInDB = require("../utils/saveInDB");
 const editInDB = require("../utils/editInDB");
 const deleteFromDB = require("../utils/deleteFromDB");
 
-const { Product } = require("../database/models");
+const { Product, User } = require("../database/models");
 
 const productController = {
     showCreate: (req, res) => {
@@ -34,61 +34,82 @@ const productController = {
         // https://github.com/sequelize/sequelize/issues/4914
         // res.redirect("product/" + newProductId); // esto es una ruta
     },
-    showDetail: (req, res) => {
-        const product = getOneFromDB(req.params.id, "productsDataBase");
+    showDetail: async (req, res) => {
+        const resultProduct = await Product.findOne({
+            where: {
+                id: Number(req.params.id),
+            },
+        });
 
-        if (!product) {
+        if (!resultProduct) {
             return res.status(404).render("not-found");
         }
 
-        const users = getFromDB("usersDataBase");
-        const user = users.find((user) => user.id == product.idUsuario);
-        const userImage = user.avatar;
+        const product = resultProduct.toJSON();
+
+        const resultUser = await User.findOne({
+            where: {
+                id: product.UserId,
+            },
+        });
+
+        const user = resultUser.toJSON();
 
         res.render("product/productDetail", {
             product,
-            // toThousand,
-            userImage,
+            user,
         });
     },
-    showEdit: (req, res) => {
-        const products = getFromDB("productsDataBase");
+    showEdit: async (req, res) => {
+        const productResult = await Product.findOne({
+            where: {
+                id: req.params.id,
+            },
+        });
 
-        const productToEdit = products.find(
-            (product) => product.id == req.params.id
-        );
-
-        if (!productToEdit) {
+        if (!productResult) {
             return res.status(404).render("not-found");
         }
 
-        res.render("product/productEdit", { productToEdit: productToEdit });
+        const product = productResult.toJSON();
+
+        res.render("product/productEdit", { product });
     },
-    edit: (req, res) => {
-        const products = getFromDB("productsDataBase");
-
-        const selectedProduct = products.find((product) => {
-            return product.id == req.body.id;
-        });
-
-        if (!selectedProduct) {
-            return res.status(404).render("not-found");
+    edit: async (req, res) => {
+        if (req.file) {
+            await Product.update(
+                {
+                    name: req.body.name,
+                    price: Number(req.body.price),
+                    description: req.body.description,
+                    image: req.file.filename,
+                    stock: Number(req.body.stock),
+                    categoryId: req.body.categoryId,
+                },
+                {
+                    where: {
+                        id: req.params.id,
+                    },
+                }
+            );
+        } else {
+            await Product.update(
+                {
+                    name: req.body.name,
+                    price: Number(req.body.price),
+                    description: req.body.description,
+                    stock: Number(req.body.stock),
+                    categoryId: req.body.categoryId,
+                },
+                {
+                    where: {
+                        id: req.params.id,
+                    },
+                }
+            );
         }
 
-        let filename = req.file ? req.file.filename : selectedProduct.image;
-
-        const editedProduct = {
-            id: Number(req.body.id),
-            name: req.body.name,
-            price: Number(req.body.price),
-            description: req.body.description,
-            location: req.body.location,
-            image: filename,
-        };
-
-        editInDB(products, selectedProduct, editedProduct, "productsDataBase");
-
-        res.redirect("/product/" + editedProduct.id);
+        return res.redirect("/product/" + req.params.id);
     },
     delete: (req, res) => {
         const deleted = deleteFromDB(req.body.id, "productsDataBase");

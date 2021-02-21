@@ -102,8 +102,7 @@
                 class="featured-products display-flex justify-content-center width-100 featured-products-lg"
             >
                 <% products.forEach(product => { %> <%-
-                include("./product/partials/product-card", {product}) %> <% });
-                %>
+                include("./partials/product-card", {product}) %> <% }); %>
             </div>
             <div class="slider">
                 <ul>

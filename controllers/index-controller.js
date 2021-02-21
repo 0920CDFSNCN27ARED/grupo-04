@@ -12,7 +12,7 @@ const { Op } = require("sequelize");
 
 const indexController = {
     show: async (req, res) => {
-        const products = await Product.findAll();
+        const products = await Product.findAll(); // TODO paginación con ORDER y LIMMIT
 
         res.render("index", {
             products,
@@ -41,8 +41,8 @@ const indexController = {
         const users = await User.findAll({
             include: [
                 User.CATEGORY_ALIAS,
-                User.PRODUCTS_ALIAS,
-                User.ORDERS_LIST_ALIAS,
+                // User.PRODUCTS_ALIAS,
+                // User.ORDERS_LIST_ALIAS,
             ],
         });
         res.send(users);

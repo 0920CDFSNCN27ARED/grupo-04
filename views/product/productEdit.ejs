@@ -14,25 +14,18 @@
                 class="create-product-form-container create-product-form-container-lg"
             >
                 <form
-                    action="/product?_method=PUT"
+                    action="/product/<%= product.id %>/edit?_method=PUT"
                     method="POST"
                     enctype="multipart/form-data"
                     class="create-product-form padding-10"
                 >
-                    <input
-                        type="numer"
-                        id="id"
-                        name="id"
-                        value="<%= productToEdit.id %>"
-                        hidden
-                    />
                     <div class="display-flex flex-direction-column padding-5">
                         <label for="name">Nombre</label>
                         <input
                             type="text"
                             id="name"
                             name="name"
-                            value="<%= productToEdit.name %>"
+                            value="<%= product.name %>"
                         />
                     </div>
                     <div class="display-flex flex-direction-column padding-5">
@@ -41,8 +34,25 @@
                             type="number"
                             id="price"
                             name="price"
-                            value="<%= productToEdit.price %>"
+                            value="<%= product.price %>"
                         />
+                    </div>
+                    <div class="display-flex flex-direction-column padding-5">
+                        <label for="stock">Stock</label>
+                        <input
+                            type="number"
+                            id="stock"
+                            name="stock"
+                            value="<%= product.stock %>"
+                        />
+                    </div>
+                    <div class="display-flex flex-direction-column padding-5">
+                        <label for="categoryId">Categoría</label>
+                        <select name="categoryId" id="categoryId">
+                            <!-- TODO recorrer caregorias y poner sin valor la primera opción -->
+                            <!-- TODO poner selected si coincide con categoria -->
+                            <option value="1">Elegí una categoría...</option>
+                        </select>
                     </div>
                     <div class="display-flex flex-direction-column padding-5">
                         <label for="description">Descripción</label>
@@ -52,17 +62,8 @@
                             cols="30"
                             rows="10"
                         >
-<%= productToEdit.description %></textarea
+<%= product.description %></textarea
                         >
-                    </div>
-                    <div class="display-flex flex-direction-column padding-5">
-                        <label for="location">Tu ubicación</label>
-                        <input
-                            type="text"
-                            id="location"
-                            name="location"
-                            value="<%= productToEdit.location %>"
-                        />
                     </div>
                     <div
                         class="display-flex flex-direction-column product-create-image-input-container padding-5"
@@ -72,7 +73,7 @@
                         <label for="foto-actual">Foto actual</label>
                         <div>
                             <img
-                                src="/images/products/<%= productToEdit.image %> "
+                                src="/images/products/<%= product.image %> "
                                 alt=""
                                 class="width-100"
                             />

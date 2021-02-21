@@ -52,7 +52,7 @@ module.exports = {
             apartment: req.body.apartment,
             phoneNumber: req.body.phoneNumber,
             avatar: req.file.filename,
-            userCategoryId: 2, // TO DO modificar DB para que tenga valor default customer
+            categoryId: 1, // TO DO modificar DB para que tenga valor default customer
             isBanned: 0, // TO DO modificar DB para que tenga valor default 0
         });
 

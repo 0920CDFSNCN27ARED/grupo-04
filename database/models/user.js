@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
         apartment: DataTypes.STRING(3),
         phoneNumber: DataTypes.STRING(20),
         avatar: DataTypes.STRING(50),
-        userCategoryId: DataTypes.INTEGER.UNSIGNED,
+        categoryId: DataTypes.INTEGER.UNSIGNED,
         isBanned: DataTypes.INTEGER.UNSIGNED,
     };
 
@@ -29,14 +29,14 @@ module.exports = (sequelize, DataTypes) => {
 
     const User = sequelize.define(alias, cols, config);
 
-    User.CATEGORY_ALIAS = "userCategory";
+    User.CATEGORY_ALIAS = "category";
     User.PRODUCTS_ALIAS = "products";
     User.ORDERS_LIST_ALIAS = "orders";
 
     User.associate = function (models) {
         User.belongsTo(models.UserCategory, {
             as: User.CATEGORY_ALIAS,
-            foreingKey: "userCategoryId",
+            foreingKey: "categoryId",
         });
         User.hasMany(models.Product, {
             as: User.PRODUCTS_ALIAS,
