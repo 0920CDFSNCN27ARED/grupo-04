@@ -3,6 +3,9 @@ const { User } = require("../database/models");
 
 module.exports = {
     showLogin: (req, res) => {
+        if (req.session.loggedUserId) {
+            return res.redirect("/");
+        }
         res.render("login");
     },
     login: async (req, res) => {
@@ -27,6 +30,9 @@ module.exports = {
         return res.redirect("/");
     },
     showRegister: (req, res) => {
+        if (req.session.loggedUserId) {
+            return res.redirect("/");
+        }
         res.render("register");
     },
     register: async (req, res) => {
