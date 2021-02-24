@@ -175,6 +175,34 @@
                     <div
                         class="product-actions-container display-flex flex-direction-column align-items-center justify-content-center product-actions-container-md"
                     >
+                        <% if (user.id == product.userId) { %>
+                        <div
+                            class="product-edit-container width-50 product-action-md"
+                        >
+                            <form
+                                action="/product/<%= product.id %>/edit"
+                                class="product-edit-form margin-x-5"
+                                method="GET"
+                            >
+                                <button class="button bg-warning text-light">
+                                    Editar
+                                </button>
+                            </form>
+                        </div>
+                        <div
+                            class="product-delete-container width-50 product-action-md"
+                        >
+                            <form
+                                action="/product/<%= product.id %>/delete?_method=DELETE"
+                                method="POST"
+                                class="product-delete-form margin-x-5"
+                            >
+                                <button class="button bg-danger text-light">
+                                    Borrar
+                                </button>
+                            </form>
+                        </div>
+                        <% } else {%>
                         <div
                             class="product-buy-container width-50 product-action-md"
                         >
@@ -207,39 +235,7 @@
                                 </button>
                             </form>
                         </div>
-
-                        <div
-                            class="product-edit-container width-50 product-action-md"
-                        >
-                            <form
-                                action="/product/<%= product.id %>/edit"
-                                class="product-edit-form margin-x-5"
-                                method="GET"
-                            >
-                                <button class="button bg-warning text-light">
-                                    Editar
-                                </button>
-                            </form>
-                        </div>
-                        <div
-                            class="product-delete-container width-50 product-action-md"
-                        >
-                            <form
-                                action="/product/?_method=DELETE"
-                                method="POST"
-                                class="product-delete-form margin-x-5"
-                            >
-                                <input
-                                    type="number"
-                                    name="id"
-                                    value="<%= product.id %>"
-                                    hidden
-                                />
-                                <button class="button bg-danger text-light">
-                                    Borrar
-                                </button>
-                            </form>
-                        </div>
+                        <% } %>
                     </div>
                 </div>
             </div>

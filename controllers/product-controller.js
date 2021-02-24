@@ -26,11 +26,8 @@ const productController = {
         res.redirect("/product/" + productId);
     },
     showDetail: async (req, res) => {
-        const resultProduct = await Product.findOne({
+        const resultProduct = await Product.findByPk(req.params.id, {
             include: [Product.USER_ALIAS],
-            where: {
-                id: Number(req.params.id),
-            },
         });
 
         if (!resultProduct) {
@@ -44,17 +41,18 @@ const productController = {
         });
     },
     showEdit: async (req, res) => {
-        const productResult = await Product.findOne({
-            where: {
-                id: req.params.id,
-            },
-        });
+        const user = res.locals.user;
+        const productResult = await Product.findByPk(req.params.id);
 
         if (!productResult) {
             return res.status(404).render("not-found");
         }
 
         const product = productResult.toJSON();
+
+        if (user.id != product.userId) {
+            return res.redirect("/");
+        }
 
         res.render("product/productEdit", { product });
     },
@@ -95,9 +93,16 @@ const productController = {
         return res.redirect("/product/" + req.params.id);
     },
     delete: async (req, res) => {
+        const product = await Product.findByPk(req.params.id);
+        const user = res.locals.user;
+
+        if (user.id != product.userId) {
+            return res.redirect("/");
+        }
+
         const deleted = await Product.destroy({
             where: {
-                id: req.body.id,
+                id: req.params.id,
             },
         });
 

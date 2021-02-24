@@ -32,7 +32,7 @@ router.get(
     productController.showEdit
 );
 router.put("/:id/edit", upload.single("image"), productController.edit);
+router.delete("/:id/delete", productController.delete);
 router.post("/", upload.single("image"), productController.create);
-router.delete("/", productController.delete);
 
 module.exports = router;
