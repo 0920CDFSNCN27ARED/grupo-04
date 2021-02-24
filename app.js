@@ -9,6 +9,8 @@ const cookieParser = require("cookie-parser");
 const indexRouter = require("./routes/index");
 const registerRouter = require("./routes/auth-router");
 const productRouter = require("./routes/product");
+const apiProductRouter = require("./routes/api/product");
+
 const logMiddleware = require("./middlewares/logMiddleware");
 const authRouter = require("./routes/auth-router");
 const authenticate = require("./middlewares/auth/authenticate");
@@ -43,10 +45,9 @@ app.use(authenticate);
 
 // ROUTES
 app.use("/", indexRouter);
-
 app.use("/product", productRouter);
-
 app.use("/auth", authRouter);
+app.use("/api/product", apiProductRouter);
 
 app.use((req, res, next) => {
     res.status(404).render("not-found");
