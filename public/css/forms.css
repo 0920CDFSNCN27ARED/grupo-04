@@ -130,7 +130,7 @@ textarea {
     margin: 0;
     padding: 0;
     font-weight: bold;
-    display: block;
+    /* display: block; */
 }
 
 .login-box input {
@@ -183,23 +183,16 @@ textarea {
 ++++++++++++
 
 */
+
 .register-container {
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .register {
     width: 80vh;
     background-color: rgba(49, 50, 134, 0.253);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
-    background: rgba (0, 0, 0, -8);
-    color: black;
-    /* top: 50%;
-    left: 50%; */
-    /* position: absolute; */
-    /* transform: translate(-50%, -50%); */
-    box-sizing: border-box;
     padding: 20px 60px 10px;
     border-radius: 10px;
     margin: 20px;
@@ -210,31 +203,6 @@ textarea {
     padding: 0 0 20px;
     text-align: center;
     font-size: 25px;
-    color: black;
-}
-
-.controls {
-    width: 100%;
-    background: #24303c;
-    padding: 10px;
-    border-radius: 4px;
-    margin-bottom: 16px;
-    border: 1px solid #1f53c5;
-    font-family: "calibri";
-    font-size: 18px;
-    color: white;
-}
-
-.form-register {
-    width: 400px;
-    background: rgba(49, 50, 134, 0.253);
-    padding: 30px;
-    margin: auto;
-    margin-top: 100px;
-    border-radius: 4px;
-    font-family: "calibri";
-    color: white;
-    box-shadow: 7px 13px 37px #000;
 }
 
 .form-register p {
@@ -252,16 +220,6 @@ textarea {
 .form-register a:hover {
     color: white;
     text-decoration: underline;
-}
-
-.form-register .botons {
-    width: 100%;
-    background: #1f53c5;
-    border: none;
-    padding: 12px;
-    color: white;
-    margin: 16px 0;
-    font-size: 16px;
 }
 
 /* .login-box {
@@ -290,25 +248,12 @@ textarea {
     background-color: rgba(135, 119, 223, 0.842);
 } */
 
-.register label {
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-}
-
-.register input {
+.register-input {
     width: 100%;
-    margin-bottom: 20px;
-}
-
-.register input[type="text"],
-.register input[type="password"],
-.register input[type="email"] {
+    padding: 7px 7px 7px 15px;
     border: none;
     border-bottom: 1px solid #fff;
     background: transparent;
-    outline: none;
-    height: 40px;
     color: black;
     font-size: 16px;
 }
@@ -316,11 +261,10 @@ textarea {
 .register button[type="submit"] {
     border: none;
     outline: none;
-    height: 40px;
-    background: #b80f22;
     color: #fff;
-    font-size: 22px;
-    border-radius: 20px;
+    font-size: 18px;
+    border-radius: 40px;
+    padding: 15px;
 }
 
 .register button[type="submit"]:hover {
@@ -331,13 +275,13 @@ textarea {
 
 .register a {
     text-decoration: none;
-    font-size: 12px;
     line-height: 20px;
     color: black;
+    font-weight: 600;
 }
 
 .register a:hover {
-    color: #fff;
+    color: rgb(73, 73, 73);
 }
 
 /**
@@ -380,8 +324,69 @@ textarea {
 
 /**
 
-+++++++++++++++++++
-+ PRODUCT DETAILS +
-+++++++++++++++++++
++++++++++++++++
++ VALIDATIONS +
++++++++++++++++
 
 */
+
+.input-container {
+    position: relative;
+    height: 80px;
+}
+
+.validation-icon {
+    display: none;
+    width: 50px;
+}
+
+.feedback {
+    display: none;
+    font-size: 12px;
+    margin-top: -22px;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    color: #b64242;
+}
+
+.is-valid {
+    border-style: solid;
+    border-bottom: solid;
+    border-color: transparent;
+    border-width: 0.1px;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 9px #12b11f;
+    margin-bottom: 10px;
+}
+
+.is-invalid {
+    border-style: solid;
+    border-bottom: solid;
+    border-color: transparent;
+    border-width: 0.1px;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 9px #b64242;
+    margin-bottom: 10px;
+}
+
+.is-invalid-icon {
+    display: block;
+    position: relative;
+    top: -36px;
+    left: -30px;
+    color: #b64242;
+    font-size: 20px;
+}
+
+.is-valid-icon {
+    display: block;
+    position: relative;
+    top: -36px;
+    left: -30px;
+    color: #12b11f;
+    font-size: 20px;
+}
+
+.has-message {
+    display: block;
+}

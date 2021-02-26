@@ -2,144 +2,217 @@
 <html>
     <head>
         <%- include("partials/head-base", {title: "Registrate en Desapego"}) %>
+        <script type="text/javascript" src="/js/validator.min.js"></script>
+        <script src="/js/validations.js"></script>
     </head>
-
     <body>
         <header><%- include("partials/header-simple") %></header>
-        <div class="register-container">
+        <div class="register-container bg-muted">
             <div class="register">
                 <h1>Formulario de Registración</h1>
                 <form
                     action="/auth/register"
                     method="POST"
                     enctype="multipart/form-data"
+                    id="registerForm"
                 >
-                    <label for="firstName" class="display-none">Nombre</label>
-                    <input
-                        class="controls"
-                        type="text"
-                        name="firstName"
-                        id="firstName"
-                        placeholder="Nombre"
-                    />
-                    <label for="lastName" class="display-none">Apellido</label>
-                    <input
-                        class="controls"
-                        type="text"
-                        name="lastName"
-                        id="lastName"
-                        placeholder="Apellido"
-                    />
-                    <label for="email" class="display-none"
-                        >Correo Electrónico</label
-                    >
-                    <input
-                        class="controls"
-                        type="email"
-                        name="email"
-                        id="email"
-                        placeholder="Correo Electrónico"
-                    />
-                    <label for="password" class="display-none"
-                        >Contraseña</label
-                    >
-                    <input
-                        class="controls"
-                        type="password"
-                        name="password"
-                        id="password"
-                        placeholder="Contraseña"
-                    />
-                    <label for="passwordConfirmation" class="display-none"
-                        >Confirmación de Contraseña</label
-                    >
-                    <input
-                        class="controls"
-                        type="password"
-                        name="passwordConfirmation"
-                        id="passwordConfirmation"
-                        placeholder="Confirmar contraseña"
-                    />
+                    <div class="input-container">
+                        <label for="firstName" class="display-none"
+                            >Nombre</label
+                        >
+                        <input
+                            class="register-input validate"
+                            type="text"
+                            name="firstName"
+                            id="firstName"
+                            placeholder="Nombre"
+                        />
+                        <i class="fas validation-icon" id="firstNameIcon"></i>
+                        <div class="feedback" id="firstNameFeedback"></div>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="lastName" class="display-none"
+                            >Apellido</label
+                        >
+                        <input
+                            class="register-input validate"
+                            type="text"
+                            name="lastName"
+                            id="lastName"
+                            placeholder="Apellido"
+                        />
+                        <i class="fas validation-icon" id="lastNameIcon"></i>
+                        <div class="feedback" id="lastNameFeedback"></div>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="email" class="display-none"
+                            >Correo Electrónico</label
+                        >
+                        <!-- TODO volver a poner input type email -->
+                        <input
+                            class="register-input validate"
+                            type="text"
+                            name="email"
+                            id="email"
+                            placeholder="Correo Electrónico"
+                        />
+                        <i class="fas validation-icon" id="emailIcon"></i>
+                        <div class="feedback" id="emailFeedback"></div>
+                    </div>
+                    <div class="input-container">
+                        <label for="password" class="display-none"
+                            >Contraseña</label
+                        >
+                        <input
+                            class="register-input validate"
+                            type="password"
+                            name="password"
+                            id="password"
+                            placeholder="Contraseña"
+                        />
+                        <i class="fas validation-icon" id="passwordIcon"></i>
+                        <div class="feedback" id="passwordFeedback"></div>
+                    </div>
+                    <div class="input-container">
+                        <label for="passwordConfirmation" class="display-none"
+                            >Confirmación de Contraseña</label
+                        >
+                        <input
+                            class="register-input validate"
+                            type="password"
+                            name="passwordConfirmation"
+                            id="passwordConfirmation"
+                            placeholder="Confirmar contraseña"
+                        />
+                        <i
+                            class="fas validation-icon"
+                            id="passwordConfirmationIcon"
+                        ></i>
+                        <div
+                            class="feedback"
+                            id="passwordConfirmationFeedback"
+                        ></div>
+                    </div>
+
                     <h4>Dirección</h4>
-                    <label for="city" class="display-none">Ciudad</label>
-                    <input
-                        class="controls"
-                        type="text"
-                        name="city"
-                        id="city"
-                        placeholder="Ciudad"
-                    />
-                    <label for="state" class="display-none">Provincia</label>
-                    <input
-                        class="controls"
-                        type="text"
-                        name="state"
-                        id="state"
-                        placeholder="Provincia"
-                    />
-                    <label for="street" class="display-none">Calle</label>
-                    <input
-                        class="controls"
-                        type="text"
-                        name="street"
-                        id="street"
-                        placeholder="Calle"
-                    />
-                    <label for="houseNumber" class="display-none">Número</label>
-                    <input
-                        class="controls"
-                        type="text"
-                        name="houseNumber"
-                        id="houseNumber"
-                        placeholder="Número"
-                    />
-                    <label for="floor" class="display-none">Piso</label>
-                    <input
-                        class="controls"
-                        type="text"
-                        name="floor"
-                        id="floor"
-                        placeholder="Piso"
-                    />
-                    <label for="apartment" class="display-none"
-                        >Departamento</label
-                    >
-                    <input
-                        class="controls"
-                        type="text"
-                        name="apartment"
-                        id="apartment"
-                        placeholder="Departamento"
-                    />
-                    <label for="phoneNumber" class="display-none"
-                        >Teléfono</label
-                    >
-                    <input
-                        class="controls"
-                        type="text"
-                        name="phoneNumber"
-                        id="phoneNumber"
-                        placeholder="Teléfono"
-                    />
+                    <div class="input-container">
+                        <label for="city" class="display-none">Ciudad</label>
+                        <input
+                            class="register-input validate"
+                            type="text"
+                            name="city"
+                            id="city"
+                            placeholder="Ciudad"
+                        />
+                        <i class="fas validation-icon" id="cityIcon"></i>
+                        <div class="feedback" id="cityFeedback"></div>
+                    </div>
+                    <div class="input-container">
+                        <label for="state" class="display-none"
+                            >Provincia</label
+                        >
+                        <input
+                            class="register-input validate"
+                            type="text"
+                            name="state"
+                            id="state"
+                            placeholder="Provincia"
+                        />
+                        <i class="fas validation-icon" id="stateIcon"></i>
+                        <div class="feedback" id="stateFeedback"></div>
+                    </div>
+                    <div class="input-container">
+                        <label for="street" class="display-none">Calle</label>
+                        <input
+                            class="register-input validate"
+                            type="text"
+                            name="street"
+                            id="street"
+                            placeholder="Calle"
+                        />
+                        <i class="fas validation-icon" id="streetIcon"></i>
+                        <div class="feedback" id="streetFeedback"></div>
+                    </div>
+                    <div class="input-container">
+                        <label for="houseNumber" class="display-none"
+                            >Número</label
+                        >
+                        <input
+                            class="register-input validate"
+                            type="text"
+                            name="houseNumber"
+                            id="houseNumber"
+                            placeholder="Número"
+                        />
+                        <i class="fas validation-icon" id="houseNumberIcon"></i>
+                        <div class="feedback" id="houseNumberFeedback"></div>
+                    </div>
+                    <div class="input-container">
+                        <label for="floor" class="display-none">Piso</label>
+                        <input
+                            class="register-input validate"
+                            type="text"
+                            name="floor"
+                            id="floor"
+                            placeholder="Piso"
+                        />
+                        <i class="fas validation-icon" id="floorIcon"></i>
+                        <div class="feedback" id="floorFeedback"></div>
+                    </div>
+                    <div class="input-container">
+                        <label for="apartment" class="display-none"
+                            >Departamento</label
+                        >
+                        <input
+                            class="register-input validate"
+                            type="text"
+                            name="apartment"
+                            id="apartment"
+                            placeholder="Departamento"
+                        />
+                        <i class="fas validation-icon" id="apartmentIcon"></i>
+                        <div class="feedback" id="apartmentFeedback"></div>
+                    </div>
+                    <div class="input-container">
+                        <label for="phoneNumber" class="display-none"
+                            >Teléfono</label
+                        >
+                        <input
+                            class="register-input validate"
+                            type="text"
+                            name="phoneNumber"
+                            id="phoneNumber"
+                            placeholder="Teléfono"
+                        />
+                        <i class="fas validation-icon" id="phoneNumberIcon"></i>
+                        <div class="feedback" id="phoneNumberFeedback"></div>
+                    </div>
                     <h4>Elegí tu foto de usuario</h4>
                     <input type="file" name="avatar" />
                     <label for="termsAndConditions" class="display-none"
                         >Términos y condiciones</label
                     >
-                    <div class="display-flex">
-                        <p class="">
-                            Estoy de acuerdo con los
-                            <a href="#">Terminos y Condiciones</a>
-                        </p>
+                    <div class="display-flex align-items-center">
                         <input
                             type="checkbox"
                             name="termsAndConditions"
                             id="termsAndConditions"
                             class="display-block"
-                            required
                         />
+                        <p class="">
+                            Estoy de acuerdo con los
+                            <a href="#">Términos y Condiciones</a>.
+                        </p>
+                        <div
+                            class="feedback"
+                            id="termsAndConditionsFeedback"
+                        ></div>
                     </div>
-                    <button type="submit">Registrarme</button>
+                    <button type="submit" class="bg-success">
+                        Registrarme
+                    </button>
                 </form>
             </div>
         </div>

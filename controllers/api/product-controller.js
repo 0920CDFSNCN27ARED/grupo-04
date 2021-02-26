@@ -2,7 +2,12 @@ const { Product } = require("../../database/models");
 
 const productController = {
     showAll: async (req, res) => {
-        const products = await Product.findAll();
+        const page = req.query.page ? req.query.page : 0;
+        const products = await Product.findAll({
+            offset: page * 10,
+            limit: 10,
+        });
+        const count = await Product.count();
         products.forEach((product) => {
             product.setDataValue(
                 "endpoint",
@@ -13,6 +18,7 @@ const productController = {
             meta: {
                 status: 200,
                 total: products.length,
+                count: count,
                 url: req.originalUrl,
             },
             data: products,
