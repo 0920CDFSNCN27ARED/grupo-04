@@ -4,7 +4,7 @@ window.addEventListener("load", () => {
     const form = document.getElementById("loginForm");
 
     form.addEventListener("submit", (event) => {
-        // event.preventDefault();
+        event.preventDefault();
 
         errors = [];
         clearValidations();
@@ -105,4 +105,8 @@ function checkErrors() {
     }
 
     return false;
+}
+
+function isTrue(value) {
+    return value;
 }
