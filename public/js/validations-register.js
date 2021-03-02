@@ -130,9 +130,9 @@ function clearValidations() {
     for (const validationIcon of validationIcons) {
         validationIcon.classList.remove(
             "fa-exclamation-circle",
-            "fa-check-circle",
             "is-invalid-icon",
-            "invalid-icon"
+            "fa-check-circle",
+            "is-valid-icon"
         );
     }
 }

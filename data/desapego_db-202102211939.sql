@@ -229,7 +229,7 @@ CREATE TABLE `users` (
   `firstName` varchar(40) NOT NULL,
   `lastName` varchar(40) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `password` varchar(40) NOT NULL,
+  `password` varchar(150) NOT NULL,
   `city` varchar(50) NOT NULL,
   `state` varchar(30) NOT NULL,
   `street` varchar(50) NOT NULL,

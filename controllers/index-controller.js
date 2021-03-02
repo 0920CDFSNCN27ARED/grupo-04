@@ -51,6 +51,7 @@ const indexController = {
         const categories = await UserCategory.findAll({
             include: UserCategory.USERS_LIST_ALIAS,
         });
+        console.log(categories);
         res.send(categories);
     },
     products: async (req, res) => {
