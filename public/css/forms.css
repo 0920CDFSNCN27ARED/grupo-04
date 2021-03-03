@@ -86,12 +86,11 @@ textarea {
 
 .login-box {
     width: 320px;
-    height: 420px;
     background-color: rgba(49, 50, 134, 0.253);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
     color: black;
     box-sizing: border-box;
-    padding: 70px 30px;
+    padding: 50px 30px;
     margin-top: 20px;
     border-radius: 10px;
 }
@@ -114,20 +113,16 @@ textarea {
     color: black;
 }
 
-.login-box input {
+.login-input {
     width: 100%;
     margin-bottom: 20px;
-}
-
-.login-box input[type="text"],
-.login-box input[type="password"] {
     border: none;
     border-bottom: 1px solid #fff;
     background: transparent;
     outline: none;
     height: 40px;
     color: black;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .login-box input[type="submit"] {
@@ -155,6 +150,10 @@ textarea {
 
 .login-box a:hover {
     color: #fff;
+}
+
+.remember-me {
+    margin-bottom: 20px;
 }
 
 /**
@@ -323,8 +322,12 @@ textarea {
     box-shadow: 0px 0px 9px #b64242;
     margin-bottom: 10px;
 }
+.is-invalid.login-input,
+.is-valid.login-input {
+    margin-bottom: 36px;
+}
 
-.is-invalid-icon {
+.login- .is-invalid-icon {
     display: block;
     position: relative;
     top: -36px;

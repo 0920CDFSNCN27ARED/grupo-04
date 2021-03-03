@@ -3,6 +3,9 @@
     <head>
         <%- include("partials/head-base", {title: "Login"}) %>
         <script type="text/javascript" src="/js/validator.min.js"></script>
+        <script src="/js/utils/check-errors.js"></script>
+        <script src="/js/utils/clear-validations.js"></script>
+        <script src="/js/utils/validate-input.js"></script>
         <script src="/js/validations-login.js"></script>
     </head>
     <body>
@@ -18,7 +21,7 @@
                 /> -->
                 <h1>Login</h1>
                 <form action="/auth/login" method="POST" id="loginForm">
-                    <div class="">
+                    <div class="login-input-container">
                         <label for="email" class="display-none"
                             >Ingresá tu correo electrónico</label
                         >
@@ -28,12 +31,12 @@
                             name="email"
                             id="email"
                             placeholder="Ingresá tu correo electrónico"
-                            class="validate"
+                            class="login-input validate"
                         />
                         <i class="fas validation-icon" id="emailIcon"></i>
                         <div class="feedback" id="emailFeedback"></div>
                     </div>
-                    <div class="">
+                    <div class="login-input-container">
                         <label for="password" class="display-none"
                             >Ingresá tu contraseña</label
                         >
@@ -42,22 +45,31 @@
                             name="password"
                             id="password"
                             placeholder="Ingresá tu contraseña"
-                            class="validate"
+                            class="login-input validate"
                         />
                         <i class="fas validation-icon" id="passwordIcon"></i>
                         <div class="feedback" id="passwordFeedback"></div>
                     </div>
-                    <div class="display-flex justify-content-center">
+                    <div
+                        class="display-flex justify-content-center remember-me"
+                    >
                         <label for="rememberMe">Recordame</label>
                         <input
                             type="checkbox"
                             name="rememberMe"
                             id="rememberMe"
+                            class=""
                         />
                     </div>
-                    <input type="submit" value="Iniciar Sesión" />
-                    <a href="#">¿Olvidaste tu contraseña?</a><br />
-                    <a href="/auth/register">¿Aún no tenes cuenta?</a>
+                    <div class="">
+                        <input
+                            type="submit"
+                            value="Iniciar Sesión"
+                            class="login-input"
+                        />
+                        <a href="#">¿Olvidaste tu contraseña?</a><br />
+                        <a href="/auth/register">¿Aún no tenes cuenta?</a>
+                    </div>
                 </form>
             </div>
         </div>
