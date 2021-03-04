@@ -1,5 +1,6 @@
 const bcrypt = require("bcrypt");
 const { User } = require("../database/models");
+const { validationResult } = require("express-validator");
 
 module.exports = {
     showLogin: (req, res) => {
@@ -9,14 +10,21 @@ module.exports = {
         res.render("login");
     },
     login: async (req, res) => {
+        const validation = validationResult(req);
+        const errors = validation.errors;
+
+        if (errors.length > 0) {
+            return res.redirect("/auth/login?validation=false");
+        }
+
         const user = await User.findOne({
             where: { email: req.body.email },
         });
 
-        if (!user) return res.redirect("/auth/login");
+        if (!user) return res.redirect("/auth/login?user=false");
 
-        if (!bcrypt.compare(req.body.password, user.password)) {
-            return res.redirect("/auth/login");
+        if (!(await bcrypt.compare(req.body.password, user.password))) {
+            return res.redirect("/auth/login?password=false");
         }
 
         req.session.loggedUserId = user.toJSON().id;
