@@ -3,6 +3,8 @@ const router = express.Router();
 const productController = require("../controllers/product-controller");
 const multer = require("multer");
 const path = require("path");
+const {check} = require("express-validator");
+
 const authenticate = require("../middlewares/auth/authenticate");
 const assertSignedIn = require("../middlewares/auth/assertSignedIn");
 const assertIsAdmin = require("../middlewares/auth/assertIsAdmin");
@@ -33,6 +35,17 @@ router.get(
 );
 router.put("/:id/edit", upload.single("image"), productController.edit);
 router.delete("/:id/delete", productController.delete);
-router.post("/", upload.single("image"), productController.create);
+router.post("/",
+[
+    check("name").isLength({min:1, max: 50}).withMessage("nombre minimo 1, max 50"),
+    check("price").isLength({min:1, max: 50}).withMessage("precio min 1 max 50"),
+    check("price").isNumeric({ no_symbols: true }).withMessage("precio debe ser numero"),
+    check("stock").isNumeric({ no_symbols: true }).withMessage("sotck debe ser numero"),
+    check("stock").isLength({min:1, max: 50}).withMessage("stock min 1 max 50"),
+    check("description").isLength({min:1, max: 1500}).withMessage("descripción min 1 max 1500"),
+    check("categoryId").isLength({min:1, max: 15}).withMessage("descripción min 1 max 15"), //TODO leer el length de categories
+    
+],
+  upload.single("image"), productController.create);
 
 module.exports = router;

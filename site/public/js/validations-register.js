@@ -1,10 +1,12 @@
 let errors = [];
 
 window.addEventListener("load", () => {
-    const form = document.getElementById("registerForm");
 
+    
+    const form = document.getElementById("registerForm");
+    
     form.addEventListener("submit", (event) => {
-        event.preventDefault();
+        // event.preventDefault();
 
         errors = [];
         clearValidations();
@@ -52,8 +54,20 @@ window.addEventListener("load", () => {
         validateInput("password", [
             [
                 validator.isLength,
-                { min: 1 },
-                "La contraseña es un campo requerido.",
+                { min: 8, max:50 },
+                "La contraseña debe contener al menos 8 caracteres y no más de 50.",
+            ],
+            [
+                validator.isStrongPassword,
+                {
+                    minLength: 8,
+                    minLowercase: 1,
+                    minUppercase: 1,
+                    minNumbers: 1,
+                    minSymbols: 1,
+                    returnScore: false,
+                },
+                "Debe contener una minúscula, una mayúscula, un número, un símbolo y un mínimo total de 8 caracteres.",
             ],
         ]);
         validateInput("passwordConfirmation", [
@@ -83,14 +97,14 @@ window.addEventListener("load", () => {
             [
                 validator.isLength,
                 { max: 2 },
-                "El piso no puede tener más de 2 caracteres",
+                "El piso no puede tener más de 2 caracteres.",
             ],
         ]);
         validateInput("apartment", [
             [
                 validator.isLength,
-                { max: 2 },
-                "El departamento no puede tener más de 2 caracteres",
+                { max: 3 },
+                "El departamento no puede tener más de 3 caracteres.",
             ],
         ]);
         validateInput("phoneNumber", [
@@ -112,5 +126,26 @@ window.addEventListener("load", () => {
         if (checkErrors()) {
             event.preventDefault();
         }
+
+        const avatar = document.getElementById("avatar")
+
+        const avatarValue = avatar.value;
+
+        fileValidation(avatarValue);
+        
+        function fileValidation(fileInputValue) {        
+            // Allowing file type 
+            var allowedExtensions =  /(\.jpg|\.jpeg|\.png|\.bmp|\.gif)$/i; 
+              
+            if (!allowedExtensions.exec(fileInputValue)) { 
+                // alert('Invalid file type'); 
+                //TODO mandar mensaje al feedback de imagen
+                fileInputValue = ''; 
+                return false; 
+            }  
+
+            //TODO implementar preview de imagen si está OK
+        } 
+
     });
 });

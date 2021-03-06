@@ -1,14 +1,23 @@
-// const toThousand = require("../utils/toThousand");
-// const { render } = require("ejs");
-
 const { Product } = require("../database/models");
+const {validationResult} = require("express-validator");
 
 const productController = {
     showCreate: (req, res) => {
         res.render("product/productCreate");
     },
-    create: async (req, res, next) => {
-        // necesito next??
+    create: async (req, res) => {
+
+        const validation = validationResult(req); // TODO no valida correctamente
+
+        const errors = validation.errors;
+
+        for (const error of errors) {
+            console.log(error.msg)
+        }
+        
+        if (errors.length > 0) {
+            return res.redirect("/product/create?validation=false");
+        }
 
         const result = await Product.create({
             name: req.body.name,
@@ -23,7 +32,7 @@ const productController = {
         const product = result.toJSON();
         const productId = product.id;
 
-        res.redirect("/product/" + productId);
+        res.redirect("/product/" + productId + "?created=true");
     },
     showDetail: async (req, res) => {
         const resultProduct = await Product.findByPk(req.params.id, {

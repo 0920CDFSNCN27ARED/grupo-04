@@ -13,6 +13,10 @@ module.exports = {
         const validation = validationResult(req);
         const errors = validation.errors;
 
+        // for (const error of errors) {
+        //     console.log(error.msg)
+        // }
+
         if (errors.length > 0) {
             return res.redirect("/auth/login?validation=false");
         }
@@ -44,6 +48,18 @@ module.exports = {
         res.render("register");
     },
     register: async (req, res) => {
+        const validation = validationResult(req); 
+
+        const errors = validation.errors;
+
+        // for (const error of errors) {
+        //     console.log(error.msg)
+        // }
+
+        if (errors.length > 0) {
+            return res.redirect("/auth/register?validation=false");
+        }
+
         const emailAlreadyRegistered = await User.findOne({
             where: { email: req.body.email },
         });
@@ -51,6 +67,12 @@ module.exports = {
         if (emailAlreadyRegistered) return res.redirect("/auth/login");
 
         delete req.body.password_confirm; // TODO implementar validación desde el front y back
+
+        if (req.file) {
+            userAvatar = req.file.filename
+        } else {
+            userAvatar = "no-image.jpg" // TODO crear archivo de imagen por defecto
+        }
 
         await User.create({
             firstName: req.body.firstName,
@@ -64,7 +86,7 @@ module.exports = {
             floor: req.body.floor,
             apartment: req.body.apartment,
             phoneNumber: req.body.phoneNumber,
-            avatar: req.file.filename,
+            avatar: userAvatar,
         });
 
         res.redirect("/auth/login");
