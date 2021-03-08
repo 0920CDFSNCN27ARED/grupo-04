@@ -52,6 +52,8 @@ module.exports = {
 
         const errors = validation.errors;
 
+        // console.log(errors)
+
         // for (const error of errors) {
         //     console.log(error.msg)
         // }

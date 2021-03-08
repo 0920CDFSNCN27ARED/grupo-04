@@ -32,7 +32,9 @@ router.post(
 );
 
 router.get("/register", authController.showRegister);
-router.post("/register", [
+router.post("/register",
+upload.single("avatar"), // TODO validar con multer si es archivo permitido y ¿manejo de error si no hay archivo?
+[
     check("firstName").isLength(
                 {min:1, max: 40 }).withMessage("El nombre es obligatorio y no puede tener más de 40 caracteres."),
     check("lastName").isLength(
@@ -70,7 +72,6 @@ router.post("/register", [
                 {min:1, max:20 }).withMessage("El número de teléfono es requerido y no puede tener más de 20 caracteres."),
     // TO DO hacer un custom validatior para el check de términos y condiciones
 ],
- upload.single("avatar"), // TODO validar con multer si es archivo permitido y ¿manejo de error si no hay archivo?
  authController.register);
 router.delete("/login", authController.logOut);
 

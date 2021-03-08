@@ -11,9 +11,9 @@ const productController = {
 
         const errors = validation.errors;
 
-        for (const error of errors) {
-            console.log(error.msg)
-        }
+        // for (const error of errors) {
+        //     console.log(error.msg)
+        // }
         
         if (errors.length > 0) {
             return res.redirect("/product/create?validation=false");

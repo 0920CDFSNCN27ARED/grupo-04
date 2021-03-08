@@ -33,7 +33,7 @@ app.use(express.static(path.resolve(__dirname, "public")));
 app.use(cookieParser());
 app.use(session({ secret: "secreto !" }));
 app.use(methodOverride("_method"));
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded());
 app.use(express.json());
 app.use(logMiddleware);
 

@@ -36,6 +36,7 @@ router.get(
 router.put("/:id/edit", upload.single("image"), productController.edit);
 router.delete("/:id/delete", productController.delete);
 router.post("/",
+upload.single("image"), productController.create),
 [
     check("name").isLength({min:1, max: 50}).withMessage("nombre minimo 1, max 50"),
     check("price").isLength({min:1, max: 50}).withMessage("precio min 1 max 50"),
@@ -45,7 +46,6 @@ router.post("/",
     check("description").isLength({min:1, max: 1500}).withMessage("descripción min 1 max 1500"),
     check("categoryId").isLength({min:1, max: 15}).withMessage("descripción min 1 max 15"), //TODO leer el length de categories
     
-],
-  upload.single("image"), productController.create);
+];
 
 module.exports = router;
