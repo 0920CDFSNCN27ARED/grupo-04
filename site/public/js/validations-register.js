@@ -127,25 +127,25 @@ window.addEventListener("load", () => {
             event.preventDefault();
         }
 
-        const avatar = document.getElementById("avatar")
+        // const avatar = document.getElementById("avatar")
 
-        const avatarValue = avatar.value;
+        // const avatarValue = avatar.value;
 
-        fileValidation(avatarValue);
+        // fileValidation(avatarValue);
         
-        function fileValidation(fileInputValue) {        
-            // Allowing file type 
-            var allowedExtensions =  /(\.jpg|\.jpeg|\.png|\.bmp|\.gif)$/i; 
+        // function fileValidation(fileInputValue) {        
+        //     // Allowing file type 
+        //     var allowedExtensions =  /(\.jpg|\.jpeg|\.png|\.bmp|\.gif)$/i; 
               
-            if (!allowedExtensions.exec(fileInputValue)) { 
-                // alert('Invalid file type'); 
-                //TODO mandar mensaje al feedback de imagen
-                fileInputValue = ''; 
-                return false; 
-            }  
+        //     if (!allowedExtensions.exec(fileInputValue)) { 
+        //         // alert('Invalid file type'); 
+        //         //TODO mandar mensaje al feedback de imagen
+        //         fileInputValue = ''; 
+        //         return false; 
+        //     }  
 
-            //TODO implementar preview de imagen si está OK
-        } 
+        //     //TODO implementar preview de imagen si está OK
+        // } 
 
     });
 });

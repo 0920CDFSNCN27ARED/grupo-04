@@ -60,10 +60,12 @@ const productController = {
         const product = productResult.toJSON();
 
         if (user.id != product.userId) {
-            return res.redirect("/");
+            return res.redirect("/?not-authorized");
         }
 
-        res.render("product/productEdit", { product });
+        const edit = true;
+
+        res.render("product/productCreate", { product, edit });
     },
     edit: async (req, res) => {
         if (req.file) {

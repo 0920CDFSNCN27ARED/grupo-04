@@ -30,7 +30,6 @@ router.get(
     "/:id/edit",
 
     assertSignedIn,
-    assertIsAdmin,
     productController.showEdit
 );
 router.put("/:id/edit", upload.single("image"), productController.edit);
