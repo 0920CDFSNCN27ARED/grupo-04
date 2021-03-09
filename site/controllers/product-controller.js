@@ -76,7 +76,7 @@ const productController = {
                     description: req.body.description,
                     image: req.file.filename,
                     stock: Number(req.body.stock),
-                    categoryId: req.body.categoryId,
+                    categoryId: Number(req.body.categoryId),
                 },
                 {
                     where: {
@@ -91,7 +91,7 @@ const productController = {
                     price: Number(req.body.price),
                     description: req.body.description,
                     stock: Number(req.body.stock),
-                    categoryId: req.body.categoryId,
+                    categoryId: Number(req.body.categoryId),
                 },
                 {
                     where: {

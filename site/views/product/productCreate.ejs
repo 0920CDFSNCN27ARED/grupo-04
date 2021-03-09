@@ -25,9 +25,9 @@
             >
                 <form
                 <% if (typeof edit != "undefined") { %>
-                 <%=action="/product"%><%= product.id %><%="/edit?_method=PUT"%> 
+                    action="/product/<%= product.id %>/edit?_method=PUT"
                 <% } else { %> 
-                <%= action="/product/" %>
+                    action="/product/"
                 <% } %> 
                     method="POST"
                     enctype="multipart/form-data"
@@ -38,7 +38,7 @@
                         <label for="name">Nombre</label>
                         <input type="text" id="name" name="name" class="validate"
                         <% if (typeof edit != "undefined") { %>
-                        <%= "value=" %> <%= product.name %> 
+                        value="<%= product.name %>"
                         <% } %>
                         />
                         <i class="fas validation-icon" id="nameIcon"></i>
@@ -48,7 +48,7 @@
                         <label for="price">Precio</label>
                         <input type="number" id="price" name="price" class="validate" 
                         <% if (typeof edit != "undefined") { %>
-                        <%= "value=" %> <%= product.price %> 
+                        value="<%= product.price %>"
                         <% } %>
                         />
                         <i class="fas validation-icon" id="priceIcon"></i>
@@ -58,7 +58,7 @@
                         <label for="stock">Stock</label>
                         <input type="number" id="stock" name="stock" class="validate"                         
                         <% if (typeof edit != "undefined") { %>
-                        <%= "value=" %> <%= product.stock %> 
+                        value="<%= product.stock %>"
                         <% } %>
                         />
                         <i class="fas validation-icon" id="stockIcon"></i>
@@ -83,25 +83,33 @@
                             id="description"
                             cols="30"
                             rows="10"
-                        >
-                        <% if (typeof edit !="undefined" ) { %><%= product.description %><% } %>
-                    </textarea>
+                        ><% if (typeof edit !="undefined" ) { %><%= product.description %><% } %></textarea>
                         <i class="fas validation-icon" id="descriptionIcon"></i>
                         <div class="feedback" id="descriptionFeedback"></div>
                     </div>
                     <div
                         class="display-flex flex-direction-column product-create-image-input-container padding-5"
                     >
-                        <label for="image">Foto</label>
+                        <label for="image">Subir una foto</label>
                         <input type="file" name="image" id="image" />
 
                     </div>
+                    <% if (typeof edit !="undefined" ) { %>                    
+                        <div>
+                            <p>Foto actual</p>
+                            <img src="/images/products/<%= product.image %>" alt="">
+                        </div>
+                    <% } %>
                     <div class="display-flex flex-direction-column padding-5">
                         <button
                             class="bg-success text-light font-size-1-1"
                             type="submit"
                         >
-                            Crear producto
+                            <% if (typeof edit !="undefined" ) { %>
+                                Modificar producto
+                            <% } else {%>
+                                Crear producto
+                            <% } %> 
                         </button>
                     </div>
                 </form>
