@@ -5,10 +5,7 @@ async function authenticate(req, res, next) {
 
     if (!id) return next();
 
-    const loggedUser = await User.findOne({
-        // Cambiar a findByPk
-        where: { id: req.session.loggedUserId },
-    });
+    const loggedUser = await User.findByPk(id);
 
     if (!loggedUser) {
         delete req.session.loggedUserId;

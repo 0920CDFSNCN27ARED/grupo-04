@@ -1,7 +1,6 @@
 //REQUIRE
 const express = require("express");
 const path = require("path");
-const fs = require("fs");
 const methodOverride = require("method-override");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
@@ -14,7 +13,6 @@ const apiProductRouter = require("./routes/api/product");
 const logMiddleware = require("./middlewares/logMiddleware");
 const authRouter = require("./routes/auth-router");
 const authenticate = require("./middlewares/auth/authenticate");
-const getProducts = require("./utils/getProducts");
 const rememberMe = require("./middlewares/auth/remember-me");
 const toThousand = require("./utils/toThousand");
 

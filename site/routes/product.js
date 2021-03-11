@@ -5,9 +5,7 @@ const multer = require("multer");
 const path = require("path");
 const {check} = require("express-validator");
 
-const authenticate = require("../middlewares/auth/authenticate");
 const assertSignedIn = require("../middlewares/auth/assertSignedIn");
-const assertIsAdmin = require("../middlewares/auth/assertIsAdmin");
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {

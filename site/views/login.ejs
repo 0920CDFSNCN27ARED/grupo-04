@@ -20,7 +20,11 @@
                     alt="Avatar Image"
                 /> -->
                 <h1>Login</h1>
+                <% if (typeof returnUrl != "undefined") { %>
+                    <form action="/auth/login?returnUrl=<%= returnUrl %>"  method="POST" id="loginForm">
+                <% } else { %>
                 <form action="/auth/login" method="POST" id="loginForm">
+                <% } %> 
                     <div class="login-input-container">
                         <label for="email" class="display-none"
                             >Ingresá tu correo electrónico</label

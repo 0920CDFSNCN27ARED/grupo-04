@@ -7,15 +7,17 @@ module.exports = {
         if (req.session.loggedUserId) {
             return res.redirect("/");
         }
-        res.render("login");
+        
+        const returnUrl = req.query.returnUrl;
+
+        res.render("login", {returnUrl});
     },
-    login: async (req, res) => {
+    login: async (req, res) => {        
+
+        const returnUrl = req.query.returnUrl;
+
         const validation = validationResult(req);
         const errors = validation.errors;
-
-        // for (const error of errors) {
-        //     console.log(error.msg)
-        // }
 
         if (errors.length > 0) {
             return res.redirect("/auth/login?validation=false");
@@ -37,6 +39,10 @@ module.exports = {
             res.cookie("rememberMe", user.toJSON().id, {
                 maxAge: 1000 * 60 * 60,
             });
+        }
+
+        if (returnUrl) {
+            return res.redirect(returnUrl);
         }
 
         return res.redirect("/");
@@ -66,17 +72,17 @@ module.exports = {
             where: { email: req.body.email },
         });
 
-        if (emailAlreadyRegistered) return res.redirect("/auth/login");
+        if (emailAlreadyRegistered) return res.redirect("/auth/login?emailAlreadyRegistered=true");
 
         delete req.body.password_confirm; // TODO implementar validación desde el front y back
 
         if (req.file) {
             userAvatar = req.file.filename
         } else {
-            userAvatar = "no-image.jpg" // TODO crear archivo de imagen por defecto
+            userAvatar = "no-image.png"
         }
 
-        await User.create({
+        const newUser = await User.create({
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             email: req.body.email,
@@ -91,14 +97,13 @@ module.exports = {
             avatar: userAvatar,
         });
 
-        res.redirect("/auth/login");
+        req.session.loggedUserId = newUser.id;        
+
+        res.redirect("/");
     },
     logOut: (req, res) => {
-        // TODO implementar estas mejoras en logOut
-        req.session.loggedUserId = null;
-        //req.session.destroy();
-        res.cookie("rememberMe", null);
-        //res.clearCookie("rememberMe");
+        req.session.destroy();
+        res.clearCookie("rememberMe");
         res.redirect("/");
     },
 };
