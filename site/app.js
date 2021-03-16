@@ -8,7 +8,8 @@ const cookieParser = require("cookie-parser");
 const indexRouter = require("./routes/index");
 const registerRouter = require("./routes/auth-router");
 const productRouter = require("./routes/product");
-const apiProductRouter = require("./routes/api/product");
+const apiProductsRouter = require("./routes/api/products");
+const apiUsersRouter = require("./routes/api/users");
 
 const logMiddleware = require("./middlewares/logMiddleware");
 const authRouter = require("./routes/auth-router");
@@ -40,12 +41,26 @@ app.locals.toThousand = toThousand;
 
 app.use(rememberMe);
 app.use(authenticate);
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method"
+    );
+    res.header(
+        "Access-Control-Allow-Methods",
+        "GET, POST, OPTIONS, PUT, DELETE"
+    );
+    res.header("Allow", "GET, POST, OPTIONS, PUT, DELETE");
+    next();
+});
 
 // ROUTES
 app.use("/", indexRouter);
 app.use("/product", productRouter);
 app.use("/auth", authRouter);
-app.use("/api/product", apiProductRouter);
+app.use("/api/products", apiProductsRouter);
+app.use("/api/users", apiUsersRouter);
 
 app.use((req, res, next) => {
     res.status(404).render("not-found");

@@ -1,4 +1,10 @@
 {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "[ejs]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    }
 }

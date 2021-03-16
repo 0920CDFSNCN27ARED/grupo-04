@@ -1,42 +1,124 @@
-const { Product } = require("../../database/models");
+const { Product, ProductCategory } = require("../../database/models");
 
 const productController = {
-    showAll: async (req, res) => {
+    count: async (req, res) => {
+        const response = await Product.count();
+        const count = {
+            count: response,
+        };
+        res.send(count);
+    },
+    totalPrice: async (req, res) => {
+        const response = await Product.findAll();
+        const totalPriceValue = response.reduce((acc, prod) => {
+            return acc + prod.price;
+        }, 0);
+
+        const totalPrice = {
+            totalPriceValue,
+        };
+
+        res.send(totalPrice);
+    },
+    list: async (req, res) => {
         const page = req.query.page ? req.query.page : 0;
-        const products = await Product.findAll({
+
+        const count = await Product.count();
+
+        const categoriesResponse = await ProductCategory.findAll({
+            include: [ProductCategory.PRODUCTS_LIST_ALIAS],
+        });
+
+        const categoriesResponseJSON = JSON.parse(
+            JSON.stringify(categoriesResponse)
+        );
+
+        let categories = [];
+
+        categoriesResponseJSON.map((category) => {
+            categories.push({
+                name: category.name,
+                products: category.products.length,
+            });
+        });
+
+        const response = await Product.findAll({
             offset: page * 10,
             limit: 10,
         });
-        const count = await Product.count();
-        products.forEach((product) => {
-            product.setDataValue(
-                "endpoint",
-                `${req.originalUrl}/${product.id}`
-            );
+
+        const responseJSON = JSON.parse(JSON.stringify(response));
+
+        let products = [];
+
+        responseJSON.map((product) => {
+            products.push({
+                id: product.id,
+                name: product.name,
+                description: product.description,
+                image: `/images/products/${product.image}`,
+                stock: product.stock,
+                url: `${req.originalUrl}/${product.id}`,
+            });
         });
+
         const apiResponse = {
             meta: {
                 status: 200,
-                total: products.length,
                 count: count,
                 url: req.originalUrl,
             },
-            data: products,
+            data: {
+                products,
+                categories,
+            },
         };
         res.json(apiResponse);
     },
-    showDetail: async (req, res) => {
-        const result = await Product.findOne({
+    detail: async (req, res) => {
+        const response = await Product.findByPk(req.params.id, {
             include: [Product.USER_ALIAS],
-            where: {
-                id: Number(req.params.id),
-            },
         });
 
-        const product = result.toJSON();
-        product.user = product.user.email; // owerwrite sensitive data with email
+        const responseJSON = response.toJSON();
+
+        const product = {
+            id: responseJSON.id,
+            name: responseJSON.name,
+            price: responseJSON.price,
+            description: responseJSON.description,
+            image: `/images/products/${responseJSON.image}`,
+            stock: responseJSON.stock,
+            url: `${req.originalUrl}/${responseJSON.id}`,
+            user: responseJSON.user.email,
+        };
 
         res.json(product);
+    },
+    last: async (req, res) => {
+        const response = await Product.findAll({
+            limit: 1,
+            order: [["createdAt", "DESC"]],
+        });
+
+        const responseJSON = JSON.parse(JSON.stringify(response));
+
+        const url = req.originalUrl;
+
+        responseJSON[0].url = url;
+
+        res.send(responseJSON[0]);
+    },
+    categories: async (req, res) => {
+        const categoriesResponse = await ProductCategory.findAll({
+            include: [ProductCategory.PRODUCTS_LIST_ALIAS],
+        });
+
+        const categoriesResponseJSON = JSON.parse(
+            JSON.stringify(categoriesResponse)
+        );
+
+        res.send(categoriesResponseJSON);
     },
 };
 
