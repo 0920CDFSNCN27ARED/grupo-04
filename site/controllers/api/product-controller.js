@@ -25,24 +25,25 @@ const productController = {
 
         const count = await Product.count();
 
-        const categoriesResponse = await ProductCategory.findAll({
-            include: [ProductCategory.PRODUCTS_LIST_ALIAS],
-        });
+        // const categoriesResponse = await ProductCategory.findAll({
+        //     include: [ProductCategory.PRODUCTS_LIST_ALIAS],
+        // });
 
-        const categoriesResponseJSON = JSON.parse(
-            JSON.stringify(categoriesResponse)
-        );
+        // const categoriesResponseJSON = JSON.parse(
+        //     JSON.stringify(categoriesResponse)
+        // );
 
-        let categories = [];
+        // let categories = [];
 
-        categoriesResponseJSON.map((category) => {
-            categories.push({
-                name: category.name,
-                products: category.products.length,
-            });
-        });
+        // categoriesResponseJSON.map((category) => {
+        //     categories.push({
+        //         name: category.name,
+        //         products: category.products.length,
+        //     });
+        // });
 
         const response = await Product.findAll({
+            include: [Product.CATEGORY_ALIAS],
             offset: page * 10,
             limit: 10,
         });
@@ -57,6 +58,8 @@ const productController = {
                 name: product.name,
                 description: product.description,
                 image: `/images/products/${product.image}`,
+                category: product.category.name,
+                price: product.price,
                 stock: product.stock,
                 url: `${req.originalUrl}/${product.id}`,
             });
@@ -70,7 +73,7 @@ const productController = {
             },
             data: {
                 products,
-                categories,
+                // categories,
             },
         };
         res.json(apiResponse);
