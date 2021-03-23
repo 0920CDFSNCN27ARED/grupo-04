@@ -1,0 +1,6 @@
+<% if (typeof categories !="undefined" ) { categories.forEach((element, i)=> {
+    %>
+    <option value="<%= i+1 %>" <%=typeof product !="undefined" && product.categoryId==(i+1) ? "selected" : "" %> >
+        <%= element %>
+    </option> %>
+    <% }); } %>

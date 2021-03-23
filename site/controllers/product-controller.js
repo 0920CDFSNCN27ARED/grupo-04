@@ -1,12 +1,18 @@
-const { Product } = require("../database/models");
-const {validationResult} = require("express-validator");
+const { Product, ProductCategory } = require("../database/models");
+const { validationResult } = require("express-validator");
 
 const productController = {
-    showCreate: (req, res) => {
-        res.render("product/productCreate");
+    showCreate: async (req, res) => {
+        const response = await ProductCategory.findAll();
+        const categories = [];
+
+        response.map((elem) => {
+            categories.push(elem.name);
+        });
+
+        res.render("product/productCreate", { categories });
     },
     create: async (req, res) => {
-
         const validation = validationResult(req); // TODO no valida correctamente
 
         const errors = validation.errors;
@@ -14,7 +20,7 @@ const productController = {
         // for (const error of errors) {
         //     console.log(error.msg)
         // }
-        
+
         if (errors.length > 0) {
             return res.redirect("/product/create?validation=false");
         }
@@ -65,7 +71,14 @@ const productController = {
 
         const edit = true;
 
-        res.render("product/productCreate", { product, edit });
+        const responseCategories = await ProductCategory.findAll();
+        const categories = [];
+
+        responseCategories.map((elem) => {
+            categories.push(elem.name);
+        });
+
+        res.render("product/productCreate", { product, edit, categories });
     },
     edit: async (req, res) => {
         if (req.file) {
