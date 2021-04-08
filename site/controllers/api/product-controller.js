@@ -21,31 +21,16 @@ const productController = {
         res.send(totalPrice);
     },
     list: async (req, res) => {
-        const page = req.query.page ? req.query.page : 0;
-
         const count = await Product.count();
 
-        // const categoriesResponse = await ProductCategory.findAll({
-        //     include: [ProductCategory.PRODUCTS_LIST_ALIAS],
-        // });
-
-        // const categoriesResponseJSON = JSON.parse(
-        //     JSON.stringify(categoriesResponse)
-        // );
-
-        // let categories = [];
-
-        // categoriesResponseJSON.map((category) => {
-        //     categories.push({
-        //         name: category.name,
-        //         products: category.products.length,
-        //     });
-        // });
+        const page = req.query.page ? Number(req.query.page) : 1; // 6
+        const limit = 10;
+        const offset = page > 1 ? (page - 1) * limit : 0; // 50
 
         const response = await Product.findAll({
             include: [Product.CATEGORY_ALIAS],
-            offset: page * 10,
-            limit: 10,
+            offset: offset,
+            limit: limit,
         });
 
         const responseJSON = JSON.parse(JSON.stringify(response));
@@ -65,11 +50,25 @@ const productController = {
             });
         });
 
+        const lastPage = Math.floor((count + limit) / limit);
+
+        const previousPage =
+            page > 1 ? `${req.baseUrl + req.path}?page=${page - 1}` : "";
+
+        const nextPage =
+            page * limit > count // 60 > 52
+                ? ""
+                : `${req.baseUrl + req.path}?page=${page + 1}`;
+
         const apiResponse = {
             meta: {
                 status: 200,
                 count: count,
                 url: req.originalUrl,
+                lastPage: lastPage,
+                currentPage: page,
+                previousPage: previousPage,
+                nextPage: nextPage,
             },
             data: {
                 products,
@@ -77,6 +76,23 @@ const productController = {
             },
         };
         res.json(apiResponse);
+
+        // const categoriesResponse = await ProductCategory.findAll({
+        //     include: [ProductCategory.PRODUCTS_LIST_ALIAS],
+        // });
+
+        // const categoriesResponseJSON = JSON.parse(
+        //     JSON.stringify(categoriesResponse)
+        // );
+
+        // let categories = [];
+
+        // categoriesResponseJSON.map((category) => {
+        //     categories.push({
+        //         name: category.name,
+        //         products: category.products.length,
+        //     });
+        // });
     },
     detail: async (req, res) => {
         const response = await Product.findByPk(req.params.id, {

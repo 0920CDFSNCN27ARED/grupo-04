@@ -1,97 +1,77 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <%- include("../partials/head-base", {title: "Tu carrito"}) %>
+
+<head>
+    <%- include("../partials/head-base", {title: "Tu carrito" }) %>
         <link rel="stylesheet" href="/css/productCart.css" />
         <link rel="stylesheet" href="/css/productDetail.css" />
-        <link
-            rel="stylesheet"
-            href="/css/productCart-md.css"
-            media="(min-width: 481px)"
-        />
-        <link
-            rel="stylesheet"
-            href="/css/productCart-lg.css"
-            media="(min-width: 769px)"
-        />
-    </head>
+        <link rel="stylesheet" href="/css/productCart-md.css" media="(min-width: 481px)" />
+        <link rel="stylesheet" href="/css/productCart-lg.css" media="(min-width: 769px)" />
+</head>
 
-    <body class="bg-muted">
-        <header><%- include("../partials/header") %></header>
-        <div
-            class="cart-top-banner display-flex justify-content-space-between align-items-center bg-primary width-100 text-light padding-y-15"
-        >
-            <h1 class="cart-title font-size-1">Tu carrito</h1>
-            <i class="fas fa-shopping-cart cart-basket-icon"></i>
-        </div>
-        <main class="display-flex justify-content-center align-items-center">
-            <div class="cart-container padding-x-15 cart-container-md">
-                <div class="cart-product display-flex padding-y-15">
-                    <div
-                        class="cart-product-image-container bg-light padding-10"
-                    >
-                        <img
-                            src="/images/products/<%= product.image %>"
-                            alt=""
-                            class="cart-product-image width-100"
-                        />
-                    </div>
-
-                    <div class="cart-product-info">
-                        <p
-                            class="cart-product-name font-weight-400 text-align-center font-size-0-8"
-                        >
-                            <%= product.name %>
-                        </p>
-
-                        <div
-                            class="cart-ammount-and-price-container display-flex justify-content-space-between align-items-center width-100"
-                        >
-                            <form action="">
-                                <select name="" id="">
-                                    <option value="1">1</option>
-                                </select>
-                            </form>
-                            <p class="cart-price font-weight-600 font-size-0-8">
-                                &#36;<%= toThousand(product.price) %>
-                            </p>
-                        </div>
-                    </div>
+<body class="bg-muted">
+    <header>
+        <%- include("../partials/header") %>
+    </header>
+    <div
+        class="cart-top-banner display-flex justify-content-space-between align-items-center bg-primary width-100 text-light padding-y-15">
+        <h1 class="cart-title font-size-1">Tu carrito</h1>
+        <i class="fas fa-shopping-cart cart-basket-icon"></i>
+    </div>
+    <main class="display-flex justify-content-center align-items-flex-end">
+        <div class="cart-container padding-x-15 cart-container-md">
+            <div class="cart-product display-flex padding-y-15">
+                <div class="cart-product-image-container bg-light padding-10">
+                    <img src="/images/products/<%= product.image %>" alt="" class="cart-product-image width-100" />
                 </div>
-                <div
-                    class="product-buttons-container display-flex justify-content-center padding-y-15 product-buttons-container-md"
-                >
-                    <button
-                        class="product-button-buy button text-light bg-success product-button-buy-md product-button-buy-lg"
-                        onclick="window.location.href='/'"
-                    >
-                        Pagar
-                    </button>
-                    <button
-                        class="product-button-cancel button text-light bg-danger product-button-cancel-md product-button-cancel-lg"
-                    >
-                        Vaciar Carrito
-                    </button>
+
+                <div class="cart-product-info">
+                    <p class="cart-product-name font-weight-400 text-align-center font-size-0-8">
+                        <%= product.name %>
+                    </p>
+
+                    <div
+                        class="cart-ammount-and-price-container display-flex justify-content-space-between align-items-center width-100">
+                        <form action="">
+                            <select name="" id="">
+                                <option value="1">1</option>
+                            </select>
+                        </form>
+                        <p class="cart-price font-weight-600 font-size-0-8">
+                            &#36;<%= toThousand(product.price) %>
+                        </p>
+                    </div>
                 </div>
             </div>
             <div
-                class="cart-seller-container font-size-0-8 padding-x-15 width-100 bg-warning"
-            >
-                <p>
-                    Tu vendedor es:
-                    <b
-                        ><%= `${product.user.firstName}
-                        ${product.user.lastName}` %></b
-                    >
-                </p>
-                <p>
-                    Una vez realizado el pago, el vendedor se pondrá en contacto
-                    con vos para coordinar la entrega
-                </p>
+                class="product-buttons-container display-flex justify-content-center padding-y-15 product-buttons-container-md">
+                <button
+                    class="product-button-buy button text-light bg-success product-button-buy-md product-button-buy-lg"
+                    onclick="window.location.href='/'">
+                    Pagar
+                </button>
+                <button
+                    class="product-button-cancel button text-light bg-danger product-button-cancel-md product-button-cancel-lg">
+                    Vaciar Carrito
+                </button>
             </div>
-        </main>
-        <footer class="bg-dark text-light text-align-center">
-            <%- include("../partials/footer") %>
-        </footer>
-    </body>
+        </div>
+        <div class="cart-seller-container font-size-0-8 padding-x-15 width-100 bg-warning">
+            <p>
+                Tu vendedor es:
+                <b>
+                    <%= `${product.user.firstName} ${product.user.lastName}` %>
+                </b>
+            </p>
+            <p>
+                Una vez realizado el pago, el vendedor se pondrá en contacto
+                con vos para coordinar la entrega
+            </p>
+        </div>
+    </main>
+    <footer class="bg-dark text-light text-align-center">
+        <%- include("../partials/footer") %>
+    </footer>
+</body>
+
 </html>
